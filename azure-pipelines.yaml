@@ -151,6 +151,7 @@ stages:
           inputs:
             testResultsFormat: 'JUnit'
             testResultsFiles: 'Results/*.xml'
+            mergeTestResults: true
       
 
     # - deployment: VMDeploy
