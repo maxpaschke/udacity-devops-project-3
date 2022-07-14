@@ -61,7 +61,7 @@ stages:
           displayName: Apply Terraform
           inputs:
             targetType: 'inline'
-            script: 'terraform apply'
+            script: 'terraform apply -auto-approve'
             workingDirectory: 'terraform'
 
   - stage: Build
