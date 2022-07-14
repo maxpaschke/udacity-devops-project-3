@@ -125,6 +125,7 @@ stages:
             script: |
               npm install -g newman
               newman --version
+              mkdir logs
               mkdir logs/postman
             
         - task: Bash@3
