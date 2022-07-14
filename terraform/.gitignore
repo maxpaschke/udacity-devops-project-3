@@ -2,3 +2,5 @@
 .terraform.lock.hcl
 terraform.tfvars
 terraform_backend.conf
+id_rsa
+id_rsa.pub
