@@ -38,22 +38,22 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                echo Copying $(terraformvars.secureFilePath) to the terraform directory
-                cp $(terraformvars.secureFilePath) $(System.DefaultWorkingDirectory)/terraform/terraform.tfvars
+                ls terraform
 
       - job: init
         displayName: Terraform Init
         pool:
           name: Default
         steps:
-        - task: TerraformInstaller@0
+        - task: Bash@3
           inputs:
-            terraformVersion: 'latest'
-        - task: TerraformCLI@0
+            filePath: 'terraform/install_terraform.sh'
+            workingDirectory: 'terraform'
+        - task: Bash@3
           inputs:
-            command: 'init'
-            workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-            allowTelemetryCollection: true
+            targetType: 'inline'
+            script: 'terraform init'
+            workingDirectory: 'terraform'
         - task: Bash@3
           inputs:
             filePath: 'terraform/import_resource_group.sh'
