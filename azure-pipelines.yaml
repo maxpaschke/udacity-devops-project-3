@@ -168,9 +168,9 @@ stages:
              targetType: 'inline'
              script: |
                sudo apt-get install default-jre -y
-               wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.tgz -O jmeter.tgz
-               unzip jmeter.tgz
-               ./jmeter/bin/jmeter --version
+               wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.tgz -O jmeter-5.4.tgz
+               tar -xzvf jmeter-5.4.tgz
+               ./apache-jmeter-5.4.tgz/bin/jmeter --version
 
 
 
