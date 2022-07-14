@@ -1,0 +1,2 @@
+#!/bin/bash
+newman run automatedtesting/postman/Regression_Test.postman_collection.json -e automatedtesting/postman/test_environment.json --reporters cli,junit --reporter-junit-export Results/RegressionTests.xml --suppress-exit-code --bail newman
