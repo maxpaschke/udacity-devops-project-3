@@ -1,7 +1,7 @@
 name: Azure Pipelines
 variables:
   python.version: "3.7.9"
-  appName: 'udacity-test-AppService'
+  appName: 'TestApp-AppService'
 
 stages:
   # - stage: Provision
