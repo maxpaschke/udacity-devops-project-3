@@ -26,11 +26,12 @@ stages:
           name: Default
         steps:
          - task: Bash@3
+           displayName: Copy tfvars file
            inputs:
             targetType: 'inline'
             script: |
-                echo Copying $(TerraFormVars.secureFilePath) to the terraform directory
-                cp $(TerraFormVars.secureFilePath) $(System.DefaultWorkingDirectory)/terraform/terraform.tfvars
+                echo Copying $(Agent.TempDirectory)/terraform.tfvars to the terraform directory
+                cp $(Agent.TempDirectory)/terraform.tfvars $(System.DefaultWorkingDirectory)/terraform/terraform.tfvars
       - job: init
         displayName: Terraform Init
         pool:
