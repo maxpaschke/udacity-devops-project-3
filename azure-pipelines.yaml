@@ -12,12 +12,20 @@ stages:
         steps:
           - task: DownloadSecureFile@1
             displayName: Download the modified vars file
+            name: terraformvars
             inputs:
-              secureFile: "terraform.tfvars"
+              secureFile: "terraform.tfvars"           
           - task: InstallSSHKey@0
             inputs:
               knownHostsEntry: 'KNOWN_HOSTS_STRING'
-              sshKeySecureFile: 'id_rsa.pub'
+              sshKeySecureFile: 'id_rsa'
+          - task: Bash@3
+            displayName: Copy tfvars file
+            inputs:
+              targetType: 'inline'
+              script: |
+                echo Copying $(terraformvars.secureFilePath) to the terraform directory
+                cp $(terraformvars.secureFilePath) $(System.DefaultWorkingDirectory)/terraform/terraform.tfvars
   - stage: Provision
     jobs:
       - job: copy_terraformvars
@@ -25,30 +33,31 @@ stages:
         pool:
           name: Default
         steps:
-         - task: Bash@3
-           inputs:
-            targetType: 'inline'
-            script: |
-                echo Copying $(TerraFormVars.secureFilePath) to the terraform directory
-                cp $(TerraFormVars.secureFilePath) $(System.DefaultWorkingDirectory)/terraform/
+          - task: Bash@3
+            displayName: Copy tfvars file
+            inputs:
+              targetType: 'inline'
+              script: |
+                ls terraform
+
       - job: init
         displayName: Terraform Init
         pool:
           name: Default
         steps:
-        - task: PowerShell@2
+        - task: Bash@3
+          inputs:
+            filePath: 'terraform/install_terraform.sh'
+            workingDirectory: 'terraform'
+        - task: Bash@3
           inputs:
             targetType: 'inline'
             script: 'terraform init'
             workingDirectory: 'terraform'
-        - task: PowerShell@2
+        - task: Bash@3
           inputs:
-            filePath: 'terraform/import_resource_group.ps1'
+            filePath: 'terraform/import_resource_group.sh'
             workingDirectory: 'terraform'
-        
-
-
-
 
   - stage: Build
     jobs:
