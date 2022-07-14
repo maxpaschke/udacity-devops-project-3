@@ -1,6 +1,7 @@
 name: Azure Pipelines
 variables:
   python.version: "3.7.9"
+  appName: 'udacity-test-AppService'
 
 stages:
   - stage: Provision
@@ -61,7 +62,7 @@ stages:
           displayName: Apply Terraform
           inputs:
             targetType: 'inline'
-            script: 'terraform apply -auto-approve'
+            script: 'terraform apply'
             workingDirectory: 'terraform'
 
   - stage: Build
@@ -70,16 +71,10 @@ stages:
         pool:
           name: Default
         steps:
-          # Needed for Terraform VM deployment
-          # - task: InstallSSHKey@0
-          #   inputs:
-          #     knownHostsEntry: 'KNOWN_HOSTS_STRING'
-          #     sshPublicKey: 'PUBLIC_KEY'
-          #     sshKeySecureFile: 'id_rsa'
           - task: ArchiveFiles@2
             displayName: "Archive FakeRestAPI"
             inputs:
-              rootFolderOrFile: "path/to/fakerestapi"
+              rootFolderOrFile: "automatedtesting/jmeter/fakerestapi"
               includeRootFolder: false
               archiveType: "zip"
               archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip"
@@ -90,7 +85,7 @@ stages:
     jobs:
       - deployment: FakeRestAPI
         pool:
-          vmImage: "Ubuntu-16.04"
+          name: Default
         environment: "TEST"
         strategy:
           runOnce:
@@ -99,8 +94,8 @@ stages:
                 - task: AzureWebApp@1
                   displayName: "Deploy Azure Web App"
                   inputs:
-                    azureSubscription: ""
-                    appName: ""
+                    azureSubscription: "Azuredevops"
+                    appName: $(appName)
                     appType: webApp
                     package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
     # - deployment: VMDeploy
