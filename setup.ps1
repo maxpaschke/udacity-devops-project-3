@@ -1,7 +1,7 @@
 $RESOURCE_GROUP_NAME = 'Azuredevops'
 $STORAGE_ACCOUNT_NAME = "tfstate$(Get-Random)"
 $CONTAINER_NAME = 'tfstate'
-$CREATE_STORAGE = $false
+$CREATE_STORAGE = $true
 
 Write-Host "Enter client_id"
 $client_id = Read-Host
