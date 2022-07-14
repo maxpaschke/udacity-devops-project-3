@@ -18,7 +18,7 @@ address_prefix_test = "10.5.1.0/24"
 image_id   = "Canonical:UbuntuServer:18.04-LTS:latest"
 vm_name = "myAgentVM"
 vm_username = "vmadmin"
-public_key_file = "~/.ssh/authorized_keys/rsa.pub"
+public_key_file = "/home/vsts/work/_temp/rsa.pub"
 
 # Resource Group Tags
 deployment_id = ""
