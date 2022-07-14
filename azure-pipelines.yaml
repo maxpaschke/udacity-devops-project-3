@@ -71,6 +71,13 @@ stages:
         pool:
           name: Default
         steps:
+          - task: Bash@3
+            displayName: Install zip
+            inputs:
+              targetType: 'inline'
+              script: |
+                apt-get update
+                apt-get install zip unzip
           - task: ArchiveFiles@2
             displayName: "Archive FakeRestAPI"
             inputs:
