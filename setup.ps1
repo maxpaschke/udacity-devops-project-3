@@ -31,28 +31,34 @@ $targetTerraformfile = "./terraform/terraform.tfvars"
 Copy-Item -Path "./terraform/terraform.tfvars_example" -Destination $targetTerraformfile
 
 function setVariable($parameter) {
-    $file = $targetTerraformfile
+    $file = $parameter[2]
     $regex = '(^' + $parameter[0] + '.*=.*)"(.*)"'
     $replaceregex = '$1"' + $parameter[1] + '"'
     (Get-Content $file) -replace $regex, $replaceregex | Set-Content $file
 }
 
-setVariable("subscription_id", $subscription.Id)
-setVariable("client_id", $client_id)
-setVariable("client_secret", $client_secret)
-setVariable("tenant_id", $tenantId)
+setVariable("subscription_id", $subscription.Id, $targetTerraformfile)
+setVariable("client_id", $client_id, $targetTerraformfile)
+setVariable("client_secret", $client_secret, $targetTerraformfile)
+setVariable("tenant_id", $tenantId, $targetTerraformfile)
 
-setVariable("location", $location)
-setVariable("resource_group", $resourceGroup.ResourceGroupName)
-setVariable("deployment_id", $resourceGroup.Tags.DeploymentId)
-setVariable("launch_id", $resourceGroup.Tags.LaunchId)
-setVariable("template_id", $resourceGroup.Tags.TemplateId)
+setVariable("location", $location, $targetTerraformfile)
+setVariable("resource_group", $resourceGroup.ResourceGroupName, $targetTerraformfile)
+setVariable("deployment_id", $resourceGroup.Tags.DeploymentId, $targetTerraformfile)
+setVariable("launch_id", $resourceGroup.Tags.LaunchId, $targetTerraformfile)
+setVariable("template_id", $resourceGroup.Tags.TemplateId, $targetTerraformfile)
 
 if ($CREATE_STORAGE) {
-    setVariable("storage_account_name", $storageaccount.StorageAccountName)
-    setVariable("backend_container_name", $CONTAINER_NAME)
-    setVariable("access_key", $ACCOUNT_KEY)
+    $targetConf = "./terraform/terraform_backend.conf"
+    Copy-Item -Path "./terraform/terraform_backend.conf_example" -Destination $targetConf
+
+    setVariable("storage_account_name", $storageaccount.StorageAccountName, $targetConf)
+    setVariable("container_name", $CONTAINER_NAME, $targetConf)
+    setVariable("access_key", $ACCOUNT_KEY, $targetConf)
 }
+
+
+
 
 # Generate the key
 ssh-keygen -f id_rsa -N '""'

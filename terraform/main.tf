@@ -7,10 +7,6 @@ provider "azurerm" {
 }
 terraform {
   backend "azurerm" {
-     storage_account_name  = "${var.storage_account_name}"
-     container_name        = "${var.backend_container_name}"
-     key                   = "${var.backend_container_name}"
-     access_key            = "${var.access_key}"
   }
 }
 

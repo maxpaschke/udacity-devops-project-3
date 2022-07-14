@@ -1,0 +1,5 @@
+# Backend
+storage_account_name  = ""
+container_name        = "tfstate"
+key = "tfstate"
+access_key            = ""

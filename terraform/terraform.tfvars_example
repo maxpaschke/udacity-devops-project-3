@@ -19,11 +19,6 @@ image_id   = ""
 vm_name = "myAgentVM"
 vm_username = "vmadmin"
 
-# Backend
-storage_account_name  = ""
-backend_container_name        = "tfstate"
-access_key            = ""
-
 # Resource Group Tags
 deployment_id = ""
 launch_id = ""
