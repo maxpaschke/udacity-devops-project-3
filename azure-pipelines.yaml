@@ -51,8 +51,7 @@ stages:
             targetType: 'inline'
             script: |
               # Write your commands here
-              ls /home/vsts/work/_temp/
-              ls /home/vsts/work
+              ls ~
         - task: Bash@3
           displayName: Apply Terraform
           inputs:
