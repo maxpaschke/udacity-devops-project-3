@@ -25,7 +25,9 @@ variable "vm_name" {
 variable "image_id" {
   description = "vm name postfix"
 }
-variable "public_key_file" {}
+variable "deployment_id" {}
+variable "launch_id" {}
+variable "template_id" {}
 
 # Resource Group
 resource "azurerm_resource_group" "test" {
