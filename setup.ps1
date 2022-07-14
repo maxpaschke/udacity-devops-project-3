@@ -9,7 +9,7 @@ Write-host "Enter client_secret"
 $client_secret = Read-Host
 
 # Connect to the az account
-# Connect-AzAccount
+Connect-AzAccount
 
 # Get the existing resource group
 $resourceGroup = Get-AzResourceGroup -Name $RESOURCE_GROUP_NAME
@@ -58,7 +58,7 @@ if ($CREATE_STORAGE) {
 ssh-keygen -f id_rsa -N '""'
 
 # Create the runner vm
-az vm create --resource-group $RESOURCE_GROUP_NAME --name "RunnerVM" --image "18.04-LTS" --admin-username "vmadmin" --ssh-key-values id_rsa.pub
+az vm create --resource-group $RESOURCE_GROUP_NAME --name "RunnerVM" --image "Canonical:UbuntuServer:18.04-LTS:latest" --admin-username "vmadmin" --ssh-key-values id_rsa.pub
 
 # get the public ip
 $publicIp = Get-AzPublicIpAddress -Name "RunnerVMPublicIp"

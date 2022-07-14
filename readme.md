@@ -52,13 +52,7 @@ This project demonstrates automated testing in Azure with end to end (E2E), unit
     * Name: `myAgentPool`
     * Enable `Grant access permission to all pipelines`
 
-* Setup terraform
-  - Replace the values below in terraform/main.tf with the output from `Create_storage_account.ps1` above
-  - Run the import script `import_resource_group.ps1` in the terraform folder
-  - Modify the tags of the existing resource group resource to match the resourcegroup in `input.tf`
-  - Run `terraform apply`
-
-* Create a new pipeline and connect it
+* Create a new pipeline and connect it to github
   - Goto `Pipelines` in the Azure Devops project
   - Select `Create`
     - In the Connect Wizard Select `Github`
@@ -76,6 +70,12 @@ This project demonstrates automated testing in Azure with end to end (E2E), unit
       - Create it
       - Save the Token
 
+* Setup the cloud shell and add the ssh certificates
+  * `touch ~/.ssh/id_rsa`
+  * `nano ~/.ssh/id_rsa`
+  * Copy the content of the local key `id_rsa` into the one on azure
+  * Run `chmod 600 ~/.ssh/id_rsa` to make the key usable
+
 * Add the pipeline agent to the VM
   *  Connect to the VM via Azure cloud shell
     - `ssh devopsagent@$VMIP$`, use your specific IP for the VM here.
@@ -86,8 +86,8 @@ This project demonstrates automated testing in Azure with end to end (E2E), unit
         # Create the agent
         mkdir myagent && cd myagent
         tar zxvf ../vsts-agent-linux-x64-2.204.0.tar.gz
-        # Configure the agent
-        ./config.sh --unattended --url https://dev.azure.com/odluser200841/ --auth pat --token ag2xd2ulzrk27d77nc5ploam5c5ybbiexofyv72m3ghht2pipsoa
+        # Configure the agent, adjust the url and token!
+        ./config.sh --unattended --url https://dev.azure.com/odluser201017/ --auth pat --token w3rwcnx335hnyz52itrlr5gzntpqbezczagddsxrun36zic27h4q
         # Finish the setup
         sudo ./svc.sh install
         sudo ./svc.sh start

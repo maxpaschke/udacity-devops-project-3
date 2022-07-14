@@ -20,8 +20,6 @@ stages:
               knownHostsEntry: "KNOWN_HOSTS_STRING"
               sshPublicKey: "PUBLIC_KEY"
               sshKeySecureFile: "id_rsa"
-          - bash:
-            ''
 
   - stage: Build
     jobs:
