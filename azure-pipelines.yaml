@@ -22,6 +22,8 @@ stages:
     jobs:
       - job: copy_terraformvars
         displayName: Copy the terraform vars
+        pool:
+          name: Default
         steps:
          - task: Bash@3
            inputs:
@@ -31,6 +33,8 @@ stages:
                 cp $(TerraFormVars.secureFilePath) $(System.DefaultWorkingDirectory)/terraform/
       - job: init
         displayName: Terraform Init
+        pool:
+          name: Default
         steps:
         - task: PowerShell@2
           inputs:
