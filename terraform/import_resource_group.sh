@@ -1,6 +1,3 @@
 #!/bin/bash
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-
-resourcegroupId=`az group list | python -c "import sys, json; print(json.load(sys.stdin)[0]['id'])"`
-echo $resourcegroupId
+resourcegroupId=$(cat terraform_resource_group.txt)
 terraform import 'azurerm_resource_group.test' "$resourcegroupId"

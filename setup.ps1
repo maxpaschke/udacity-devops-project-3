@@ -13,6 +13,7 @@ Connect-AzAccount
 
 # Get the existing resource group
 $resourceGroup = Get-AzResourceGroup -Name $RESOURCE_GROUP_NAME
+$resourceGroup.ResourceId > terraform/terraform_resource_group.txt
 $location = $resourceGroup.Location
 $subscription = Get-AzSubscription
 $tenantId = $subscription.TenantId
