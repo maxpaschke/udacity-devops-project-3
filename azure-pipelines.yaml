@@ -46,15 +46,18 @@ stages:
           name: Default
         steps:
         - task: Bash@3
+          displayName: Install Terraform
           inputs:
             filePath: 'terraform/install_terraform.sh'
             workingDirectory: 'terraform'
         - task: Bash@3
+          displayName: Init Terraform
           inputs:
             targetType: 'inline'
             script: 'terraform init'
             workingDirectory: 'terraform'
         - task: Bash@3
+          displayName: Import RG
           inputs:
             filePath: 'terraform/import_resource_group.sh'
             workingDirectory: 'terraform'
