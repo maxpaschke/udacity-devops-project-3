@@ -127,14 +127,17 @@ stages:
               newman --version
               mkdir logs
               mkdir logs/postman
+              mkdir Results
             
         - task: Bash@3
           displayName: 'Run the regression tests'
           inputs:
+            workingDirectory: '$(System.DefaultWorkingDirectory)'
             filePath: 'automatedtesting/postman/run_regression_tests.sh'
         - task: Bash@3
           displayName: 'Run the validation tests'
           inputs:
+            workingDirectory: '$(System.DefaultWorkingDirectory)'
             filePath: 'automatedtesting/postman/run_validation_tests.sh'
         - task: Bash@3
           displayName: 'Show test result files'
