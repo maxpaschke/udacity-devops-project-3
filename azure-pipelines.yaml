@@ -4,66 +4,70 @@ variables:
   appName: 'udacity-test-AppService'
 
 stages:
-  - stage: Provision
-    jobs:
-      - job: Provision
-        displayName: Run Terraform
-        pool:
-          name: Default
-        steps:
-        - task: InstallSSHKey@0
-          inputs:
-              knownHostsEntry: 'KNOWN_HOSTS_STRING'
-              sshKeySecureFile: 'id_rsa'
-        - task: DownloadSecureFile@1
-          displayName: Download the modified vars file
-          name: terraformvars
-          inputs:
-            secureFile: "terraform.tfvars"    
-        - task: DownloadSecureFile@1
-          displayName: Download the modified backend file
-          name: terraformbackend
-          inputs:
-            secureFile: "terraform_backend.conf"
-        - task: DownloadSecureFile@1
-          displayName: Download the modified backend file
-          name: rsakey
-          inputs:
-           secureFile: "id_rsa.pub"
-        - task: CopyFiles@2
-          displayName: Copy the secure files
-          inputs:
-            SourceFolder: '$(Agent.TempDirectory)'
-            Contents: '**'
-            TargetFolder: 'terraform'
-        # - task: Bash@3
-        #   displayName: Install Terraform
-        #   inputs:
-        #     filePath: 'terraform/install_terraform.sh'
-        #     workingDirectory: 'terraform'
-        - task: Bash@3
-          displayName: Init Terraform
-          inputs:
-            targetType: 'inline'
-            script: 'terraform init --backend-config=terraform_backend.conf --reconfigure'
-            workingDirectory: 'terraform'
-        # - task: Bash@3
-        #   displayName: Import RG
-        #   inputs:
-        #     filePath: 'terraform/import_resource_group.sh'
-        #     workingDirectory: 'terraform'
-        - task: Bash@3
-          inputs:
-            targetType: 'inline'
-            script: |
-              # Write your commands here
-              ls /home/vmadmin/myagent/myagent/_work/_temp/
-        - task: Bash@3
-          displayName: Apply Terraform
-          inputs:
-            targetType: 'inline'
-            script: 'terraform apply'
-            workingDirectory: 'terraform'
+  # - stage: Provision
+  #   jobs:
+  #     - job: Provision
+  #       displayName: Run Terraform
+  #       pool:
+  #         name: Default
+  #       steps:
+  #       - task: InstallSSHKey@0
+  #         inputs:
+  #             knownHostsEntry: 'KNOWN_HOSTS_STRING'
+  #             sshKeySecureFile: 'id_rsa'
+  #       - task: DownloadSecureFile@1
+  #         displayName: Download the modified vars file
+  #         name: terraformvars
+  #         inputs:
+  #           secureFile: "terraform.tfvars"    
+  #       - task: DownloadSecureFile@1
+  #         displayName: Download the modified backend file
+  #         name: terraformbackend
+  #         inputs:
+  #           secureFile: "terraform_backend.conf"
+  #       - task: DownloadSecureFile@1
+  #         displayName: Download the modified backend file
+  #         name: rsakey
+  #         inputs:
+  #          secureFile: "id_rsa.pub"
+  #       - task: CopyFiles@2
+  #         displayName: Copy the secure files
+  #         inputs:
+  #           SourceFolder: '$(Agent.TempDirectory)'
+  #           Contents: '**'
+  #           TargetFolder: 'terraform'
+  #       # - task: Bash@3
+  #       #   displayName: Install Terraform
+  #       #   inputs:
+  #       #     filePath: 'terraform/install_terraform.sh'
+  #       #     workingDirectory: 'terraform'
+  #       - task: Bash@3
+  #         displayName: Init Terraform
+  #         inputs:
+  #           targetType: 'inline'
+  #           script: 'terraform init --backend-config=terraform_backend.conf --reconfigure'
+  #           workingDirectory: 'terraform'
+  #       # - task: Bash@3
+  #       #   displayName: Import RG
+  #       #   inputs:
+  #       #     filePath: 'terraform/import_resource_group.sh'
+  #       #     workingDirectory: 'terraform'
+  #       - task: Bash@3
+  #         inputs:
+  #           targetType: 'inline'
+  #           script: |
+  #             # Write your commands here
+  #             ls /home/vmadmin/myagent/myagent/_work/_temp/
+  #       - task: Bash@3
+  #         displayName: Apply Terraform
+  #         inputs:
+  #           targetType: 'inline'
+  #           script: 'terraform apply'
+  #           workingDirectory: 'terraform'
+
+
+
+
 
   - stage: Build
     jobs:
@@ -76,8 +80,8 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                apt-get update
-                apt-get install zip unzip
+                sudo apt-get update
+                sudo apt-get install zip unzip
           - task: ArchiveFiles@2
             displayName: "Archive FakeRestAPI"
             inputs:
