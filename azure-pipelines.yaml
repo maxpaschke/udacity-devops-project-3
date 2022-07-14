@@ -66,49 +66,88 @@ stages:
   #           workingDirectory: 'terraform'
 
 
+  # - stage: Build
+  #   jobs:
+  #     - job: Build
+  #       pool:
+  #         name: Default
+  #       steps:
+  #         - task: Bash@3
+  #           displayName: Install zip
+  #           inputs:
+  #             targetType: 'inline'
+  #             script: |
+  #               sudo apt-get update
+  #               sudo apt-get install zip unzip
+  #         - task: ArchiveFiles@2
+  #           displayName: "Archive FakeRestAPI"
+  #           inputs:
+  #             rootFolderOrFile: "automatedtesting/jmeter/fakerestapi"
+  #             includeRootFolder: false
+  #             archiveType: "zip"
+  #             archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip"
+  #         - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
+  #           displayName: "Upload Package"
+  #           artifact: drop-fakerestapi
+  # - stage: FakeRestAPI
+  #   jobs:
+  #     - deployment: FakeRestAPI
+  #       pool:
+  #         name: Default
+  #       environment: "TEST"
+  #       strategy:
+  #         runOnce:
+  #           deploy:
+  #             steps:
+  #               - task: AzureWebApp@1
+  #                 displayName: "Deploy Azure Web App"
+  #                 inputs:
+  #                   azureSubscription: "azure"
+  #                   appName: $(appName)
+  #                   appType: webApp
+  #                   package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
 
-
-
-  - stage: Build
+  - stage: Tests
     jobs:
-      - job: Build
-        pool:
-          name: Default
-        steps:
-          - task: Bash@3
-            displayName: Install zip
-            inputs:
-              targetType: 'inline'
-              script: |
-                sudo apt-get update
-                sudo apt-get install zip unzip
-          - task: ArchiveFiles@2
-            displayName: "Archive FakeRestAPI"
-            inputs:
-              rootFolderOrFile: "automatedtesting/jmeter/fakerestapi"
-              includeRootFolder: false
-              archiveType: "zip"
-              archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip"
-          - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
-            displayName: "Upload Package"
-            artifact: drop-fakerestapi
-  - stage: FakeRestAPI
-    jobs:
-      - deployment: FakeRestAPI
-        pool:
-          name: Default
-        environment: "TEST"
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-                - task: AzureWebApp@1
-                  displayName: "Deploy Azure Web App"
-                  inputs:
-                    azureSubscription: "azure"
-                    appName: $(appName)
-                    appType: webApp
-                    package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
+    - job: Integrationtests
+      pool:
+        name: Default
+      displayName: 'Integration Tests'
+      steps:
+        - task: NodeTool@0
+          displayName: 'Install node'
+          inputs:
+            versionSpec: '16.x'
+        - task: Bash@3
+          displayName: 'Install newman'
+          inputs:
+            targetType: 'inline'
+            script: |
+              npm install -g newman
+              newman --version
+              mkdir logs/postman
+            
+        - task: Bash@3
+          displayName: 'Run the regression tests'
+          inputs:
+            filePath: 'automatedtesting/postman/run_regression_tests.sh'
+        - task: Bash@3
+          displayName: 'Run the validation tests'
+          inputs:
+            filePath: 'automatedtesting/postman/run_validation_tests.sh'
+        - task: Bash@3
+          displayName: 'Show test result files'
+          inputs:
+            targetType: 'inline'
+            script: |
+              ls ./Results/
+        - task: PublishTestResults@2
+          displayName: Publish the Postman results
+          inputs:
+            testResultsFormat: 'JUnit'
+            testResultsFiles: 'Results/*.xml'
+      
+
     # - deployment: VMDeploy
     #   displayName: NAME
     #   environment:
