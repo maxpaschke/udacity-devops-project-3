@@ -51,7 +51,7 @@ stages:
             targetType: 'inline'
             script: |
               # Write your commands here
-              echo ls /home/vmadmin/myagent/myagent/_work/_temp/
+              ls /home/vmadmin/myagent/myagent/_work/_temp/
         - task: Bash@3
           displayName: Apply Terraform
           inputs:
