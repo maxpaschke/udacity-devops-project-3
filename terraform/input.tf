@@ -22,9 +22,6 @@ variable "vm_username" {
 variable "vm_name" {
   description = "vm name postfix"
 }
-variable "image_id" {
-  description = "vm name postfix"
-}
 variable "deployment_id" {}
 variable "launch_id" {}
 variable "template_id" {}

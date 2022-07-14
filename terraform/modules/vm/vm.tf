@@ -19,7 +19,6 @@ resource "azurerm_linux_virtual_machine" "test" {
   admin_username      = var.vm_username
   network_interface_ids = [azurerm_network_interface.test.id]
   disable_password_authentication = false
-  source_image_id     = var.image_id
 
   admin_ssh_key {
     username   = var.vm_username
@@ -29,5 +28,12 @@ resource "azurerm_linux_virtual_machine" "test" {
   os_disk {
     caching           = "ReadWrite"
     storage_account_type = "Standard_LRS"
+  }
+
+    source_image_reference {
+    publisher = "Canonical"
+    offer     = "UbuntuServer"
+    sku       = "18.04-LTS"
+    version   = "latest"
   }
 }
