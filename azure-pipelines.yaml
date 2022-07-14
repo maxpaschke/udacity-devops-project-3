@@ -6,45 +6,26 @@ stages:
   - stage: SecureFiles
     jobs:
       - job: secure_files
-        displayName: Install SSH and get terraform vars
+        displayName: Install SSH
         pool:
           name: Default
-        steps:
-          - task: DownloadSecureFile@1
-            displayName: Download the modified vars file
-            name: terraformvars
-            inputs:
-              secureFile: "terraform.tfvars"           
+        steps: 
           - task: InstallSSHKey@0
             inputs:
               knownHostsEntry: 'KNOWN_HOSTS_STRING'
               sshKeySecureFile: 'id_rsa'
-          - task: Bash@3
-            displayName: Copy tfvars file
-            inputs:
-              targetType: 'inline'
-              script: |
-                echo Copying $(terraformvars.secureFilePath) to the terraform directory
-                cp $(terraformvars.secureFilePath) $(System.DefaultWorkingDirectory)/terraform/terraform.tfvars
   - stage: Provision
     jobs:
-      - job: copy_terraformvars
-        displayName: Copy the terraform vars
-        pool:
-          name: Default
-        steps:
-          - task: Bash@3
-            displayName: Copy tfvars file
-            inputs:
-              targetType: 'inline'
-              script: |
-                ls terraform
-
-      - job: init
+      - job: Provision
         displayName: Terraform Init
         pool:
           name: Default
         steps:
+        - task: DownloadSecureFile@1
+          displayName: Download the modified vars file
+          name: terraformvars
+          inputs:
+            secureFile: "terraform.tfvars"         
         - task: Bash@3
           displayName: Install Terraform
           inputs:
