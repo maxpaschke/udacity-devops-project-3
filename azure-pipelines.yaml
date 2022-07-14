@@ -25,7 +25,7 @@ stages:
     jobs:
       - job: Build
         pool:
-          name: Hosted Ubuntu 1604
+          name: myAgentPool
         steps:
           # Needed for Terraform VM deployment
           # - task: InstallSSHKey@0
