@@ -36,14 +36,14 @@ stages:
         pool:
           name: Default
         steps:
-        - task: PowerShell@2
+        - task: Bash@3
           inputs:
             targetType: 'inline'
             script: 'terraform init'
             workingDirectory: 'terraform'
-        - task: PowerShell@2
+        - task: Bash@3
           inputs:
-            filePath: 'terraform/import_resource_group.ps1'
+            filePath: 'terraform/import_resource_group.sh'
             workingDirectory: 'terraform'
         
 
