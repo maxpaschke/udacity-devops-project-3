@@ -8,7 +8,7 @@ stages:
       - job: provision_infrastructure
         displayName: Provision the Infrastructure
         pool:
-          name: myAgentPool
+          name: Default
         steps:
           - task: DownloadSecureFile@1
             name: TerraFormVars
@@ -25,7 +25,7 @@ stages:
     jobs:
       - job: Build
         pool:
-          name: myAgentPool
+          name: Default
         steps:
           # Needed for Terraform VM deployment
           # - task: InstallSSHKey@0
