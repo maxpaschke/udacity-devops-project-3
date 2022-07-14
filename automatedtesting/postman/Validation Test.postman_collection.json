@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "79012281-0d8e-44ac-aed5-e9b420f39b09",
+		"name": "Validation Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"jsonData = (pm.response.json())",
+							"",
+							"pm.test(\"Successful response\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"success\");",
+							"});",
+							"",
+							"pm.test(\"Data should be equal to the input\", function () {",
+							"    pm.expect(jsonData.data.name).to.equal(pm.environment.get(\"name\"));",
+							"    pm.expect(jsonData.data.salary).to.equal(pm.environment.get(\"salary\"));",
+							"    pm.expect(jsonData.data.age).to.equal(pm.environment.get(\"age\"));",
+							"});",
+							"",
+							"pm.environment.set(\"id\", jsonData.data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{name}}\",\n    \"salary\": \"{{salary}}\",\n    \"age\": \"{{age}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://dummy.restapiexample.com/api/v1/create",
+					"protocol": "http",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Employees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"jsonData = (pm.response.json())",
+							"",
+							"pm.test(\"Successful response\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"success\");",
+							"});",
+							"",
+							"pm.test(\"Successful response message\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Successfully! All records has been fetched.\");",
+							"});",
+							"",
+							"pm.test(\"More than zero entries in data\", function () {",
+							"    pm.expect(jsonData.data.length).to.be.greaterThan(0);",
+							"});",
+							"",
+							"pm.test(\"Test data type of the response\", () => {",
+							"  pm.expect(jsonData).to.be.an(\"object\");",
+							"  pm.expect(jsonData.data).to.be.an(\"array\");",
+							"  pm.expect(jsonData.status).to.be.an(\"string\");",
+							"  pm.expect(jsonData.message).to.be.an(\"string\");",
+							"});",
+							"",
+							"pm.test(\"Test data of the first response\", () => {",
+							"  pm.expect(jsonData.data[0].id).to.equal(1);",
+							"  pm.expect(jsonData.data[0].employee_salary).to.equal(320800);",
+							"  pm.expect(jsonData.data[0].employee_age).to.equal(61);",
+							"  pm.expect(jsonData.data[0].employee_name).to.equal(\"Tiger Nixon\");",
+							"  pm.expect(jsonData.data[0].profile_image).to.equal(\"\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://dummy.restapiexample.com/api/v1/employees",
+					"protocol": "http",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
