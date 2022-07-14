@@ -26,7 +26,7 @@ stages:
             secureFile: "terraform_backend.conf"
         - task: DownloadSecureFile@1
           displayName: Download the modified backend file
-          name: terraformbackend
+          name: rsakey
           inputs:
            secureFile: "id_rsa.pub"
         - task: CopyFiles@2
