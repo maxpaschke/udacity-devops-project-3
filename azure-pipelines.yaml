@@ -23,7 +23,7 @@ stages:
           displayName: Download the modified backend file
           name: terraformbackend
           inputs:
-            secureFile: "terraform_backend.conf"   
+            secureFile: "terraform_backend.conf"
         - task: CopyFiles@2
           displayName: Copy the secure files
           inputs:
@@ -51,7 +51,7 @@ stages:
             targetType: 'inline'
             script: |
               # Write your commands here
-              echo ls ~
+              echo ls /home/vmadmin/myagent/myagent/_work/_temp/
         - task: Bash@3
           displayName: Apply Terraform
           inputs:
