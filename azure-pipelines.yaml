@@ -3,17 +3,6 @@ variables:
   python.version: "3.7.9"
 
 stages:
-  - stage: SecureFiles
-    jobs:
-      - job: secure_files
-        displayName: Install SSH
-        pool:
-          name: Default
-        steps: 
-          - task: InstallSSHKey@0
-            inputs:
-              knownHostsEntry: 'KNOWN_HOSTS_STRING'
-              sshKeySecureFile: 'id_rsa'
   - stage: Provision
     jobs:
       - job: Provision
@@ -21,6 +10,10 @@ stages:
         pool:
           name: Default
         steps:
+        - task: InstallSSHKey@0
+          inputs:
+              knownHostsEntry: 'KNOWN_HOSTS_STRING'
+              sshKeySecureFile: 'id_rsa'
         - task: DownloadSecureFile@1
           displayName: Download the modified vars file
           name: terraformvars
