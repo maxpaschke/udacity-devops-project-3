@@ -9,5 +9,5 @@ variable "vm_username" {}
 variable "name" {}
 
 variable "image_id" {}
-variable "public_key" {}
+variable "public_key_file" {}
 

@@ -57,4 +57,5 @@ module "vm" {
   vm_username      = var.vm_username
   name             = var.vm_name
   image_id         = var.image_id
+  public_key_file  = var.public_key_file
 }

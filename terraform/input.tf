@@ -22,12 +22,10 @@ variable "vm_username" {
 variable "vm_name" {
   description = "vm name postfix"
 }
+variable "image_id" {
+  description = "vm name postfix"
+}
 variable "public_key_file" {}
-
-variable "storage_account_name" {}
-variable "backend_container_name" {}
-variable "access_key" {}
-
 
 # Resource Group
 resource "azurerm_resource_group" "test" {
