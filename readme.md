@@ -92,3 +92,6 @@ This project demonstrates automated testing in Azure with end to end (E2E), unit
         sudo ./svc.sh install
         sudo ./svc.sh start
   ```
+
+* Install the terraform pipeline tasks
+  * Goto [Terraform Tasks](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform) and install the tasks to your devops organization.
