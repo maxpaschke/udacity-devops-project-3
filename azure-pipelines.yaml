@@ -147,6 +147,7 @@ stages:
               ls ./Results/
         - task: PublishTestResults@2
           displayName: Publish the Postman results
+          condition: always()
           inputs:
             testResultsFormat: 'JUnit'
             testResultsFiles: 'Results/*.xml'
