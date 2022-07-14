@@ -51,7 +51,7 @@ stages:
             targetType: 'inline'
             script: |
               # Write your commands here
-              ls ~
+              echo ls ~
         - task: Bash@3
           displayName: Apply Terraform
           inputs:
