@@ -17,7 +17,7 @@ stages:
           - task: InstallSSHKey@0
             inputs:
               knownHostsEntry: 'KNOWN_HOSTS_STRING'
-              sshKeySecureFile: 'id_rsa'
+              sshKeySecureFile: 'id_rsa.pub'
   - stage: Provision
     jobs:
       - job: copy_terraformvars
@@ -45,6 +45,7 @@ stages:
           inputs:
             filePath: 'terraform/import_resource_group.ps1'
             workingDirectory: 'terraform'
+        
 
 
 
