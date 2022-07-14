@@ -30,7 +30,7 @@ stages:
             targetType: 'inline'
             script: |
                 echo Copying $(TerraFormVars.secureFilePath) to the terraform directory
-                cp $(TerraFormVars.secureFilePath) $(System.DefaultWorkingDirectory)/terraform/
+                cp $(TerraFormVars.secureFilePath) $(System.DefaultWorkingDirectory)/terraform/terraform.tfvars
       - job: init
         displayName: Terraform Init
         pool:
