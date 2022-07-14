@@ -12,8 +12,9 @@ stages:
         steps:
           - task: DownloadSecureFile@1
             displayName: Download the modified vars file
+            name: terraformvars
             inputs:
-              secureFile: "terraform.tfvars"
+              secureFile: "terraform.tfvars"           
           - task: InstallSSHKey@0
             inputs:
               knownHostsEntry: 'KNOWN_HOSTS_STRING'
@@ -30,26 +31,25 @@ stages:
            inputs:
             targetType: 'inline'
             script: |
-                echo Copying $(Agent.TempDirectory)/terraform.tfvars to the terraform directory
-                cp $(Agent.TempDirectory)/terraform.tfvars $(System.DefaultWorkingDirectory)/terraform/terraform.tfvars
+                echo Copying $(terraformvars.secureFilePath) to the terraform directory
+                cp $(terraformvars.secureFilePath) $(System.DefaultWorkingDirectory)/terraform/terraform.tfvars
       - job: init
         displayName: Terraform Init
         pool:
           name: Default
         steps:
-        - task: Bash@3
+        - task: TerraformInstaller@0
           inputs:
-            targetType: 'inline'
-            script: 'terraform init'
-            workingDirectory: 'terraform'
+            terraformVersion: 'latest'
+        - task: TerraformCLI@0
+          inputs:
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+            allowTelemetryCollection: true
         - task: Bash@3
           inputs:
             filePath: 'terraform/import_resource_group.sh'
             workingDirectory: 'terraform'
-        
-
-
-
 
   - stage: Build
     jobs:
