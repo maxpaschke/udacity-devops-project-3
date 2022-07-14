@@ -6,55 +6,50 @@ stages:
   - stage: SecureFiles
     jobs:
       - job: secure_files
-        displayName: Install SSH and get terraform vars
+        displayName: Install SSH
         pool:
           name: Default
-        steps:
-          - task: DownloadSecureFile@1
-            displayName: Download the modified vars file
-            name: terraformvars
-            inputs:
-              secureFile: "terraform.tfvars"           
+        steps: 
           - task: InstallSSHKey@0
             inputs:
               knownHostsEntry: 'KNOWN_HOSTS_STRING'
               sshKeySecureFile: 'id_rsa'
-          - task: Bash@3
-            displayName: Copy tfvars file
-            inputs:
-              targetType: 'inline'
-              script: |
-                echo Copying $(terraformvars.secureFilePath) to the terraform directory
-                cp $(terraformvars.secureFilePath) $(System.DefaultWorkingDirectory)/terraform/terraform.tfvars
   - stage: Provision
     jobs:
-      - job: copy_terraformvars
-        displayName: Copy the terraform vars
-        pool:
-          name: Default
-        steps:
-          - task: Bash@3
-            displayName: Copy tfvars file
-            inputs:
-              targetType: 'inline'
-              script: |
-                ls terraform
-
-      - job: init
+      - job: Provision
         displayName: Terraform Init
         pool:
           name: Default
         steps:
+        - task: DownloadSecureFile@1
+          displayName: Download the modified vars file
+          name: terraformvars
+          inputs:
+            secureFile: "terraform.tfvars"    
+        - task: DownloadSecureFile@1
+          displayName: Download the modified backend file
+          name: terraformbackend
+          inputs:
+            secureFile: "terraform_backend.conf"   
+        - task: CopyFiles@2
+          displayName: Copy the secure files
+          inputs:
+            SourceFolder: '$(Agent.TempDirectory)'
+            Contents: 'terraform**'
+            TargetFolder: 'terraform'
         - task: Bash@3
+          displayName: Install Terraform
           inputs:
             filePath: 'terraform/install_terraform.sh'
             workingDirectory: 'terraform'
         - task: Bash@3
+          displayName: Init Terraform
           inputs:
             targetType: 'inline'
-            script: 'terraform init'
+            script: 'terraform init --backend-config=terraform_backend.conf'
             workingDirectory: 'terraform'
         - task: Bash@3
+          displayName: Import RG
           inputs:
             filePath: 'terraform/import_resource_group.sh'
             workingDirectory: 'terraform'
