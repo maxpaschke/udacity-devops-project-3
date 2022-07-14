@@ -19,13 +19,10 @@ variable "vm_username" {
   description = "Username for the vm"
 }
 
-variable "vm_password" {
-  description = "path to the vm password"
-}
-
 variable "vm_name" {
   description = "vm name postfix"
 }
+variable "public_key_file" {}
 
 variable "storage_account_name" {}
 variable "backend_container_name" {}
