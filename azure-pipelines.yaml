@@ -3,29 +3,58 @@ variables:
   python.version: "3.7.9"
 
 stages:
-  - stage: Provision
+  - stage: SecureFiles
     jobs:
-      - job: provision_infrastructure
-        displayName: Provision the Infrastructure
+      - job: secure_files
+        displayName: Install SSH and get terraform vars
         pool:
-          name: myAgentPool
+          name: Default
         steps:
           - task: DownloadSecureFile@1
-            name: TerraFormVars
             displayName: Download the modified vars file
             inputs:
               secureFile: "terraform.tfvars"
           - task: InstallSSHKey@0
             inputs:
-              knownHostsEntry: "KNOWN_HOSTS_STRING"
-              sshPublicKey: "PUBLIC_KEY"
-              sshKeySecureFile: "id_rsa"
+              knownHostsEntry: 'KNOWN_HOSTS_STRING'
+              sshKeySecureFile: 'id_rsa.pub'
+  - stage: Provision
+    jobs:
+      - job: copy_terraformvars
+        displayName: Copy the terraform vars
+        pool:
+          name: Default
+        steps:
+         - task: Bash@3
+           inputs:
+            targetType: 'inline'
+            script: |
+                echo Copying $(TerraFormVars.secureFilePath) to the terraform directory
+                cp $(TerraFormVars.secureFilePath) $(System.DefaultWorkingDirectory)/terraform/
+      - job: init
+        displayName: Terraform Init
+        pool:
+          name: Default
+        steps:
+        - task: PowerShell@2
+          inputs:
+            targetType: 'inline'
+            script: 'terraform init'
+            workingDirectory: 'terraform'
+        - task: PowerShell@2
+          inputs:
+            filePath: 'terraform/import_resource_group.ps1'
+            workingDirectory: 'terraform'
+        
+
+
+
 
   - stage: Build
     jobs:
       - job: Build
         pool:
-          name: Hosted Ubuntu 1604
+          name: Default
         steps:
           # Needed for Terraform VM deployment
           # - task: InstallSSHKey@0
