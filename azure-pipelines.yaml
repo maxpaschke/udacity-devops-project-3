@@ -17,7 +17,7 @@ stages:
   - stage: Provision
     jobs:
       - job: Provision
-        displayName: Terraform Init
+        displayName: Run Terraform
         pool:
           name: Default
         steps:
@@ -46,12 +46,18 @@ stages:
           displayName: Init Terraform
           inputs:
             targetType: 'inline'
-            script: 'terraform init --backend-config=terraform_backend.conf'
+            script: 'terraform init --backend-config=terraform_backend.conf --reconfigure'
             workingDirectory: 'terraform'
+        # - task: Bash@3
+        #   displayName: Import RG
+        #   inputs:
+        #     filePath: 'terraform/import_resource_group.sh'
+        #     workingDirectory: 'terraform'
         - task: Bash@3
-          displayName: Import RG
+          displayName: Apply Terraform
           inputs:
-            filePath: 'terraform/import_resource_group.sh'
+            targetType: 'inline'
+            script: 'terraform apply'
             workingDirectory: 'terraform'
 
   - stage: Build
