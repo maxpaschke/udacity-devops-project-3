@@ -29,6 +29,8 @@ variable "deployment_id" {}
 variable "launch_id" {}
 variable "template_id" {}
 
+variable "public_key_file" {}
+
 # Resource Group
 resource "azurerm_resource_group" "test" {
     name = var.resource_group
