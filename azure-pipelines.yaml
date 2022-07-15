@@ -123,8 +123,7 @@ stages:
   #           script: |
   #             npm install -g newman
   #             newman --version
-  #             mkdir logs
-  #             mkdir logs/postman
+  #             mkdir -p logs/postman
   #             mkdir Results
             
   #       - task: Bash@3
@@ -174,8 +173,7 @@ stages:
   #          inputs:
   #            targetType: 'inline'
   #            script: |
-  #              mkdir logs
-  #              mkdir logs/jmeter
+  #              mkdir -p logs/jmeter
   #              mkdir Results
   #        - task: Bash@3
   #          displayName: 'Run Endurance Test'
@@ -216,16 +214,20 @@ stages:
          - task: ArchiveFiles@2
            displayName: 'Archive selenium tests'
            inputs:
-             rootFolderOrFile: '$(Build.BinariesDirectory)'
+             rootFolderOrFile: '$(System.DefaultWorkingDirectory)/automatedtesting/selenium'
              includeRootFolder: true
              archiveType: 'zip'
              archiveFile: '$(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip'
              replaceExistingArchive: true
-         - upload: $(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip
+         - publish: $(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip
            artifact: seleniumtestarchive
+           displayName: 'Publish selenium tests'
+
      - deployment: seleniumtests
+       dependsOn: prepareSeleniumTest
        environment:
         name: 'TEST'
+        resourceName: 'TestApp-vm-myAgentVM'
         resourceType: VirtualMachine
        displayName: 'Run Selenium tests'
        strategy:
@@ -235,20 +237,32 @@ stages:
             - task: Bash@3
               displayName: 'Install selenium'
               inputs:
-                workingDirectory: '$(System.DefaultWorkingDirectory)'
+                targetType: 'inline'
                 script: |
+                  pwd
+                  hostname
                   echo "Run the installation"
                   sudo apt-get upgrade -y
                   sudo apt-get install unzip -y
                   sudo apt-get install -y chromium-browser
                   sudo apt-get install -y chromium-chromedriver
                   pip3 install selenium
-
+                  
                   chromium-browser --version
                   chromedriver --version
-            - download: downloadSeleniumTests
-              artifact: seleniumtestarchive
-
+            - task: DownloadBuildArtifacts@0
+              inputs:
+                buildType: 'current'
+                downloadType: 'single'
+                artifactName: 'seleniumtestarchive'
+                downloadPath: '$(System.ArtifactsDirectory)'
+            - task: Bash@3
+              displayName: 'Run selenium tests'
+              inputs:
+                targetType: 'inline'
+                script: |
+                 cd $(System.ArtifactsDirectory)
+                 ls -la
 
 
 
