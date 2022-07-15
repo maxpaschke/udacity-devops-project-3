@@ -61,48 +61,48 @@ stages:
   #           workingDirectory: 'terraform'
 
 ##########################################################################################
-  - stage: BuildFakeRestApi
-    jobs:
-      - job: Build
-        pool:
-          name: Default
-        steps:
-          - task: Bash@3
-            displayName: Install zip
-            inputs:
-              targetType: 'inline'
-              script: |
-                sudo apt-get update
-                sudo apt-get install zip unzip
-          - task: ArchiveFiles@2
-            displayName: "Archive FakeRestAPI"
-            inputs:
-              rootFolderOrFile: "automatedtesting/jmeter/fakerestapi"
-              includeRootFolder: false
-              archiveType: "zip"
-              archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip"
-          - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
-            displayName: "Upload Package"
-            artifact: drop-fakerestapi
+  # - stage: BuildFakeRestApi
+  #   jobs:
+  #     - job: Build
+  #       pool:
+  #         name: Default
+  #       steps:
+  #         - task: Bash@3
+  #           displayName: Install zip
+  #           inputs:
+  #             targetType: 'inline'
+  #             script: |
+  #               sudo apt-get update
+  #               sudo apt-get install zip unzip
+  #         - task: ArchiveFiles@2
+  #           displayName: "Archive FakeRestAPI"
+  #           inputs:
+  #             rootFolderOrFile: "automatedtesting/jmeter/fakerestapi"
+  #             includeRootFolder: false
+  #             archiveType: "zip"
+  #             archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip"
+  #         - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
+  #           displayName: "Upload Package"
+  #           artifact: drop-fakerestapi
 
 ##########################################################################################
-  - stage: DeployFakeRestApi
-    jobs:
-      - deployment: FakeRestAPI
-        pool:
-          name: Default
-        environment: "TEST"
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-                - task: AzureWebApp@1
-                  displayName: "Deploy Azure Web App"
-                  inputs:
-                    azureSubscription: "azure"
-                    appName: $(appName)
-                    appType: webApp
-                    package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
+  # - stage: DeployFakeRestApi
+  #   jobs:
+  #     - deployment: FakeRestAPI
+  #       pool:
+  #         name: Default
+  #       environment: "TEST"
+  #       strategy:
+  #         runOnce:
+  #           deploy:
+  #             steps:
+  #               - task: AzureWebApp@1
+  #                 displayName: "Deploy Azure Web App"
+  #                 inputs:
+  #                   azureSubscription: "azure"
+  #                   appName: $(appName)
+  #                   appType: webApp
+  #                   package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
 
 ###########################################################################################
   # - stage: Tests
@@ -167,7 +167,22 @@ stages:
                wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.tgz -O jmeter-5.4.tgz
                tar -xzvf jmeter-5.4.tgz
                ./apache-jmeter-5.4/bin/jmeter --version
-
+         - task: Bash@3
+           displayName: 'Create folders'
+           inputs:
+             targetType: 'inline'
+             script: |
+               mkdir logs
+               mkdir logs/jmeter
+               mkdir Results
+         - task: Bash@3
+           displayName: 'Run Endurance Test'
+           inputs:
+             targetType: 'inline'
+             script: |
+              apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Endurance_Test.jmx -l log/jmeter/Endurance_Result.csv \
+                             -e -f -o log/jmeter/Endurance-html-report -j log/jmeter/Endurance-test.log
+                                       
 
 
 
