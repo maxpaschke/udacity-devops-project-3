@@ -123,8 +123,7 @@ stages:
   #           script: |
   #             npm install -g newman
   #             newman --version
-  #             mkdir logs
-  #             mkdir logs/postman
+  #             mkdir -p logs/postman
   #             mkdir Results
             
   #       - task: Bash@3
@@ -174,8 +173,7 @@ stages:
   #          inputs:
   #            targetType: 'inline'
   #            script: |
-  #              mkdir logs
-  #              mkdir logs/jmeter
+  #              mkdir -p logs/jmeter
   #              mkdir Results
   #        - task: Bash@3
   #          displayName: 'Run Endurance Test'
@@ -258,7 +256,13 @@ stages:
                 downloadType: 'single'
                 artifactName: 'seleniumtestarchive'
                 downloadPath: '$(System.ArtifactsDirectory)'
-
+            - task: Bash@3
+              displayName: 'Run selenium tests'
+              inputs:
+                targetType: 'inline'
+                script: |
+                 cd $(System.ArtifactsDirectory)
+                 ls -la
 
 
 
