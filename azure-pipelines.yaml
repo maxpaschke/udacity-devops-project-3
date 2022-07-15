@@ -164,9 +164,9 @@ stages:
              targetType: 'inline'
              script: |
                sudo apt-get install default-jre -y
-               wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.tgz -O jmeter-5.4.tgz
-               tar -xzvf jmeter-5.4.tgz
-               ./apache-jmeter-5.4/bin/jmeter --version
+               wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.5.tgz -O jmeter-5.5.tgz
+               tar -xzvf jmeter-5.5.tgz
+               ./apache-jmeter-5.5/bin/jmeter --version
          - task: Bash@3
            displayName: 'Create folders'
            inputs:
