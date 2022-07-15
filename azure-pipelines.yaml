@@ -259,13 +259,9 @@ stages:
               inputs:
                 targetType: 'inline'
                 script: |
-                 pwd
-                 ls -la
                  cd $(Pipeline.Workspace)
-                 ls -la
                  unzip -o seleniumtests/seleniumtests.zip -d .
-                 ls seleniumtests
-                 cd seleniumtests/selenium
+                 cd selenium
                  python3 selenium_test.py > selenium-test-logs.log
                  cat selenium-test-logs.log
                  sudo cp selenium-test-logs.log $(System.DefaultWorkingDirectory)/selenium-test-logs.log
