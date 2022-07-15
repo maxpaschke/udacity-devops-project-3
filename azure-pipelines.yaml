@@ -217,13 +217,13 @@ stages:
              rootFolderOrFile: '$(System.DefaultWorkingDirectory)/automatedtesting/selenium'
              includeRootFolder: true
              archiveType: 'zip'
-             archiveFile: '$(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip'
+             archiveFile: '$(Build.ArtifactStagingDirectory)/seleniumtests.zip'
              replaceExistingArchive: true
-         - upload: $(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip
-           artifact: seleniumtestarchive
+         - upload: $(Build.ArtifactStagingDirectory)/seleniumtests.zip
+           artifact: seleniumtests
            displayName: 'Upload selenium tests'
 
-     - deployment: seleniumtests
+     - deployment: runSelenium
        dependsOn: prepareSeleniumTest
        environment:
         name: 'TEST'
@@ -252,7 +252,7 @@ stages:
                   chromedriver --version
             - download: current
               displayName: 'Download Selenium'
-              artifact: seleniumtestarchive
+              artifact: seleniumtests
 
             - task: Bash@3
               displayName: 'Run selenium tests'
@@ -263,6 +263,7 @@ stages:
                  ls -la
                  cd $(Pipeline.Workspace)
                  ls -la
+                 unzip -o seleniumtests/seleniumtests.zip -d .
 
 
 
