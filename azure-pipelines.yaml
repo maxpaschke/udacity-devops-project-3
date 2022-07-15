@@ -170,9 +170,9 @@ stages:
                if [ -f "$JMETERFILE"]; then
                  echo "$JMETERFILE already downloaded."
                else
-                 wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.5.tgz -O jmeter-5.5.tgz
+                 wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.5.tgz -O $JMETERFILE
                fi
-               tar -xzvf jmeter-5.5.tgz
+               tar -xzvf $JMETERFILE
                ./apache-jmeter-5.5/bin/jmeter --version
          - task: Bash@3
            displayName: 'Create folders'
@@ -198,9 +198,16 @@ stages:
               dir automatedtesting/jmeter
               apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Stress_Test.jmx -l logs/jmeter/Stress_Result.csv \
                              -e -f -o logs/jmeter/Stress-html-report -j logs/jmeter/Stress-test.log
+         - task: ArchiveFiles@2
+           inputs:
+              rootFolderOrFile: 'logs/jmeter'
+              includeRootFolder: true
+              archiveType: 'zip'
+              archiveFile: 'logs/jmeter/jmeter-test-repot-$(Build.BuildId).zip'
+              replaceExistingArchive: true
          - task: PublishPipelineArtifact@1
            inputs:
-            targetPath: 'logs/jmeter'
+            targetPath: 'logs/jmeter/jmeter-test-repot-$(Build.BuildId).zip'
             artifact: 'Jmeter-Results'
 
 ###########################################################################################
