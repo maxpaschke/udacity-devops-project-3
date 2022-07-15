@@ -87,7 +87,7 @@ This project demonstrates automated testing in Azure with end to end (E2E), unit
         mkdir myagent && cd myagent
         tar zxvf ../vsts-agent-linux-x64-2.204.0.tar.gz
         # Configure the agent, adjust the url and token!
-        ./config.sh --unattended --url https://dev.azure.com/odluser201017/ --auth pat --token w3rwcnx335hnyz52itrlr5gzntpqbezczagddsxrun36zic27h4q
+        ./config.sh --unattended --url https://dev.azure.com/odluser201100/ --auth pat --token tlwgijbgneco7idy5kuwidcvl6ztitbqwnpbx53l3ei4eh4h374a
         # Finish the setup
         sudo ./svc.sh install
         sudo ./svc.sh start
