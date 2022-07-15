@@ -4,6 +4,7 @@ variables:
   appName: 'TestApp-AppService'
 
 stages:
+###########################################################################################
   # - stage: Provision
   #   jobs:
   #     - job: Provision
@@ -65,7 +66,7 @@ stages:
   #           script: 'terraform apply'
   #           workingDirectory: 'terraform'
 
-
+###########################################################################################
   # - stage: Build
   #   jobs:
   #     - job: Build
@@ -107,50 +108,80 @@ stages:
   #                   appType: webApp
   #                   package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
 
-  - stage: Tests
-    jobs:
-    - job: Integrationtests
-      pool:
-        name: Default
-      displayName: 'Integration Tests'
-      steps:
-        - task: NodeTool@0
-          displayName: 'Install node'
-          inputs:
-            versionSpec: '16.x'
-        - task: Bash@3
-          displayName: 'Install newman'
-          inputs:
-            targetType: 'inline'
-            script: |
-              npm install -g newman
-              newman --version
-              mkdir logs
-              mkdir logs/postman
-              mkdir Results
+###########################################################################################
+  # - stage: Tests
+  #   jobs:
+  #   - job: Integrationtests
+  #     pool:
+  #       name: Default
+  #     displayName: 'Integration Tests'
+  #     steps:
+  #       - task: NodeTool@0
+  #         displayName: 'Install node'
+  #         inputs:
+  #           versionSpec: '16.x'
+  #       - task: Bash@3
+  #         displayName: 'Install newman'
+  #         inputs:
+  #           targetType: 'inline'
+  #           script: |
+  #             npm install -g newman
+  #             newman --version
+  #             mkdir logs
+  #             mkdir logs/postman
+  #             mkdir Results
             
-        - task: Bash@3
-          displayName: 'Run the regression tests'
-          inputs:
-            workingDirectory: '$(System.DefaultWorkingDirectory)'
-            filePath: 'automatedtesting/postman/run_regression_tests.sh'
-        - task: Bash@3
-          displayName: 'Run the validation tests'
-          inputs:
-            workingDirectory: '$(System.DefaultWorkingDirectory)'
-            filePath: 'automatedtesting/postman/run_validation_tests.sh'
-        - task: Bash@3
-          displayName: 'Show test result files'
-          inputs:
-            targetType: 'inline'
-            script: |
-              ls ./Results/
-        - task: PublishTestResults@2
-          displayName: Publish the Postman results
-          inputs:
-            testResultsFormat: 'JUnit'
-            testResultsFiles: 'Results/*.xml'
+  #       - task: Bash@3
+  #         displayName: 'Run the regression tests'
+  #         inputs:
+  #           workingDirectory: '$(System.DefaultWorkingDirectory)'
+  #           filePath: 'automatedtesting/postman/run_regression_tests.sh'
+  #       - task: Bash@3
+  #         displayName: 'Run the validation tests'
+  #         inputs:
+  #           workingDirectory: '$(System.DefaultWorkingDirectory)'
+  #           filePath: 'automatedtesting/postman/run_validation_tests.sh'
+  #       - task: Bash@3
+  #         displayName: 'Show test result files'
+  #         inputs:
+  #           targetType: 'inline'
+  #           script: |
+  #             ls ./Results/
+  #       - task: PublishTestResults@2
+  #         displayName: Publish the Postman results
+  #         condition: always()
+  #         inputs:
+  #           testResultsFormat: 'JUnit'
+  #           testResultsFiles: 'Results/*.xml'
+  #           mergeTestResults: true
       
+  - stage: jmeter
+    jobs:
+     - job: jmeterTests
+       pool:
+        name: Default
+       displayName: 'Run Jmeter Tests'
+       steps:
+         - task: Bash@3
+           displayName: 'Install jmeter'
+           inputs:
+             targetType: 'inline'
+             script: |
+               sudo apt-get install default-jre -y
+               wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.tgz -O jmeter-5.4.tgz
+               tar -xzvf jmeter-5.4.tgz
+               ./apache-jmeter-5.4/bin/jmeter --version
+
+
+
+
+
+
+
+
+
+
+
 
     # - deployment: VMDeploy
     #   displayName: NAME
