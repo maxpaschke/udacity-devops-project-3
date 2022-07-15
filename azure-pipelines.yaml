@@ -264,6 +264,15 @@ stages:
                  cd $(Pipeline.Workspace)
                  ls -la
                  unzip -o seleniumtests/seleniumtests.zip -d .
+                 cd seleniumtests/selenium
+                 python3 selenium_test.py > selenium-test-logs.log
+                 cat selenium-test-logs.log
+                 sudo cp selenium-test-logs.log $(System.DefaultWorkingDirectory)/selenium-test-logs.log
+            - task: PublishPipelineArtifact@1
+              inputs:
+                targetPath: 'selenium-test-logs.log'
+                artifact: 'selenium-test-logs'
+                publishLocation: 'pipeline'
 
 
 
