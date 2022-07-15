@@ -152,63 +152,58 @@ stages:
   #           mergeTestResults: true
 
 ###########################################################################################
-  - stage: LoadTesting
-    jobs:
-     - job: jmeterTests
-       pool:
-        name: Default
-       displayName: 'Run Jmeter Tests'
-       steps:
-         - task: Bash@3
-           displayName: 'Install jmeter'
-           inputs:
-             targetType: 'inline'
-             script: |
-               sudo apt-get install default-jre -y
-
-               JMETERFILE=apache-jmeter-5.5.tgz
-               if [ -f "$JMETERFILE"]; then
-                 echo "$JMETERFILE already downloaded."
-               else
-                 wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.5.tgz -O $JMETERFILE
-               fi
-               tar -xzvf $JMETERFILE
-               ./apache-jmeter-5.5/bin/jmeter --version
-         - task: Bash@3
-           displayName: 'Create folders'
-           inputs:
-             targetType: 'inline'
-             script: |
-               mkdir logs
-               mkdir logs/jmeter
-               mkdir Results
-         - task: Bash@3
-           displayName: 'Run Endurance Test'
-           inputs:
-             targetType: 'inline'
-             script: |
-              dir automatedtesting/jmeter
-              apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Endurance_Test.jmx -l logs/jmeter/Endurance_Result.csv \
-                             -e -f -o logs/jmeter/Endurance-html-report -j logs/jmeter/Endurance-test.log
-         - task: Bash@3
-           displayName: 'Run Stress Test'
-           inputs:
-             targetType: 'inline'
-             script: |
-              dir automatedtesting/jmeter
-              apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Stress_Test.jmx -l logs/jmeter/Stress_Result.csv \
-                             -e -f -o logs/jmeter/Stress-html-report -j logs/jmeter/Stress-test.log
-         - task: ArchiveFiles@2
-           inputs:
-              rootFolderOrFile: 'logs/jmeter'
-              includeRootFolder: true
-              archiveType: 'zip'
-              archiveFile: 'logs/jmeter/jmeter-test-repot-$(Build.BuildId).zip'
-              replaceExistingArchive: true
-         - task: PublishPipelineArtifact@1
-           inputs:
-            targetPath: 'logs/jmeter/jmeter-test-repot-$(Build.BuildId).zip'
-            artifact: 'Jmeter-Results'
+  # - stage: LoadTesting
+  #   jobs:
+  #    - job: jmeterTests
+  #      pool:
+  #       name: Default
+  #      displayName: 'Run Jmeter Tests'
+  #      steps:
+  #        - task: Bash@3
+  #          displayName: 'Install jmeter'
+  #          inputs:
+  #            targetType: 'inline'
+  #            script: |
+  #              sudo apt-get install default-jre -y
+  #              JMETERFILE=apache-jmeter-5.5.tgz
+  #              wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.5.tgz -O $JMETERFILE
+  #              tar -xzvf $JMETERFILE
+  #              ./apache-jmeter-5.5/bin/jmeter --version
+  #        - task: Bash@3
+  #          displayName: 'Create folders'
+  #          inputs:
+  #            targetType: 'inline'
+  #            script: |
+  #              mkdir logs
+  #              mkdir logs/jmeter
+  #              mkdir Results
+  #        - task: Bash@3
+  #          displayName: 'Run Endurance Test'
+  #          inputs:
+  #            targetType: 'inline'
+  #            script: |
+  #             dir automatedtesting/jmeter
+  #             apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Endurance_Test.jmx -l logs/jmeter/Endurance_Result.csv \
+  #                            -e -f -o logs/jmeter/Endurance-html-report -j logs/jmeter/Endurance-test.log
+  #        - task: Bash@3
+  #          displayName: 'Run Stress Test'
+  #          inputs:
+  #            targetType: 'inline'
+  #            script: |
+  #             dir automatedtesting/jmeter
+  #             apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Stress_Test.jmx -l logs/jmeter/Stress_Result.csv \
+  #                            -e -f -o logs/jmeter/Stress-html-report -j logs/jmeter/Stress-test.log
+  #        - task: ArchiveFiles@2
+  #          inputs:
+  #             rootFolderOrFile: 'logs/jmeter'
+  #             includeRootFolder: true
+  #             archiveType: 'zip'
+  #             archiveFile: 'logs/jmeter/jmeter-test-repot-$(Build.BuildId).zip'
+  #             replaceExistingArchive: true
+  #        - task: PublishPipelineArtifact@1
+  #          inputs:
+  #           targetPath: 'logs/jmeter/jmeter-test-repot-$(Build.BuildId).zip'
+  #           artifact: 'Jmeter-Results'
 
 ###########################################################################################
   - stage: UI_Testing
@@ -223,7 +218,7 @@ stages:
            inputs:
              targetType: 'inline'
              script: |
-               echo hello
+               chromium-browser -version
 
 
 
