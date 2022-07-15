@@ -225,6 +225,7 @@ stages:
            artifact: seleniumtestarchive
      - deployment: seleniumtests
        environment:
+        name: 'Test'
         resourceName: 'TestApp-vm-myAgentVM'
         resourceType: VirtualMachine
        displayName: 'Run Selenium tests'
