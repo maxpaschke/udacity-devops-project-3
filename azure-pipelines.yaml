@@ -239,7 +239,6 @@ stages:
             - task: Bash@3
               displayName: 'Install selenium'
               inputs:
-                workingDirectory: '$(System.DefaultWorkingDirectory)'
                 script: |
                   echo "Run the installation"
                   sudo apt-get upgrade -y
