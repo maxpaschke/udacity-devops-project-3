@@ -264,6 +264,7 @@ stages:
                  cd $(Pipeline.Workspace)
                  ls -la
                  unzip -o seleniumtests/seleniumtests.zip -d .
+                 ls seleniumtests
                  cd seleniumtests/selenium
                  python3 selenium_test.py > selenium-test-logs.log
                  cat selenium-test-logs.log
