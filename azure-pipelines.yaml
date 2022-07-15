@@ -222,7 +222,8 @@ stages:
              archiveFile: '$(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip'
              replaceExistingArchive: true
          - upload: $(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip
-           artifact: seleniumtestarchive
+           artifact: 'seleniumtestarchive'
+
      - deployment: seleniumtests
        dependsOn: prepareSeleniumTest
        environment:
@@ -249,7 +250,7 @@ stages:
                   chromium-browser --version
                   chromedriver --version
             - download: downloadSeleniumTests
-              artifact: seleniumtestarchive
+              artifact: 'seleniumtestarchive'
 
 
 
