@@ -4,7 +4,7 @@ variables:
   appName: 'TestApp-AppService'
 
 stages:
-###########################################################################################
+##########################################################################################
   # - stage: Provision
   #   jobs:
   #     - job: Provision
@@ -37,11 +37,11 @@ stages:
   #           SourceFolder: '$(Agent.TempDirectory)'
   #           Contents: '**'
   #           TargetFolder: 'terraform'
-  #       # - task: Bash@3
-  #       #   displayName: Install Terraform
-  #       #   inputs:
-  #       #     filePath: 'terraform/install_terraform.sh'
-  #       #     workingDirectory: 'terraform'
+  #       - task: Bash@3
+  #         displayName: Install Terraform
+  #         inputs:
+  #           filePath: 'terraform/install_terraform.sh'
+  #           workingDirectory: 'terraform'
   #       - task: Bash@3
   #         displayName: Init Terraform
   #         inputs:
@@ -54,20 +54,14 @@ stages:
   #       #     filePath: 'terraform/import_resource_group.sh'
   #       #     workingDirectory: 'terraform'
   #       - task: Bash@3
-  #         inputs:
-  #           targetType: 'inline'
-  #           script: |
-  #             # Write your commands here
-  #             ls /home/vmadmin/myagent/myagent/_work/_temp/
-  #       - task: Bash@3
   #         displayName: Apply Terraform
   #         inputs:
   #           targetType: 'inline'
-  #           script: 'terraform apply'
+  #           script: 'terraform apply -auto-approve'
   #           workingDirectory: 'terraform'
 
-###########################################################################################
-  # - stage: Build
+##########################################################################################
+  # - stage: BuildFakeRestApi
   #   jobs:
   #     - job: Build
   #       pool:
@@ -90,7 +84,9 @@ stages:
   #         - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
   #           displayName: "Upload Package"
   #           artifact: drop-fakerestapi
-  # - stage: FakeRestAPI
+
+##########################################################################################
+  # - stage: DeployFakeRestApi
   #   jobs:
   #     - deployment: FakeRestAPI
   #       pool:
@@ -155,7 +151,7 @@ stages:
   #           testResultsFiles: 'Results/*.xml'
   #           mergeTestResults: true
       
-  - stage: jmeter
+  - stage: LoadTesting
     jobs:
      - job: jmeterTests
        pool:
@@ -168,10 +164,25 @@ stages:
              targetType: 'inline'
              script: |
                sudo apt-get install default-jre -y
-               wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.tgz -O jmeter-5.4.tgz
-               tar -xzvf jmeter-5.4.tgz
-               ./apache-jmeter-5.4/bin/jmeter --version
-
+               wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.5.tgz -O jmeter-5.5.tgz
+               tar -xzvf jmeter-5.5.tgz
+               ./apache-jmeter-5.5/bin/jmeter --version
+         - task: Bash@3
+           displayName: 'Create folders'
+           inputs:
+             targetType: 'inline'
+             script: |
+               mkdir logs
+               mkdir logs/jmeter
+               mkdir Results
+         - task: Bash@3
+           displayName: 'Run Endurance Test'
+           inputs:
+             targetType: 'inline'
+             script: |
+              apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Endurance_Test.jmx -l log/jmeter/Endurance_Result.csv \
+                             -e -f -o log/jmeter/Endurance-html-report -j log/jmeter/Endurance-test.log
+                                       
 
 
 
