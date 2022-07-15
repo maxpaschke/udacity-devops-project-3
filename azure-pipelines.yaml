@@ -260,7 +260,7 @@ stages:
                 script: |
                  pwd
                  ls -la
-                 cd $(System.ArtifactsDirectory)
+                 cd $(Pipeline.Workspace)
                  ls -la
 
 
