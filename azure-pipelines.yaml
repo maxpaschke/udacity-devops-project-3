@@ -250,7 +250,7 @@ stages:
                   
                   chromium-browser --version
                   chromedriver --version
-            - download: seleniumtestarchive
+            - download: current
               artifact: seleniumtestarchive
               target: $(System.ArtifactsDirectory)
 
