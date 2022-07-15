@@ -54,12 +54,6 @@ stages:
         #     filePath: 'terraform/import_resource_group.sh'
         #     workingDirectory: 'terraform'
         - task: Bash@3
-          inputs:
-            targetType: 'inline'
-            script: |
-              # Write your commands here
-              ls /home/vmadmin/myagent/myagent/_work/_temp/
-        - task: Bash@3
           displayName: Apply Terraform
           inputs:
             targetType: 'inline'
@@ -67,7 +61,7 @@ stages:
             workingDirectory: 'terraform'
 
 ##########################################################################################
-  - stage: Build
+  - stage: Deploy
     jobs:
       - job: Build
         pool:
