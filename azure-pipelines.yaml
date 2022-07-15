@@ -216,7 +216,7 @@ stages:
          - task: ArchiveFiles@2
            displayName: 'Archive selenium tests'
            inputs:
-             rootFolderOrFile: '$(Build.BinariesDirectory)'
+             rootFolderOrFile: '$(System.DefaultWorkingDirectory)/automatedtesting/selenium'
              includeRootFolder: true
              archiveType: 'zip'
              archiveFile: '$(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip'
