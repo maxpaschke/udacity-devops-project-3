@@ -37,11 +37,11 @@ stages:
             SourceFolder: '$(Agent.TempDirectory)'
             Contents: '**'
             TargetFolder: 'terraform'
-        # - task: Bash@3
-        #   displayName: Install Terraform
-        #   inputs:
-        #     filePath: 'terraform/install_terraform.sh'
-        #     workingDirectory: 'terraform'
+        - task: Bash@3
+          displayName: Install Terraform
+          inputs:
+            filePath: 'terraform/install_terraform.sh'
+            workingDirectory: 'terraform'
         - task: Bash@3
           displayName: Init Terraform
           inputs:
