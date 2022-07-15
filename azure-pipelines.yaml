@@ -180,8 +180,9 @@ stages:
            inputs:
              targetType: 'inline'
              script: |
-              apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Endurance_Test.jmx -l log/jmeter/Endurance_Result.csv \
-                             -e -f -o log/jmeter/Endurance-html-report -j log/jmeter/Endurance-test.log
+              dir automatedtesting/jmeter
+              apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Endurance_Test.jmx -l logs/jmeter/Endurance_Result.csv \
+                             -e -f -o logs/jmeter/Endurance-html-report -j logs/jmeter/Endurance-test.log
                                        
 
 
