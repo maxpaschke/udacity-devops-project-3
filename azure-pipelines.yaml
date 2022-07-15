@@ -224,8 +224,10 @@ stages:
          - upload: $(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip
            artifact: seleniumtestarchive
      - deployment: seleniumtests
+       dependsOn: prepareSeleniumTest
        environment:
         name: 'TEST'
+        resourceName: 'TestApp-vm-myAgentVM'
         resourceType: VirtualMachine
        displayName: 'Run Selenium tests'
        strategy:
