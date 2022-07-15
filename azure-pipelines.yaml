@@ -250,12 +250,12 @@ stages:
                   
                   chromium-browser --version
                   chromedriver --version
-            - task: DownloadBuildArtifacts@0
+            - task: DownloadPipelineArtifact@2
               inputs:
-                buildType: 'current'
-                downloadType: 'single'
-                artifactName: 'seleniumtestarchive'
-                downloadPath: '$(System.ArtifactsDirectory)'
+                    buildType: 'current'
+                    artifactName: 'seleniumtestarchive'
+                    targetPath: '$(System.ArtifactsDirectory)'
+
             - task: Bash@3
               displayName: 'Run selenium tests'
               inputs:
