@@ -150,7 +150,8 @@ stages:
   #           testResultsFormat: 'JUnit'
   #           testResultsFiles: 'Results/*.xml'
   #           mergeTestResults: true
-      
+
+###########################################################################################
   - stage: LoadTesting
     jobs:
      - job: jmeterTests
@@ -164,7 +165,13 @@ stages:
              targetType: 'inline'
              script: |
                sudo apt-get install default-jre -y
-               wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.5.tgz -O jmeter-5.5.tgz
+
+               JMETERFILE=apache-jmeter-5.5.tgz
+               if [ -f "$JMETERFILE"]; then
+                 echo "$JMETERFILE already downloaded."
+               else
+                 wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.5.tgz -O jmeter-5.5.tgz
+               fi
                tar -xzvf jmeter-5.5.tgz
                ./apache-jmeter-5.5/bin/jmeter --version
          - task: Bash@3
@@ -193,11 +200,23 @@ stages:
                              -e -f -o logs/jmeter/Stress-html-report -j logs/jmeter/Stress-test.log
          - task: PublishPipelineArtifact@1
            inputs:
-            targetPath: '$(Pipeline.Workspace)/logs/jmeter'
+            targetPath: 'logs/jmeter'
             artifact: 'Jmeter-Results'
 
-
-
+###########################################################################################
+  - stage: UI_Testing
+    jobs:
+     - job: seleniumtests
+       pool:
+        name: Default
+       displayName: 'Run Selenium tests'
+       steps:
+         - task: Bash@3
+           displayName: 'Install selenium'
+           inputs:
+             targetType: 'inline'
+             script: |
+               echo hello
 
 
 
