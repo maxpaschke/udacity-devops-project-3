@@ -247,14 +247,14 @@ stages:
                   sudo apt-get install -y chromium-browser
                   sudo apt-get install -y chromium-chromedriver
 
-                  sudo apt-get install python3.7
-                  sudo apt-get install python3.7-venv
-                  sudo apt-get install python3-pip
-                  sudo apt install python3-pip
+                  sudo apt-get install python3.7 -y
+                  sudo apt-get install python3.7-venv -y 
+                  sudo apt-get install python3-pip -y
+                  sudo apt install python3-pip -y
                   python3 —version
                   pip —version 
-                  sudo apt-get install python3.7-distutils
-                  sudo apt install python3.7-distutils
+                  sudo apt-get install python3.7-distutils -y
+                  sudo apt install python3.7-distutils -y
                   sudo apt-get -y install zip
 
                   pip install selenium
