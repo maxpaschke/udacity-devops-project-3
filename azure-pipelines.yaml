@@ -261,6 +261,8 @@ stages:
               inputs:
                 targetType: 'inline'
                 script: |
+                 pwd
+                 ls -la
                  cd $(System.ArtifactsDirectory)
                  ls -la
 
