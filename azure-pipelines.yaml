@@ -223,6 +223,7 @@ stages:
              replaceExistingArchive: true
          - publish: $(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip
            artifact: seleniumtestarchive
+           displayName: 'Publish selenium tests'
 
      - deployment: seleniumtests
        dependsOn: prepareSeleniumTest
@@ -249,8 +250,12 @@ stages:
 
                   chromium-browser --version
                   chromedriver --version
-            - download: downloadSeleniumTests
-              artifact: $(Pipeline.Workspace)/seleniumtestarchive
+            - task: DownloadBuildArtifacts@0
+              inputs:
+                buildType: 'current'
+                downloadType: 'single'
+                artifactName: 'seleniumtestarchive'
+                downloadPath: '$(System.ArtifactsDirectory)'
 
 
 
