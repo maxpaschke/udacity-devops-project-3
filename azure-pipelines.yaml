@@ -217,7 +217,7 @@ stages:
            displayName: 'Install selenium'
            inputs:
              workingDirectory: '$(System.DefaultWorkingDirectory)'
-             script: 'automatedtesting/selenium/install_selenium.sh'
+             filePath: 'automatedtesting/selenium/install_selenium.sh'
              
 
 
