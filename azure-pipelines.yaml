@@ -226,7 +226,6 @@ stages:
      - deployment: seleniumtests
        environment:
         name: 'TEST'
-        resourceName: 'TestApp-vm-myAgentVM'
         resourceType: VirtualMachine
        displayName: 'Run Selenium tests'
        strategy:
