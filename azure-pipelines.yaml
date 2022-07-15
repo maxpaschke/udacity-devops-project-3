@@ -183,6 +183,14 @@ stages:
               dir automatedtesting/jmeter
               apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Endurance_Test.jmx -l logs/jmeter/Endurance_Result.csv \
                              -e -f -o logs/jmeter/Endurance-html-report -j logs/jmeter/Endurance-test.log
+         - task: Bash@3
+           displayName: 'Run Stress Test'
+           inputs:
+             targetType: 'inline'
+             script: |
+              dir automatedtesting/jmeter
+              apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Stress_Test.jmx -l logs/jmeter/Stress_Result.csv \
+                             -e -f -o logs/jmeter/Stress-html-report -j logs/jmeter/Stress-test.log
                                        
 
 
