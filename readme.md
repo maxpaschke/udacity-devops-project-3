@@ -93,5 +93,10 @@ This project demonstrates automated testing in Azure with end to end (E2E), unit
         sudo ./svc.sh start
   ```
 
-* Install the terraform pipeline tasks
-  * Goto [Terraform Tasks](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform) and install the tasks to your devops organization.
+* Add the VM created by terraform to your environment
+  * Create the environment `TEST` in Azure Devops >> Pipelines >> Environments
+  * Click `Add Resource`
+  * Copy the setup string and run it on the VM via ssh, it should look something like this:
+  ```
+   mkdir azagent;cd azagent;curl -fkSL -o vstsagent.tar.gz https://vstsagentpackage.azureedge.net/agent/2.204.0/vsts-agent-linux-x64-2.204.0.tar.gz;tar ...
+   ```
