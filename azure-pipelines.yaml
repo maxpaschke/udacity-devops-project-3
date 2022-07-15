@@ -240,6 +240,8 @@ stages:
               displayName: 'Install selenium'
               inputs:
                 script: |
+                  pwd
+                  hostname
                   echo "Run the installation"
                   sudo apt-get upgrade -y
                   sudo apt-get install unzip -y
