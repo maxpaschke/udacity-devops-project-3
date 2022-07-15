@@ -191,8 +191,10 @@ stages:
               dir automatedtesting/jmeter
               apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Stress_Test.jmx -l logs/jmeter/Stress_Result.csv \
                              -e -f -o logs/jmeter/Stress-html-report -j logs/jmeter/Stress-test.log
-                                       
-
+         - task: PublishPipelineArtifact@1
+           inputs:
+            targetPath: '$(Pipeline.Workspace)/logs/jmeter'
+            artifact: 'Jmeter-Results'
 
 
 
