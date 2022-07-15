@@ -239,6 +239,7 @@ stages:
             - task: Bash@3
               displayName: 'Install selenium'
               inputs:
+                targetType: 'inline'
                 script: |
                   pwd
                   hostname
@@ -248,7 +249,7 @@ stages:
                   sudo apt-get install -y chromium-browser
                   sudo apt-get install -y chromium-chromedriver
                   pip3 install selenium
-
+                  
                   chromium-browser --version
                   chromedriver --version
             - task: DownloadBuildArtifacts@0
