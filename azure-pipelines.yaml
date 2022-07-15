@@ -61,7 +61,7 @@ stages:
             workingDirectory: 'terraform'
 
 ##########################################################################################
-  - stage: Deploy
+  - stage: BuildFakeRestApi
     jobs:
       - job: Build
         pool:
@@ -84,7 +84,9 @@ stages:
           - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
             displayName: "Upload Package"
             artifact: drop-fakerestapi
-  - stage: FakeRestAPI
+
+##########################################################################################
+  - stage: DeployFakeRestApi
     jobs:
       - deployment: FakeRestAPI
         pool:
