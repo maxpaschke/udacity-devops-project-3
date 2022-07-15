@@ -251,7 +251,8 @@ stages:
                   chromium-browser --version
                   chromedriver --version
             - download: current
-              artifact: seleniumtestarchive
+              displayName: 'Download selenium tests'
+              patterns: "**selenium**" 
 
             - task: Bash@3
               displayName: 'Run selenium tests'
