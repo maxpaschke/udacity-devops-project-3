@@ -208,20 +208,46 @@ stages:
 ###########################################################################################
   - stage: UI_Testing
     jobs:
-     - job: seleniumtests
+     - job: prepareSeleniumTest
        pool:
-        name: Default
-       displayName: 'Run Selenium tests'
+         name: 'Default'
+       displayName: "Prepare Selenium test artifact"
        steps:
-         - task: Bash@3
-           displayName: 'Install selenium'
+         - task: ArchiveFiles@2
+           displayName: 'Archive selenium tests'
            inputs:
-             workingDirectory: '$(System.DefaultWorkingDirectory)'
-             filePath: 'automatedtesting/selenium/install_selenium.sh'
-             
+             rootFolderOrFile: '$(Build.BinariesDirectory)'
+             includeRootFolder: true
+             archiveType: 'zip'
+             archiveFile: '$(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip'
+             replaceExistingArchive: true
+         - upload: $(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip
+           artifact: seleniumtestarchive
+     - deployment: seleniumtests
+       environment:
+        name: 'TEST'
+        resourceType: VirtualMachine
+       displayName: 'Run Selenium tests'
+       strategy:
+        runOnce:
+          deploy:
+           steps:
+            - task: Bash@3
+              displayName: 'Install selenium'
+              inputs:
+                workingDirectory: '$(System.DefaultWorkingDirectory)'
+                script: |
+                  echo "Run the installation"
+                  sudo apt-get upgrade -y
+                  sudo apt-get install unzip -y
+                  sudo apt-get install -y chromium-browser
+                  sudo apt-get install -y chromium-chromedriver
+                  pip3 install selenium
 
-
-
+                  chromium-browser --version
+                  chromedriver --version
+            - download: downloadSeleniumTests
+              artifact: seleniumtestarchive
 
 
 
