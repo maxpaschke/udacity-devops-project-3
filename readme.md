@@ -76,6 +76,17 @@ This project demonstrates automated testing in Azure with end to end (E2E), unit
   * Copy the content of the local key `id_rsa` into the one on azure
   * Run `chmod 600 ~/.ssh/id_rsa` to make the key usable
 
+* Upload all the secrets to the azure pipeline library
+  * Goto Azure `Devops >> Pipelines >> Libary`
+  * Click `Secure File`
+  * Add the following from the output of `setup.ps1` via `+Securefile`
+    ```
+    id_rsa
+    id_rsa.pub
+    terraform.tfvars
+    terraform_backend.conf
+    ```
+
 * Add the pipeline agent to the VM
   *  Connect to the VM via Azure cloud shell
     - `ssh devopsagent@$VMIP$`, use your specific IP for the VM here.
