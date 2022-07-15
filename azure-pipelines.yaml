@@ -247,6 +247,7 @@ stages:
                   sudo apt-get install -y chromium-browser
                   sudo apt-get install -y chromium-chromedriver
                   pip3 install selenium
+                  python3 --version
                   
                   chromium-browser --version
                   chromedriver --version
