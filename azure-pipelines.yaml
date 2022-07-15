@@ -216,8 +216,9 @@ stages:
          - task: Bash@3
            displayName: 'Install selenium'
            inputs:
-             script: 'automatedtesting/selenium/install_selenium.sh'
              workingDirectory: '$(System.DefaultWorkingDirectory)'
+             filePath: 'automatedtesting/selenium/install_selenium.sh'
+             
 
 
 
