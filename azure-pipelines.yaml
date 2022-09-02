@@ -279,6 +279,9 @@ stages:
                       python3 selenium_test.py > selenium-test-logs.log
                       cat selenium-test-logs.log
                       sudo cp selenium-test-logs.log $(System.DefaultWorkingDirectory)/selenium-test-logs.log
+                      mkdir /var/log/selenium/
+                      sudo cp selenium-test-logs.log /var/log/selenium/selenium-test-logs.log
+
                 - task: PublishPipelineArtifact@1
                   inputs:
                     targetPath: "selenium-test-logs.log"
