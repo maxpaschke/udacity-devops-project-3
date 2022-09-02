@@ -36,12 +36,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/api/authors",
+					"raw": "{{url}}/authors",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"api",
 						"authors"
 					]
 				}
@@ -79,12 +78,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/api/activities",
+					"raw": "{{url}}/activities",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"api",
 						"activities"
 					]
 				}
@@ -110,12 +108,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/api/CoverPhotos",
+					"raw": "{{url}}/CoverPhotos",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"api",
 						"CoverPhotos"
 					]
 				}
@@ -141,12 +138,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/api/books",
+					"raw": "{{url}}/books",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"api",
 						"books"
 					]
 				}
@@ -172,12 +168,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/api/users",
+					"raw": "{{url}}/users",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"api",
 						"users"
 					]
 				}
@@ -292,12 +287,22 @@
 					}
 				}
 			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"ID\": {{id}},\n  \"IDBook\": {{IDBook}},\n  \"FirstName\": {{FirstName}},\n  \"LastName\": {{LastName}}\n}",
+					"raw": "{\n  \"ID\": 0,\n  \"IDBook\": 0,\n  \"FirstName\": {{FirstName}},\n  \"LastName\": {{LastName}}\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -305,14 +310,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/api/authors/{{id}}",
+					"raw": "{{url}}/Authors",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"api",
-						"authors",
-						"{{id}}"
+						"Authors"
 					]
 				}
 			},
@@ -758,12 +761,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/api/books/{{id}}",
+					"raw": "{{url}}/books/{{id}}",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"api",
 						"books",
 						"{{id}}"
 					]
