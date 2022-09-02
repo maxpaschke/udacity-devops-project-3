@@ -19,9 +19,9 @@ The following steps have to be done in order to run this project:
   - Add the new SSH Key
 
 * Clone the repo into the cloud shell
-  * Use the SSH clone, like `git clone git@github.com:maxpaschke/udacity-devops-third.git`
+  * Use the SSH clone, like `git clone git@github.com:maxpaschke/udacity-devops-project-3.git`
 
-* Run setup.ps1 to create the following
+* Run setup.ps1 locally to create the following
   * Terraform config
   * VM for the pipeline runner
 
@@ -95,7 +95,7 @@ The following steps have to be done in order to run this project:
         mkdir myagent && cd myagent
         tar zxvf ../vsts-agent-linux-x64-2.204.0.tar.gz
         # Configure the agent, adjust the url and token!
-        ./config.sh --unattended --url https://dev.azure.com/odluser201100/ --auth pat --token tlwgijbgneco7idy5kuwidcvl6ztitbqwnpbx53l3ei4eh4h374a
+        ./config.sh --unattended --url https://dev.azure.com/odluser205976/ --auth pat --token b57fw4x76cscl2v2vk2whtgkcct2ralw5c5akp7ypknaozsarlba
         # Finish the setup
         sudo ./svc.sh install
         sudo ./svc.sh start

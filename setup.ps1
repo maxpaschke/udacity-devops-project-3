@@ -1,7 +1,7 @@
 $RESOURCE_GROUP_NAME = 'Azuredevops'
 $STORAGE_ACCOUNT_NAME = "tfstate$(Get-Random)"
 $CONTAINER_NAME = 'tfstate'
-$CREATE_STORAGE = $true
+$CREATE_STORAGE = $false
 
 Write-Host "Enter client_id"
 $client_id = Read-Host
@@ -63,7 +63,7 @@ if ($CREATE_STORAGE) {
 
 
 # Generate the key
-ssh-keygen -f terraform/id_rsa -N '""'
+# ssh-keygen -f terraform/id_rsa -N '""'
 
 # Create the runner vm
 az vm create --resource-group $RESOURCE_GROUP_NAME --name "RunnerVM" --image "Canonical:UbuntuServer:18.04-LTS:latest" --admin-username "vmadmin" --ssh-key-values terraform/id_rsa.pub
