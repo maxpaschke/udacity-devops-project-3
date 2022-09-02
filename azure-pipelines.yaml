@@ -219,7 +219,7 @@ stages:
               archiveType: "zip"
               archiveFile: "$(Build.ArtifactStagingDirectory)/seleniumtests.zip"
               replaceExistingArchive: true
-          - upload: $(Build.ArtifactStagingDirectory)/seleniumtests.zip
+          - publish: $(Build.ArtifactStagingDirectory)/seleniumtests.zip
             artifact: seleniumtests
             displayName: "Upload selenium tests"
 
