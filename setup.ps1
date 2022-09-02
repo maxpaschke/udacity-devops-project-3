@@ -62,8 +62,8 @@ if ($CREATE_STORAGE) {
 
 
 
-# Generate the key
-# ssh-keygen -f terraform/id_rsa -N '""'
+# Generate the key //IMPORTANT: From windows it needs the -c parameter else the key is invalid for azure pipelines!
+# ssh-keygen -f terraform/id_rsa -N '""' -C test@test.com
 
 # Create the runner vm
 # az vm create --resource-group $RESOURCE_GROUP_NAME --name "RunnerVM" --image "Canonical:UbuntuServer:18.04-LTS:latest" --admin-username "vmadmin" --ssh-key-values terraform/id_rsa.pub
