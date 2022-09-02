@@ -85,7 +85,7 @@ def find_cart_status(driver):
 
 
 def log(input: str):
-    datestring = datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+    datestring = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(datestring+': ' + input)
 
 
