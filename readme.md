@@ -108,3 +108,8 @@ The following steps have to be done in order to run this project:
   ```
    mkdir azagent;cd azagent;curl -fkSL -o vstsagent.tar.gz https://vstsagentpackage.azureedge.net/agent/2.204.0/vsts-agent-linux-x64-2.204.0.tar.gz;tar ...
    ```
+
+
+* Connect the logworkspace to the vm
+  * Select the workspace from the portal
+  * Select "Connect VM" --> Connect the VM to the workspace
