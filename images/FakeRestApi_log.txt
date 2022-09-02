@@ -1,0 +1,283 @@
+2022-09-02T11:46:52.7449595Z ##[section]Starting: Build
+2022-09-02T11:46:55.2670802Z ##[section]Starting: Initialize job
+2022-09-02T11:46:55.2672404Z Agent name: 'RunnerVM'
+2022-09-02T11:46:55.2673016Z Agent machine name: 'RunnerVM'
+2022-09-02T11:46:55.2673295Z Current agent version: '2.204.0'
+2022-09-02T11:46:55.2695780Z Agent running as: 'vmadmin'
+2022-09-02T11:46:55.2742286Z Prepare build directory.
+2022-09-02T11:46:55.3485110Z Set build variables.
+2022-09-02T11:46:55.3521219Z Download all required tasks.
+2022-09-02T11:46:55.3709277Z Checking job knob settings.
+2022-09-02T11:46:55.3720859Z Finished checking job knob settings.
+2022-09-02T11:46:55.4087575Z Start tracking orphan processes.
+2022-09-02T11:46:55.4241326Z ##[section]Finishing: Initialize job
+2022-09-02T11:46:55.4713370Z ##[section]Starting: Checkout maxpaschke/udacity-devops-project-3@main to s
+2022-09-02T11:46:55.4971430Z ==============================================================================
+2022-09-02T11:46:55.4972065Z Task         : Get sources
+2022-09-02T11:46:55.4972591Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2022-09-02T11:46:55.4972910Z Version      : 1.0.0
+2022-09-02T11:46:55.4973248Z Author       : Microsoft
+2022-09-02T11:46:55.4973792Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2022-09-02T11:46:55.4974165Z ==============================================================================
+2022-09-02T11:46:59.7802136Z Syncing repository: maxpaschke/udacity-devops-project-3 (GitHub)
+2022-09-02T11:46:59.7811961Z ##[command]git version
+2022-09-02T11:46:59.7822734Z git version 2.17.1
+2022-09-02T11:46:59.7825628Z ##[command]git config --get remote.origin.url
+2022-09-02T11:46:59.7838357Z ##[command]git clean -ffdx
+2022-09-02T11:46:59.7846903Z Removing terraform/.taskkey
+2022-09-02T11:46:59.7847813Z Removing terraform/.terraform.lock.hcl
+2022-09-02T11:46:59.7848232Z Removing terraform/.terraform/
+2022-09-02T11:46:59.7848616Z Removing terraform/id_rsa.pub
+2022-09-02T11:46:59.7849029Z Removing terraform/terraform.tfvars
+2022-09-02T11:46:59.7849480Z Removing terraform/terraform_backend.conf
+2022-09-02T11:46:59.7851612Z ##[command]git reset --hard HEAD
+2022-09-02T11:46:59.7859671Z HEAD is now at 73d9660 Run the full pipeline
+2022-09-02T11:46:59.7868453Z ##[command]git config gc.auto 0
+2022-09-02T11:46:59.7879971Z ##[command]git config --get-all http.https://github.com/maxpaschke/udacity-devops-project-3.extraheader
+2022-09-02T11:46:59.7890857Z ##[command]git config --get-all http.extraheader
+2022-09-02T11:46:59.7901576Z ##[command]git config --get-regexp .*extraheader
+2022-09-02T11:46:59.7912334Z ##[command]git config --get-all http.proxy
+2022-09-02T11:46:59.7922999Z ##[command]git config http.version HTTP/1.1
+2022-09-02T11:46:59.7940057Z ##[command]git -c http.extraheader="AUTHORIZATION: basic ***" fetch  --tags --prune --prune-tags --progress --no-recurse-submodules origin
+2022-09-02T11:47:02.1077706Z ##[command]git checkout --progress --force 73d9660cb506e386914efbeb01f4a60322634eac
+2022-09-02T11:47:02.1084787Z HEAD is now at 73d9660 Run the full pipeline
+2022-09-02T11:47:02.1137975Z ##[section]Finishing: Checkout maxpaschke/udacity-devops-project-3@main to s
+2022-09-02T11:47:02.1165881Z ##[section]Starting: Install zip
+2022-09-02T11:47:02.1173746Z ==============================================================================
+2022-09-02T11:47:02.1174103Z Task         : Bash
+2022-09-02T11:47:02.1174404Z Description  : Run a Bash script on macOS, Linux, or Windows
+2022-09-02T11:47:02.1174717Z Version      : 3.201.1
+2022-09-02T11:47:02.1174983Z Author       : Microsoft Corporation
+2022-09-02T11:47:02.1175362Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2022-09-02T11:47:02.1175776Z ==============================================================================
+2022-09-02T11:47:02.2858625Z Generating script.
+2022-09-02T11:47:02.2889891Z ========================== Starting Command Output ===========================
+2022-09-02T11:47:02.2914637Z [command]/bin/bash /home/vmadmin/myagent/_work/_temp/d9bff467-ca85-4733-a475-604c7230f540.sh
+2022-09-02T11:47:02.3906398Z Hit:1 http://azure.archive.ubuntu.com/ubuntu bionic InRelease
+2022-09-02T11:47:02.3908381Z Hit:2 http://azure.archive.ubuntu.com/ubuntu bionic-updates InRelease
+2022-09-02T11:47:02.3909545Z Hit:3 http://azure.archive.ubuntu.com/ubuntu bionic-backports InRelease
+2022-09-02T11:47:02.3910711Z Hit:4 http://azure.archive.ubuntu.com/ubuntu bionic-security InRelease
+2022-09-02T11:47:02.4479583Z Hit:5 https://apt.releases.hashicorp.com bionic InRelease
+2022-09-02T11:47:03.9798004Z Reading package lists...
+2022-09-02T11:47:04.1094282Z Reading package lists...
+2022-09-02T11:47:04.3090001Z Building dependency tree...
+2022-09-02T11:47:04.3100247Z Reading state information...
+2022-09-02T11:47:04.4581838Z zip is already the newest version (3.0-11build1).
+2022-09-02T11:47:04.4583201Z unzip is already the newest version (6.0-21ubuntu1.1).
+2022-09-02T11:47:04.4584050Z The following package was automatically installed and is no longer required:
+2022-09-02T11:47:04.4591249Z   linux-headers-4.15.0-191
+2022-09-02T11:47:04.4594443Z Use 'sudo apt autoremove' to remove it.
+2022-09-02T11:47:04.5117720Z 0 upgraded, 0 newly installed, 0 to remove and 15 not upgraded.
+2022-09-02T11:47:04.5661076Z ##[section]Finishing: Install zip
+2022-09-02T11:47:04.5684792Z ##[section]Starting: Archive FakeRestAPI
+2022-09-02T11:47:04.5691781Z ==============================================================================
+2022-09-02T11:47:04.5692039Z Task         : Archive files
+2022-09-02T11:47:04.5692305Z Description  : Compress files into .7z, .tar.gz, or .zip
+2022-09-02T11:47:04.5692519Z Version      : 2.206.0
+2022-09-02T11:47:04.5692752Z Author       : Microsoft Corporation
+2022-09-02T11:47:04.5693026Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/archive-files
+2022-09-02T11:47:04.5693392Z ==============================================================================
+2022-09-02T11:47:04.6981332Z Found 10 files
+2022-09-02T11:47:04.6985626Z Archiving file: Areas
+2022-09-02T11:47:04.6987771Z Archiving file: Content
+2022-09-02T11:47:04.6989557Z Archiving file: Global.asax
+2022-09-02T11:47:04.6991281Z Archiving file: Scripts
+2022-09-02T11:47:04.6993089Z Archiving file: Views
+2022-09-02T11:47:04.6994324Z Archiving file: Web.config
+2022-09-02T11:47:04.6995548Z Archiving file: bin
+2022-09-02T11:47:04.6997134Z Archiving file: favicon.ico
+2022-09-02T11:47:04.6998404Z Archiving file: fonts
+2022-09-02T11:47:04.6999552Z Archiving file: packages.config
+2022-09-02T11:47:04.7070976Z files=Areas
+2022-09-02T11:47:04.7075226Z files=Content
+2022-09-02T11:47:04.7079605Z files=Global.asax
+2022-09-02T11:47:04.7083989Z files=Scripts
+2022-09-02T11:47:04.7088741Z files=Views
+2022-09-02T11:47:04.7093483Z files=Web.config
+2022-09-02T11:47:04.7098148Z files=bin
+2022-09-02T11:47:04.7128691Z files=favicon.ico
+2022-09-02T11:47:04.7129748Z files=fonts
+2022-09-02T11:47:04.7139401Z files=packages.config
+2022-09-02T11:47:04.7148130Z [command]/usr/bin/zip -r /home/vmadmin/myagent/_work/1/a/25-fakerestapi.zip Areas Content Global.asax Scripts Views Web.config bin favicon.ico fonts packages.config
+2022-09-02T11:47:06.2143680Z   adding: Areas/ (stored 0%)
+2022-09-02T11:47:06.2144712Z   adding: Areas/HelpPage/ (stored 0%)
+2022-09-02T11:47:06.2145521Z   adding: Areas/HelpPage/Views/ (stored 0%)
+2022-09-02T11:47:06.2146300Z   adding: Areas/HelpPage/Views/Web.config (deflated 68%)
+2022-09-02T11:47:06.2147088Z   adding: Areas/HelpPage/Views/Shared/ (stored 0%)
+2022-09-02T11:47:06.2147887Z   adding: Areas/HelpPage/Views/Shared/_Layout.cshtml (deflated 30%)
+2022-09-02T11:47:06.2148570Z   adding: Areas/HelpPage/Views/_ViewStart.cshtml (deflated 18%)
+2022-09-02T11:47:06.2149305Z   adding: Areas/HelpPage/Views/Help/ (stored 0%)
+2022-09-02T11:47:06.2149848Z   adding: Areas/HelpPage/Views/Help/Api.cshtml (deflated 47%)
+2022-09-02T11:47:06.2150372Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/ (stored 0%)
+2022-09-02T11:47:06.2151048Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/ModelDescriptionLink.cshtml (deflated 66%)
+2022-09-02T11:47:06.2151942Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/Parameters.cshtml (deflated 71%)
+2022-09-02T11:47:06.2152613Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/KeyValuePairModelDescription.cshtml (deflated 57%)
+2022-09-02T11:47:06.2153278Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/ApiGroup.cshtml (deflated 59%)
+2022-09-02T11:47:06.2153914Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/TextSample.cshtml (deflated 3%)
+2022-09-02T11:47:06.2154520Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/DictionaryModelDescription.cshtml (deflated 58%)
+2022-09-02T11:47:06.2157285Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/SimpleTypeModelDescription.cshtml (deflated 18%)
+2022-09-02T11:47:06.2157754Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/Samples.cshtml (deflated 55%)
+2022-09-02T11:47:06.2158262Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/ComplexTypeModelDescription.cshtml (deflated 16%)
+2022-09-02T11:47:06.2158791Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/InvalidSample.cshtml (deflated 24%)
+2022-09-02T11:47:06.2159279Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/ImageSample.cshtml (deflated 2%)
+2022-09-02T11:47:06.2159944Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/EnumTypeModelDescription.cshtml (deflated 59%)
+2022-09-02T11:47:06.2160435Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/CollectionModelDescription.cshtml (deflated 33%)
+2022-09-02T11:47:06.2160949Z   adding: Areas/HelpPage/Views/Help/DisplayTemplates/HelpPageApiModel.cshtml (deflated 73%)
+2022-09-02T11:47:06.2161433Z   adding: Areas/HelpPage/Views/Help/Index.cshtml (deflated 56%)
+2022-09-02T11:47:06.2161863Z   adding: Areas/HelpPage/Views/Help/ResourceModel.cshtml (deflated 47%)
+2022-09-02T11:47:06.2162282Z   adding: Areas/HelpPage/HelpPage.css (deflated 69%)
+2022-09-02T11:47:06.2162599Z   adding: Content/ (stored 0%)
+2022-09-02T11:47:06.2162975Z   adding: Content/bootstrap.min.css.map (deflated 65%)
+2022-09-02T11:47:06.2163378Z   adding: Content/bootstrap.min.css (deflated 84%)
+2022-09-02T11:47:06.2163751Z   adding: Content/Site.css (deflated 45%)
+2022-09-02T11:47:06.2164084Z   adding: Content/bootstrap.css.map (deflated 81%)
+2022-09-02T11:47:06.2165068Z   adding: Content/bootstrap-theme.css (deflated 89%)
+2022-09-02T11:47:06.2165643Z   adding: Content/bootstrap-theme.min.css (deflated 88%)
+2022-09-02T11:47:06.2166228Z   adding: Content/bootstrap-theme.min.css.map (deflated 83%)
+2022-09-02T11:47:06.2166754Z   adding: Content/font-awesome.min.css (deflated 77%)
+2022-09-02T11:47:06.2167300Z   adding: Content/font-awesome.css (deflated 80%)
+2022-09-02T11:47:06.2167681Z   adding: Content/bootstrap.css (deflated 86%)
+2022-09-02T11:47:06.2168228Z   adding: Content/bootstrap-theme.css.map (deflated 85%)
+2022-09-02T11:47:06.2168561Z   adding: Global.asax (deflated 8%)
+2022-09-02T11:47:06.2168895Z   adding: Scripts/ (stored 0%)
+2022-09-02T11:47:06.2169249Z   adding: Scripts/bootstrap.min.js (deflated 74%)
+2022-09-02T11:47:06.2169791Z   adding: Scripts/jquery-2.2.2.min.map (deflated 60%)
+2022-09-02T11:47:06.2170133Z   adding: Scripts/respond.js (deflated 66%)
+2022-09-02T11:47:06.2170666Z   adding: Scripts/jquery-2.2.2.min.js (deflated 65%)
+2022-09-02T11:47:06.2171113Z   adding: Scripts/respond.matchmedia.addListener.js (deflated 68%)
+2022-09-02T11:47:06.2171522Z   adding: Scripts/_references.js (deflated 72%)
+2022-09-02T11:47:06.2171944Z   adding: Scripts/respond.matchmedia.addListener.min.js (deflated 53%)
+2022-09-02T11:47:06.2172466Z   adding: Scripts/jquery-2.2.2.js (deflated 70%)
+2022-09-02T11:47:06.2172850Z   adding: Scripts/respond.min.js (deflated 51%)
+2022-09-02T11:47:06.2173388Z   adding: Scripts/modernizr-2.8.3.js (deflated 69%)
+2022-09-02T11:47:06.2173774Z   adding: Scripts/bootstrap.js (deflated 80%)
+2022-09-02T11:47:06.2174072Z   adding: Views/ (stored 0%)
+2022-09-02T11:47:06.2174412Z   adding: Views/Web.config (deflated 70%)
+2022-09-02T11:47:06.2174759Z   adding: Views/Home/ (stored 0%)
+2022-09-02T11:47:06.2175237Z   adding: Views/Home/Index.cshtml (deflated 63%)
+2022-09-02T11:47:06.2175551Z   adding: Views/Shared/ (stored 0%)
+2022-09-02T11:47:06.2175933Z   adding: Views/Shared/Error.cshtml (deflated 34%)
+2022-09-02T11:47:06.2176332Z   adding: Views/Shared/_Layout.cshtml (deflated 59%)
+2022-09-02T11:47:06.2176722Z   adding: Views/_ViewStart.cshtml (deflated 7%)
+2022-09-02T11:47:06.2177043Z   adding: Web.config (deflated 72%)
+2022-09-02T11:47:06.2177375Z   adding: bin/ (stored 0%)
+2022-09-02T11:47:06.2177745Z   adding: bin/System.Web.WebPages.Deployment.dll (deflated 53%)
+2022-09-02T11:47:06.2178152Z   adding: bin/Swashbuckle.Core.dll (deflated 75%)
+2022-09-02T11:47:06.2178485Z   adding: bin/NLipsum.Core.dll (deflated 58%)
+2022-09-02T11:47:06.2179599Z   adding: bin/Antlr3.Runtime.pdb (deflated 77%)
+2022-09-02T11:47:06.2180082Z   adding: bin/FakeRestAPI.Web.dll (deflated 57%)
+2022-09-02T11:47:06.2180636Z   adding: bin/System.Web.Http.dll (deflated 60%)
+2022-09-02T11:47:06.2181255Z   adding: bin/Microsoft.Practices.Unity.RegistrationByConvention.dll (deflated 56%)
+2022-09-02T11:47:06.2181854Z   adding: bin/roslyn/ (stored 0%)
+2022-09-02T11:47:06.2182374Z   adding: bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll (deflated 63%)
+2022-09-02T11:47:06.2183050Z   adding: bin/roslyn/csc.rsp (deflated 62%)
+2022-09-02T11:47:06.2183638Z   adding: bin/roslyn/System.Collections.Immutable.dll (deflated 56%)
+2022-09-02T11:47:06.2184226Z   adding: bin/roslyn/csc.exe.config (deflated 71%)
+2022-09-02T11:47:06.2184694Z   adding: bin/roslyn/csi.rsp (deflated 43%)
+2022-09-02T11:47:06.2185208Z   adding: bin/roslyn/vbc.rsp (deflated 63%)
+2022-09-02T11:47:06.2185806Z   adding: bin/roslyn/Microsoft.CSharp.Core.targets (deflated 69%)
+2022-09-02T11:47:06.2186420Z   adding: bin/roslyn/System.Reflection.Metadata.dll (deflated 57%)
+2022-09-02T11:47:06.2186985Z   adding: bin/roslyn/csc.exe (deflated 48%)
+2022-09-02T11:47:06.2187507Z   adding: bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll (deflated 61%)
+2022-09-02T11:47:06.2188173Z   adding: bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll (deflated 58%)
+2022-09-02T11:47:06.2188800Z   adding: bin/roslyn/Microsoft.CodeAnalysis.dll (deflated 59%)
+2022-09-02T11:47:06.2189435Z   adding: bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll (deflated 51%)
+2022-09-02T11:47:06.2190007Z   adding: bin/roslyn/System.AppContext.dll (deflated 43%)
+2022-09-02T11:47:06.2190700Z   adding: bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll (deflated 56%)
+2022-09-02T11:47:06.2191290Z   adding: bin/roslyn/VBCSCompiler.exe.config (deflated 69%)
+2022-09-02T11:47:06.2191946Z   adding: bin/roslyn/System.IO.FileSystem.dll (deflated 43%)
+2022-09-02T11:47:06.2192395Z   adding: bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll (deflated 52%)
+2022-09-02T11:47:06.2192918Z   adding: bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll (deflated 53%)
+2022-09-02T11:47:06.2193517Z   adding: bin/roslyn/vbc.exe.config (deflated 71%)
+2022-09-02T11:47:06.2193933Z   adding: bin/roslyn/System.IO.FileSystem.Primitives.dll (deflated 44%)
+2022-09-02T11:47:06.2194390Z   adding: bin/roslyn/Microsoft.VisualBasic.Core.targets (deflated 70%)
+2022-09-02T11:47:06.2194748Z   adding: bin/roslyn/vbc.exe (deflated 48%)
+2022-09-02T11:47:06.2195135Z   adding: bin/roslyn/VBCSCompiler.exe (deflated 50%)
+2022-09-02T11:47:06.2195512Z   adding: bin/roslyn/csi.exe (deflated 42%)
+2022-09-02T11:47:06.2195902Z   adding: bin/roslyn/System.Console.dll (deflated 44%)
+2022-09-02T11:47:06.2250661Z   adding: bin/roslyn/System.Diagnostics.StackTrace.dll (deflated 46%)
+2022-09-02T11:47:06.2251353Z   adding: bin/FakeRestAPI.Web.pdb (deflated 78%)
+2022-09-02T11:47:06.2251915Z   adding: bin/System.Web.Helpers.dll (deflated 57%)
+2022-09-02T11:47:06.2252512Z   adding: bin/Microsoft.Practices.Unity.Configuration.dll (deflated 60%)
+2022-09-02T11:47:06.2253112Z   adding: bin/System.Web.Http.Cors.dll (deflated 53%)
+2022-09-02T11:47:06.2253597Z   adding: bin/WebGrease.dll (deflated 65%)
+2022-09-02T11:47:06.2254219Z   adding: bin/WebActivatorEx.dll (deflated 53%)
+2022-09-02T11:47:06.2254860Z   adding: bin/Antlr3.Runtime.dll (deflated 57%)
+2022-09-02T11:47:06.2255385Z   adding: bin/System.Web.WebPages.Razor.dll (deflated 52%)
+2022-09-02T11:47:06.2255930Z   adding: bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll (deflated 49%)
+2022-09-02T11:47:06.2256570Z   adding: bin/Microsoft.Practices.Unity.WebApi.dll (deflated 62%)
+2022-09-02T11:47:06.2257129Z   adding: bin/System.Web.Optimization.dll (deflated 52%)
+2022-09-02T11:47:06.2257660Z   adding: bin/Microsoft.Practices.Unity.dll (deflated 60%)
+2022-09-02T11:47:06.2258149Z   adding: bin/System.Web.Http.WebHost.dll (deflated 54%)
+2022-09-02T11:47:06.2258713Z   adding: bin/Microsoft.Practices.ServiceLocation.pdb (deflated 85%)
+2022-09-02T11:47:06.2259287Z   adding: bin/Microsoft.Practices.ServiceLocation.dll (deflated 48%)
+2022-09-02T11:47:06.2259851Z   adding: bin/System.Net.Http.Formatting.dll (deflated 58%)
+2022-09-02T11:47:06.2260385Z   adding: bin/System.Web.Mvc.dll (deflated 61%)
+2022-09-02T11:47:06.2260898Z   adding: bin/Newtonsoft.Json.dll (deflated 62%)
+2022-09-02T11:47:06.2261347Z   adding: bin/FakeRestAPI.Web.XML (deflated 90%)
+2022-09-02T11:47:06.2262002Z   adding: bin/System.Web.WebPages.dll (deflated 58%)
+2022-09-02T11:47:06.2262513Z   adding: bin/System.Web.Razor.dll (deflated 59%)
+2022-09-02T11:47:06.2263062Z   adding: bin/Microsoft.Web.Infrastructure.dll (deflated 52%)
+2022-09-02T11:47:06.2263606Z   adding: bin/System.Web.Cors.dll (deflated 52%)
+2022-09-02T11:47:06.2264074Z   adding: favicon.ico (deflated 71%)
+2022-09-02T11:47:06.2264516Z   adding: fonts/ (stored 0%)
+2022-09-02T11:47:06.2265412Z   adding: fonts/fontawesome-webfont.svg (deflated 70%)
+2022-09-02T11:47:06.2266224Z   adding: fonts/glyphicons-halflings-regular.svg (deflated 75%)
+2022-09-02T11:47:06.2267009Z   adding: fonts/glyphicons-halflings-regular.woff2 (deflated 0%)
+2022-09-02T11:47:06.2267764Z   adding: fonts/fontawesome-webfont.ttf (deflated 41%)
+2022-09-02T11:47:06.2268444Z   adding: fonts/fontawesome-webfont.eot (deflated 0%)
+2022-09-02T11:47:06.2269215Z   adding: fonts/fontawesome-webfont.woff (deflated 0%)
+2022-09-02T11:47:06.2269975Z   adding: fonts/glyphicons-halflings-regular.ttf (deflated 48%)
+2022-09-02T11:47:06.2270743Z   adding: fonts/glyphicons-halflings-regular.eot (deflated 0%)
+2022-09-02T11:47:06.2271286Z   adding: fonts/FontAwesome.otf (deflated 18%)
+2022-09-02T11:47:06.2271974Z   adding: fonts/glyphicons-halflings-regular.woff (deflated 1%)
+2022-09-02T11:47:06.2272731Z   adding: fonts/fontawesome-webfont.woff2 (deflated 0%)
+2022-09-02T11:47:06.2273239Z   adding: packages.config (deflated 80%)
+2022-09-02T11:47:06.2280296Z ##[section]Finishing: Archive FakeRestAPI
+2022-09-02T11:47:06.2298670Z ##[section]Starting: Upload Package
+2022-09-02T11:47:06.2305070Z ==============================================================================
+2022-09-02T11:47:06.2305384Z Task         : Publish Pipeline Artifacts
+2022-09-02T11:47:06.2305761Z Description  : Publish (upload) a file or directory as a named artifact for the current run
+2022-09-02T11:47:06.2306183Z Version      : 1.199.0
+2022-09-02T11:47:06.2306416Z Author       : Microsoft Corporation
+2022-09-02T11:47:06.2306708Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/publish-pipeline-artifact
+2022-09-02T11:47:06.2307102Z ==============================================================================
+2022-09-02T11:47:06.5474479Z Artifact name input: drop-fakerestapi
+2022-09-02T11:47:06.5611154Z Uploading pipeline artifact from /home/vmadmin/myagent/_work/1/a/25-fakerestapi.zip for build #25
+2022-09-02T11:47:06.6034643Z Using default max parallelism.
+2022-09-02T11:47:06.6051255Z Max dedup parallelism: 192
+2022-09-02T11:47:11.9669850Z ApplicationInsightsTelemetrySender will correlate events with X-TFS-Session e4792caa-f2bf-4a43-b867-662f7cace3e7
+2022-09-02T11:47:11.9914120Z DedupManifestArtifactClient will correlate http requests with X-TFS-Session e4792caa-f2bf-4a43-b867-662f7cace3e7
+2022-09-02T11:47:12.1860942Z 1 files processed.
+2022-09-02T11:47:12.1904483Z Processed 1 files from /home/vmadmin/myagent/_work/1/a successfully.
+2022-09-02T11:47:14.0245137Z Uploaded 189 out of 9,361,852 bytes
+2022-09-02T11:47:14.0250285Z Content upload is done!
+2022-09-02T11:47:14.0292188Z 
+2022-09-02T11:47:14.0293647Z Content upload statistics:
+2022-09-02T11:47:14.0294736Z Total Content: 18.7 MB
+2022-09-02T11:47:14.0295795Z Physical Content Uploaded: 0.2 KB
+2022-09-02T11:47:14.0296722Z Logical Content Uploaded: 0.2 KB
+2022-09-02T11:47:14.0297536Z Compression Saved: 0.0 bytes
+2022-09-02T11:47:14.0298364Z Deduplication Saved: 18.7 MB
+2022-09-02T11:47:14.0299220Z Number of Chunks Uploaded: 1
+2022-09-02T11:47:14.0300164Z Total Number of Chunks: 373
+2022-09-02T11:47:14.0300895Z 
+2022-09-02T11:47:16.1190757Z Associated artifact 37 with build 25
+2022-09-02T11:47:16.1192550Z ApplicationInsightsTelemetrySender correlated 2 events with X-TFS-Session e4792caa-f2bf-4a43-b867-662f7cace3e7
+2022-09-02T11:47:16.1193142Z Uploading pipeline artifact finished.
+2022-09-02T11:47:16.1197266Z ##[section]Finishing: Upload Package
+2022-09-02T11:47:16.1225622Z ##[section]Starting: Checkout maxpaschke/udacity-devops-project-3@main to s
+2022-09-02T11:47:16.1231016Z ==============================================================================
+2022-09-02T11:47:16.1231367Z Task         : Get sources
+2022-09-02T11:47:16.1231710Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2022-09-02T11:47:16.1232047Z Version      : 1.0.0
+2022-09-02T11:47:16.1232278Z Author       : Microsoft
+2022-09-02T11:47:16.1232607Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2022-09-02T11:47:16.1233021Z ==============================================================================
+2022-09-02T11:47:16.4440546Z Cleaning any cached credential from repository: maxpaschke/udacity-devops-project-3 (GitHub)
+2022-09-02T11:47:16.4548434Z ##[section]Finishing: Checkout maxpaschke/udacity-devops-project-3@main to s
+2022-09-02T11:47:16.4593689Z ##[section]Starting: Finalize Job
+2022-09-02T11:47:16.4627843Z Cleaning up task key
+2022-09-02T11:47:16.4628990Z Start cleaning up orphan processes.
+2022-09-02T11:47:16.4724459Z ##[section]Finishing: Finalize Job
+2022-09-02T11:47:16.4754917Z ##[section]Finishing: Build

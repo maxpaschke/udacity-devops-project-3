@@ -1,0 +1,341 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1662119391451,496,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,480,0,452
+1662119391449,510,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,482,0,450
+1662119391960,7,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119391956,13,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,13,0,0
+1662119391967,6,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,6,0,0
+1662119391969,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119391974,5,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119391973,7,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,7,0,0
+1662119391979,25,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119391981,24,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392007,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392006,7,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392011,5,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,5,0,0
+1662119392013,7,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,6,0,0
+1662119392017,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,4,0,0
+1662119392020,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,4,0,0
+1662119392021,24,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392025,19,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119392046,6,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392048,5,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392052,5,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,5,0,0
+1662119392057,5,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,5,0,0
+1662119392053,10,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,10,0,0
+1662119392063,8,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,8,0,0
+1662119392062,14,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392076,7,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392083,10,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,10,0,0
+1662119392093,6,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,6,0,0
+1662119392072,32,GET All Authors,200,OK,Stress Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392100,9,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392104,7,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392110,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392114,6,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,6,0,0
+1662119392115,7,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,7,0,0
+1662119392120,6,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,6,0,0
+1662119392122,8,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,8,0,0
+1662119392127,21,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392132,21,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,12,0,0
+1662119392150,7,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392157,6,GET Author,200,OK,Stress Testing 1-2,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,6,0,0
+1662119392154,15,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,15,0,0
+1662119392163,8,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,8,0,0
+1662119392172,10,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392170,13,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,13,0,0
+1662119392183,5,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119392183,6,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392189,8,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,8,0,0
+1662119392197,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,4,0,0
+1662119392188,18,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,12,0,0
+1662119392201,9,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392210,6,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392207,13,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,13,0,0
+1662119392216,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,5,0,0
+1662119392220,5,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,5,0,0
+1662119392221,6,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,6,0,0
+1662119392225,6,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,6,0,0
+1662119392232,29,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,16,0,0
+1662119392227,41,GET All Authors,200,OK,Stress Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,20,0,0
+1662119392268,6,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392269,10,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119392274,5,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,5,0,0
+1662119392279,7,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,7,0,0
+1662119392279,8,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,8,0,0
+1662119392286,9,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392288,7,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,7,0,0
+1662119392295,8,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392304,5,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,5,0,0
+1662119392295,15,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392309,7,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,7,0,0
+1662119392310,7,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392317,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,5,0,0
+1662119392323,3,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,3,0,0
+1662119392317,19,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392330,9,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392336,9,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119392339,11,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,11,0,0
+1662119392346,5,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,5,0,0
+1662119392350,5,GET Author,200,OK,Stress Testing 1-2,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,5,0,0
+1662119392351,7,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,7,0,0
+1662119392355,7,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,7,0,0
+1662119392363,7,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392359,11,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392371,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392370,6,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392376,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,5,0,0
+1662119392375,8,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,8,0,0
+1662119392381,5,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,5,0,0
+1662119392383,7,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,7,0,0
+1662119392386,11,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119392390,10,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392397,5,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392400,5,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392402,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,5,0,0
+1662119392405,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,4,0,0
+1662119392407,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,4,0,0
+1662119392409,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,4,0,0
+1662119392411,8,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392413,14,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,11,0,0
+1662119392419,9,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119392428,7,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,7,0,0
+1662119392427,9,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119392436,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,4,0,0
+1662119392437,9,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,9,0,0
+1662119392446,5,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,5,0,0
+1662119392440,14,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47563,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,12,0,0
+1662119392454,4,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392451,11,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119392458,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,5,0,0
+1662119392462,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392463,6,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,6,0,0
+1662119392466,6,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,6,0,0
+1662119392469,7,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392472,5,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,5,0,0
+1662119392476,4,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392477,9,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392480,6,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,6,0,0
+1662119392486,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392487,7,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,7,0,0
+1662119392490,5,GET Author,200,OK,Stress Testing 1-1,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,5,0,0
+1662119392495,5,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,5,0,0
+1662119392495,8,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392500,8,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392503,8,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392508,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392511,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119392512,6,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,6,0,0
+1662119392516,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,4,0,0
+1662119392519,5,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,5,0,0
+1662119392524,7,GET All Authors,200,OK,Stress Testing 1-1,text,true,,48712,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392520,12,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,11,0,0
+1662119392532,5,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392531,6,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392537,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,5,0,0
+1662119392538,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,4,0,0
+1662119392542,9,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,9,0,0
+1662119392542,9,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,9,0,0
+1662119392551,11,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119392552,12,GET All Authors,200,OK,Stress Testing 1-2,text,true,,40553,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,11,0,0
+1662119392562,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392564,4,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392566,5,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,5,0,0
+1662119392568,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,5,0,0
+1662119392574,5,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,5,0,0
+1662119392572,7,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,7,0,0
+1662119392580,6,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392579,9,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392586,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392588,6,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392590,7,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,7,0,0
+1662119392594,6,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,6,0,0
+1662119392597,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,4,0,0
+1662119392600,5,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,5,0,0
+1662119392601,8,GET All Authors,200,OK,Stress Testing 1-1,text,true,,60356,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392610,5,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392605,11,GET All Authors,200,OK,Stress Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119392616,5,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392615,7,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,7,0,0
+1662119392622,4,GET Author,200,OK,Stress Testing 1-2,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,4,0,0
+1662119392623,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,4,0,0
+1662119392626,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,4,0,0
+1662119392628,9,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392637,5,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392631,13,GET All Authors,200,OK,Stress Testing 1-2,text,true,,35339,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,12,0,0
+1662119392642,7,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,7,0,0
+1662119392644,8,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392649,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,4,0,0
+1662119392652,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,5,0,0
+1662119392653,10,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392658,5,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,5,0,0
+1662119392663,5,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392664,6,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392668,5,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,5,0,0
+1662119392670,5,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392673,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,4,0,0
+1662119392675,6,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,6,0,0
+1662119392677,8,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392681,5,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,5,0,0
+1662119392685,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392686,8,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392690,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,4,0,0
+1662119392695,8,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,8,0,0
+1662119392695,8,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392704,6,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,6,0,0
+1662119392703,10,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392710,5,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,5,0,0
+1662119392715,8,GET All Authors,200,OK,Stress Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392715,8,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392725,5,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392724,9,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,9,0,0
+1662119392731,4,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,4,0,0
+1662119392733,5,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,5,0,0
+1662119392738,7,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392745,5,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392751,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,4,0,0
+1662119392756,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,4,0,0
+1662119392736,26,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,26,0,0
+1662119392760,7,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392767,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392763,12,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119392771,5,GET Author,200,OK,Stress Testing 1-1,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,5,0,0
+1662119392775,4,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392776,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,4,0,0
+1662119392779,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119392781,6,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392784,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,4,0,0
+1662119392789,3,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,3,0,0
+1662119392788,6,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392792,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,4,0,0
+1662119392794,6,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392796,6,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,6,0,0
+1662119392801,4,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,4,0,0
+1662119392802,7,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392805,6,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,6,0,0
+1662119392812,5,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392817,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,4,0,0
+1662119392811,12,GET All Authors,200,OK,Stress Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119392821,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,4,0,0
+1662119392823,5,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392828,6,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,6,0,0
+1662119392825,10,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392834,8,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,8,0,0
+1662119392836,8,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392844,6,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,6,0,0
+1662119392842,9,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392850,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,4,0,0
+1662119392851,4,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392854,7,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392855,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,5,0,0
+1662119392861,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392862,8,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,8,0,0
+1662119392866,8,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,8,0,0
+1662119392870,6,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392874,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,4,0,0
+1662119392877,3,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,3,0,0
+1662119392878,8,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392881,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,5,0,0
+1662119392886,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392887,3,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,3,0,0
+1662119392890,6,GET Author,200,OK,Stress Testing 1-1,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,6,0,0
+1662119392896,3,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,3,0,0
+1662119392891,10,GET All Authors,200,OK,Stress Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392901,5,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392900,9,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119392906,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119392909,5,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392911,5,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119392914,5,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,5,0,0
+1662119392920,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,4,0,0
+1662119392916,17,GET All Authors,200,OK,Stress Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,15,0,0
+1662119392925,9,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392933,6,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392934,9,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119392940,4,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,4,0,0
+1662119392943,5,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,5,0,0
+1662119392945,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,4,0,0
+1662119392948,8,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,8,0,0
+1662119392949,10,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119392956,7,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392960,4,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,3,0,0
+1662119392963,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392964,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,5,0,0
+1662119392967,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,4,0,0
+1662119392969,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,4,0,0
+1662119392971,5,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,5,0,0
+1662119392973,8,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392976,6,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119392981,4,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119392982,5,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119392987,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,4,0,0
+1662119392985,7,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,7,0,0
+1662119392991,5,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,5,0,0
+1662119392992,5,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,5,0,0
+1662119392997,8,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119392996,11,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119393005,6,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119393008,3,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,3,0,0
+1662119393011,7,GET Author,200,OK,Stress Testing 1-2,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,7,0,0
+1662119393012,7,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,7,0,0
+1662119393018,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,4,0,0
+1662119393019,7,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,7,0,0
+1662119393023,9,GET All Authors,200,OK,Stress Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119393026,8,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119393032,4,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119393034,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119393036,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119393038,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,4,0,0
+1662119393042,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,4,0,0
+1662119393042,6,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,6,0,0
+1662119393046,7,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119393048,7,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119393053,4,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119393055,5,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119393060,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,4,0,0
+1662119393058,10,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,10,0,0
+1662119393065,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,4,0,0
+1662119393069,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,4,0,0
+1662119393069,11,GET All Authors,200,OK,Stress Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119393073,9,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119393080,5,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119393082,7,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119393085,5,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,5,0,0
+1662119393089,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,5,0,0
+1662119393090,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,4,0,0
+1662119393094,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,4,0,0
+1662119393095,8,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119393098,9,GET All Authors,200,OK,Stress Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119393104,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119393109,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,4,0,0
+1662119393109,6,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119393113,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,4,0,0
+1662119393115,4,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,4,0,0
+1662119393120,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,4,0,0
+1662119393118,9,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119393127,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119393124,10,GET All Authors,200,OK,Stress Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119393131,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,4,0,0
+1662119393134,4,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119393135,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,4,0,0
+1662119393138,5,GET Author,200,OK,Stress Testing 1-2,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,5,0,0
+1662119393143,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,4,0,0
+1662119393139,9,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119393148,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119393148,6,GET All Authors,200,OK,Stress Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119393152,5,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119393155,4,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119393157,4,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,4,0,0
+1662119393159,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,5,0,0
+1662119393164,5,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,5,0,0
+1662119393161,11,GET All Authors,200,OK,Stress Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119393172,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119393169,8,GET All Authors,200,OK,Stress Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119393177,4,GET Author,200,OK,Stress Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,4,0,0
+1662119393178,4,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119393181,5,DELETE Author,200,OK,Stress Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,5,0,0
+1662119393182,5,GET Author,200,OK,Stress Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,5,0,0
+1662119393187,4,DELETE Author,200,OK,Stress Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,4,0,0
+1662119393186,9,GET All Authors,200,OK,Stress Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119393195,4,POST Authors,200,OK,Stress Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119393192,11,GET All Authors,200,OK,Stress Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119393203,6,POST Authors,200,OK,Stress Testing 1-2,text,true,,262,260,1,1,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0

@@ -1,0 +1,264 @@
+2022-09-02T11:50:53.7280516Z ##[section]Starting: Run Selenium tests_Deploy_TestApp-vm-myAgentVM
+2022-09-02T11:50:54.8870425Z ##[section]Starting: Initialize job
+2022-09-02T11:50:54.8872083Z Agent name: 'TestApp-vm-myAgentVM'
+2022-09-02T11:50:54.8872746Z Agent machine name: 'TestApp-vm-myAgentVM'
+2022-09-02T11:50:54.8873063Z Current agent version: '2.209.0'
+2022-09-02T11:50:54.8893925Z Agent running as: 'vmadmin'
+2022-09-02T11:50:54.8941097Z Prepare build directory.
+2022-09-02T11:50:54.9365018Z Set build variables.
+2022-09-02T11:50:54.9400033Z Download all required tasks.
+2022-09-02T11:50:54.9608202Z Checking job knob settings.
+2022-09-02T11:50:54.9620611Z Finished checking job knob settings.
+2022-09-02T11:50:54.9953286Z Start tracking orphan processes.
+2022-09-02T11:50:55.0126211Z ##[section]Finishing: Initialize job
+2022-09-02T11:50:55.0421216Z ##[section]Starting: Install selenium
+2022-09-02T11:50:55.0676357Z ==============================================================================
+2022-09-02T11:50:55.0677078Z Task         : Bash
+2022-09-02T11:50:55.0677642Z Description  : Run a Bash script on macOS, Linux, or Windows
+2022-09-02T11:50:55.0677982Z Version      : 3.201.1
+2022-09-02T11:50:55.0678424Z Author       : Microsoft Corporation
+2022-09-02T11:50:55.0678984Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2022-09-02T11:50:55.0679429Z ==============================================================================
+2022-09-02T11:50:55.8453038Z Generating script.
+2022-09-02T11:50:55.8460470Z ========================== Starting Command Output ===========================
+2022-09-02T11:50:55.8465198Z [command]/bin/bash /home/vmadmin/azagent/_work/_temp/2ceee9fe-777f-4800-8714-3f1cf36403ab.sh
+2022-09-02T11:50:55.8465752Z /home/vmadmin/azagent/_work/1/s
+2022-09-02T11:50:55.8466418Z TestApp-vm-myAgentVM
+2022-09-02T11:50:55.8466801Z Run the installation
+2022-09-02T11:50:55.8467276Z Hit:1 http://azure.archive.ubuntu.com/ubuntu bionic InRelease
+2022-09-02T11:50:55.8468080Z Get:2 http://azure.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+2022-09-02T11:50:55.8468960Z Get:3 http://azure.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+2022-09-02T11:50:55.8469820Z Get:4 http://azure.archive.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
+2022-09-02T11:50:56.8125198Z Fetched 252 kB in 0s (589 kB/s)
+2022-09-02T11:50:59.1889619Z Reading package lists...
+2022-09-02T11:51:00.2197885Z 
+2022-09-02T11:51:00.2210236Z WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+2022-09-02T11:51:00.2212489Z 
+2022-09-02T11:51:00.3120353Z Hit:1 http://azure.archive.ubuntu.com/ubuntu bionic InRelease
+2022-09-02T11:51:00.3122575Z Get:2 http://azure.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+2022-09-02T11:51:00.3124564Z Get:3 http://azure.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+2022-09-02T11:51:00.3144946Z Get:4 http://azure.archive.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
+2022-09-02T11:51:00.8398863Z Fetched 252 kB in 0s (583 kB/s)
+2022-09-02T11:51:02.7295204Z Reading package lists...
+2022-09-02T11:51:03.3750384Z Building dependency tree...
+2022-09-02T11:51:03.4287194Z Reading state information...
+2022-09-02T11:51:03.6360507Z 5 packages can be upgraded. Run 'apt list --upgradable' to see them.
+2022-09-02T11:51:03.7219393Z Reading package lists...
+2022-09-02T11:51:03.9915580Z Building dependency tree...
+2022-09-02T11:51:03.9935176Z Reading state information...
+2022-09-02T11:51:04.0780514Z Calculating upgrade...
+2022-09-02T11:51:04.1930106Z The following package was automatically installed and is no longer required:
+2022-09-02T11:51:04.1952486Z   linux-headers-4.15.0-191
+2022-09-02T11:51:04.1957316Z Use 'sudo apt autoremove' to remove it.
+2022-09-02T11:51:04.3067089Z The following packages have been kept back:
+2022-09-02T11:51:04.3127146Z   linux-azure linux-cloud-tools-azure linux-headers-azure linux-image-azure
+2022-09-02T11:51:04.3151170Z   linux-tools-azure
+2022-09-02T11:51:04.3262865Z 0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+2022-09-02T11:51:04.5381943Z Reading package lists...
+2022-09-02T11:51:04.7705894Z Building dependency tree...
+2022-09-02T11:51:04.7728164Z Reading state information...
+2022-09-02T11:51:04.9472641Z unzip is already the newest version (6.0-21ubuntu1.1).
+2022-09-02T11:51:04.9474495Z The following package was automatically installed and is no longer required:
+2022-09-02T11:51:04.9526200Z   linux-headers-4.15.0-191
+2022-09-02T11:51:04.9531536Z Use 'sudo apt autoremove' to remove it.
+2022-09-02T11:51:05.1268966Z 0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+2022-09-02T11:51:05.2640862Z Reading package lists...
+2022-09-02T11:51:05.4957156Z Building dependency tree...
+2022-09-02T11:51:05.5012148Z Reading state information...
+2022-09-02T11:51:05.6756201Z chromium-browser is already the newest version (104.0.5112.101-0ubuntu0.18.04.1).
+2022-09-02T11:51:05.6763196Z The following package was automatically installed and is no longer required:
+2022-09-02T11:51:05.6806587Z   linux-headers-4.15.0-191
+2022-09-02T11:51:05.6812383Z Use 'sudo apt autoremove' to remove it.
+2022-09-02T11:51:05.7756771Z 0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+2022-09-02T11:51:05.9122183Z Reading package lists...
+2022-09-02T11:51:06.1413918Z Building dependency tree...
+2022-09-02T11:51:06.1433843Z Reading state information...
+2022-09-02T11:51:06.3133341Z chromium-chromedriver is already the newest version (104.0.5112.101-0ubuntu0.18.04.1).
+2022-09-02T11:51:06.3134581Z The following package was automatically installed and is no longer required:
+2022-09-02T11:51:06.3141980Z   linux-headers-4.15.0-191
+2022-09-02T11:51:06.3144924Z Use 'sudo apt autoremove' to remove it.
+2022-09-02T11:51:06.3866382Z 0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+2022-09-02T11:51:06.5455670Z Reading package lists...
+2022-09-02T11:51:06.7794842Z Building dependency tree...
+2022-09-02T11:51:06.7808166Z Reading state information...
+2022-09-02T11:51:06.9538582Z python3.7 is already the newest version (3.7.5-2ubuntu1~18.04.2).
+2022-09-02T11:51:06.9539892Z The following package was automatically installed and is no longer required:
+2022-09-02T11:51:06.9547327Z   linux-headers-4.15.0-191
+2022-09-02T11:51:06.9550360Z Use 'sudo apt autoremove' to remove it.
+2022-09-02T11:51:07.0210000Z 0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+2022-09-02T11:51:07.1550049Z Reading package lists...
+2022-09-02T11:51:07.3828196Z Building dependency tree...
+2022-09-02T11:51:07.3841251Z Reading state information...
+2022-09-02T11:51:07.5608541Z python3.7-venv is already the newest version (3.7.5-2ubuntu1~18.04.2).
+2022-09-02T11:51:07.5609629Z The following package was automatically installed and is no longer required:
+2022-09-02T11:51:07.5616948Z   linux-headers-4.15.0-191
+2022-09-02T11:51:07.5619965Z Use 'sudo apt autoremove' to remove it.
+2022-09-02T11:51:07.6290349Z 0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+2022-09-02T11:51:07.7621597Z Reading package lists...
+2022-09-02T11:51:07.9944669Z Building dependency tree...
+2022-09-02T11:51:07.9957749Z Reading state information...
+2022-09-02T11:51:08.1690687Z python3-pip is already the newest version (9.0.1-2.3~ubuntu1.18.04.5).
+2022-09-02T11:51:08.1691839Z The following package was automatically installed and is no longer required:
+2022-09-02T11:51:08.1699190Z   linux-headers-4.15.0-191
+2022-09-02T11:51:08.1702120Z Use 'sudo apt autoremove' to remove it.
+2022-09-02T11:51:08.2367755Z 0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+2022-09-02T11:51:08.3691209Z Reading package lists...
+2022-09-02T11:51:08.5945883Z Building dependency tree...
+2022-09-02T11:51:08.5958782Z Reading state information...
+2022-09-02T11:51:08.7283501Z E: Unable to locate package pip
+2022-09-02T11:51:08.7648465Z python3: can't open file '—version': [Errno 2] No such file or directory
+2022-09-02T11:51:10.2462144Z ERROR: unknown command "—version"
+2022-09-02T11:51:10.3768046Z Reading package lists...
+2022-09-02T11:51:10.6199177Z Building dependency tree...
+2022-09-02T11:51:10.6224494Z Reading state information...
+2022-09-02T11:51:10.8106890Z python3-distutils is already the newest version (3.6.9-1~18.04).
+2022-09-02T11:51:10.8107980Z The following package was automatically installed and is no longer required:
+2022-09-02T11:51:10.8115464Z   linux-headers-4.15.0-191
+2022-09-02T11:51:10.8118587Z Use 'sudo apt autoremove' to remove it.
+2022-09-02T11:51:10.9005545Z 0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+2022-09-02T11:51:10.9628362Z 
+2022-09-02T11:51:10.9635123Z WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+2022-09-02T11:51:10.9637170Z 
+2022-09-02T11:51:11.0331028Z Reading package lists...
+2022-09-02T11:51:11.3988986Z Building dependency tree...
+2022-09-02T11:51:11.4002627Z Reading state information...
+2022-09-02T11:51:11.5874273Z python3-distutils is already the newest version (3.6.9-1~18.04).
+2022-09-02T11:51:11.5875219Z The following package was automatically installed and is no longer required:
+2022-09-02T11:51:11.5882815Z   linux-headers-4.15.0-191
+2022-09-02T11:51:11.5885993Z Use 'sudo apt autoremove' to remove it.
+2022-09-02T11:51:11.6578806Z 0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+2022-09-02T11:51:11.8010080Z Reading package lists...
+2022-09-02T11:51:12.0265707Z Building dependency tree...
+2022-09-02T11:51:12.0278594Z Reading state information...
+2022-09-02T11:51:12.1986955Z zip is already the newest version (3.0-11build1).
+2022-09-02T11:51:12.1987878Z The following package was automatically installed and is no longer required:
+2022-09-02T11:51:12.1995124Z   linux-headers-4.15.0-191
+2022-09-02T11:51:12.1998004Z Use 'sudo apt autoremove' to remove it.
+2022-09-02T11:51:12.2628749Z 0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+2022-09-02T11:51:13.4793930Z Collecting selenium
+2022-09-02T11:51:13.6318828Z   Using cached https://files.pythonhosted.org/packages/80/d6/4294f0b4bce4de0abf13e17190289f9d0613b0a44e5dd6a7f5ca98459853/selenium-3.141.0-py2.py3-none-any.whl
+2022-09-02T11:51:13.6580815Z Collecting urllib3 (from selenium)
+2022-09-02T11:51:13.7460557Z   Using cached https://files.pythonhosted.org/packages/6f/de/5be2e3eed8426f871b170663333a0f627fc2924cc386cd41be065e7ea870/urllib3-1.26.12-py2.py3-none-any.whl
+2022-09-02T11:51:13.7753490Z Installing collected packages: urllib3, selenium
+2022-09-02T11:51:14.0349039Z Successfully installed selenium-3.141.0 urllib3-1.26.12
+2022-09-02T11:51:14.0950466Z Python 3.6.9
+2022-09-02T11:51:14.6790763Z Chromium 104.0.5112.101 Built on Ubuntu , running on Ubuntu 18.04
+2022-09-02T11:51:14.7668085Z ChromeDriver 104.0.5112.101 (0a2e5078088fc9f9a29247aaa40af9e7ada8b79f-refs/branch-heads/5112@{#1477})
+2022-09-02T11:51:14.7919705Z ##[section]Finishing: Install selenium
+2022-09-02T11:51:14.7954036Z ##[section]Starting: Download Selenium Tests
+2022-09-02T11:51:14.7978836Z ==============================================================================
+2022-09-02T11:51:14.7979250Z Task         : Download pipeline artifact
+2022-09-02T11:51:14.7979613Z Description  : Download a named artifact from a pipeline to a local path
+2022-09-02T11:51:14.7979964Z Version      : 1.198.0
+2022-09-02T11:51:14.7980229Z Author       : Microsoft Corporation
+2022-09-02T11:51:14.7981211Z Help         : Download a named artifact from a pipeline to a local path
+2022-09-02T11:51:14.7981626Z ==============================================================================
+2022-09-02T11:51:15.2554702Z Download from the specified build: #25
+2022-09-02T11:51:15.2562914Z Download artifact to: /home/vmadmin/azagent/_work/1/seleniumtests
+2022-09-02T11:51:15.3236071Z Using default max parallelism.
+2022-09-02T11:51:15.3268529Z Max dedup parallelism: 192
+2022-09-02T11:51:16.2809733Z ApplicationInsightsTelemetrySender will correlate events with X-TFS-Session 54957c07-d376-4115-a014-1c99eeaa321d
+2022-09-02T11:51:16.9270723Z DedupManifestArtifactClient will correlate http requests with X-TFS-Session 54957c07-d376-4115-a014-1c99eeaa321d
+2022-09-02T11:51:16.9295258Z Minimatch patterns: [**]
+2022-09-02T11:51:18.5786796Z Filtered 1 files from the Minimatch filters supplied.
+2022-09-02T11:51:18.5854380Z Downloaded 0.0 MB out of 0.0 MB (0%).
+2022-09-02T11:51:19.2543267Z Downloaded 0.0 MB out of 0.0 MB (100%).
+2022-09-02T11:51:19.2559434Z 
+2022-09-02T11:51:19.2560341Z Download statistics:
+2022-09-02T11:51:19.2560920Z Total Content: 0.0 MB
+2022-09-02T11:51:19.2564685Z Physical Content Downloaded: 0.0 MB
+2022-09-02T11:51:19.2565333Z Compression Saved: 0.0 MB
+2022-09-02T11:51:19.2565891Z Local Caching Saved: 0.0 MB
+2022-09-02T11:51:19.2566439Z Chunks Downloaded: 1
+2022-09-02T11:51:19.2566963Z Nodes Downloaded: 0
+2022-09-02T11:51:19.2567317Z 
+2022-09-02T11:51:19.2635787Z Download completed.
+2022-09-02T11:51:22.2284529Z ApplicationInsightsTelemetrySender correlated 2 events with X-TFS-Session 54957c07-d376-4115-a014-1c99eeaa321d
+2022-09-02T11:51:22.2298881Z Downloading artifact finished.
+2022-09-02T11:51:22.2374407Z ##[section]Finishing: Download Selenium Tests
+2022-09-02T11:51:22.2402865Z ##[section]Starting: Run selenium tests
+2022-09-02T11:51:22.2414189Z ==============================================================================
+2022-09-02T11:51:22.2414555Z Task         : Bash
+2022-09-02T11:51:22.2414850Z Description  : Run a Bash script on macOS, Linux, or Windows
+2022-09-02T11:51:22.2415153Z Version      : 3.201.1
+2022-09-02T11:51:22.2415405Z Author       : Microsoft Corporation
+2022-09-02T11:51:22.2415770Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2022-09-02T11:51:22.2416220Z ==============================================================================
+2022-09-02T11:51:22.4465620Z Generating script.
+2022-09-02T11:51:22.4601357Z ========================== Starting Command Output ===========================
+2022-09-02T11:51:22.4621682Z [command]/bin/bash /home/vmadmin/azagent/_work/_temp/9b1a0669-1dc5-4b49-95f3-6f329f0c2f98.sh
+2022-09-02T11:51:22.4733891Z Archive:  seleniumtests/seleniumtests.zip
+2022-09-02T11:51:22.4747407Z   inflating: ./selenium/selenium_test.py  
+2022-09-02T11:51:22.4751841Z   inflating: ./selenium/login.py     
+2022-09-02T11:51:28.1315264Z 2022-09-02 11:51:22: Running UI tests for saucedemo.com demo website.
+2022-09-02T11:51:28.1328214Z 2022-09-02 11:51:22: Starting the browser...
+2022-09-02T11:51:28.1330697Z 2022-09-02 11:51:25: Browser started successfully. Navigating to the demo page to login.
+2022-09-02T11:51:28.1331860Z 2022-09-02 11:51:26: Logging in with $standard_user and $secret_sauce
+2022-09-02T11:51:28.1333029Z 2022-09-02 11:51:26: Login sucessfull, found 6 items after logging in with Username standard_user and Password secret_sauce
+2022-09-02T11:51:28.1334130Z 2022-09-02 11:51:26: Adding and removing all items to and from the cart.
+2022-09-02T11:51:28.1335148Z 2022-09-02 11:51:26: Adding item `$Sauce Labs Backpack` to the shopping cart.
+2022-09-02T11:51:28.1336088Z 2022-09-02 11:51:27: 1 item(s) in shopping cart.
+2022-09-02T11:51:28.1337096Z 2022-09-02 11:51:27: Adding item `$Sauce Labs Bike Light` to the shopping cart.
+2022-09-02T11:51:28.1338057Z 2022-09-02 11:51:27: 2 item(s) in shopping cart.
+2022-09-02T11:51:28.1339037Z 2022-09-02 11:51:27: Adding item `$Sauce Labs Bolt T-Shirt` to the shopping cart.
+2022-09-02T11:51:28.1342243Z 2022-09-02 11:51:27: 3 item(s) in shopping cart.
+2022-09-02T11:51:28.1343195Z 2022-09-02 11:51:27: Adding item `$Sauce Labs Fleece Jacket` to the shopping cart.
+2022-09-02T11:51:28.1344044Z 2022-09-02 11:51:27: 4 item(s) in shopping cart.
+2022-09-02T11:51:28.1344917Z 2022-09-02 11:51:27: Adding item `$Sauce Labs Onesie` to the shopping cart.
+2022-09-02T11:51:28.1345758Z 2022-09-02 11:51:27: 5 item(s) in shopping cart.
+2022-09-02T11:51:28.1346681Z 2022-09-02 11:51:27: Adding item `$Test.allTheThings() T-Shirt (Red)` to the shopping cart.
+2022-09-02T11:51:28.1347551Z 2022-09-02 11:51:27: 6 item(s) in shopping cart.
+2022-09-02T11:51:28.1348377Z 2022-09-02 11:51:27: Remove the items from the shopping cart.
+2022-09-02T11:51:28.1349299Z 2022-09-02 11:51:27: Removing item `$Sauce Labs Backpack` from the shopping cart.
+2022-09-02T11:51:28.1350530Z 2022-09-02 11:51:27: 5 item(s) in shopping cart.
+2022-09-02T11:51:28.1351425Z 2022-09-02 11:51:27: Removing item `$Sauce Labs Bike Light` from the shopping cart.
+2022-09-02T11:51:28.1352281Z 2022-09-02 11:51:27: 4 item(s) in shopping cart.
+2022-09-02T11:51:28.1353186Z 2022-09-02 11:51:27: Removing item `$Sauce Labs Bolt T-Shirt` from the shopping cart.
+2022-09-02T11:51:28.1354084Z 2022-09-02 11:51:27: 3 item(s) in shopping cart.
+2022-09-02T11:51:28.1355708Z 2022-09-02 11:51:27: Removing item `$Sauce Labs Fleece Jacket` from the shopping cart.
+2022-09-02T11:51:28.1356471Z 2022-09-02 11:51:27: 2 item(s) in shopping cart.
+2022-09-02T11:51:28.1357240Z 2022-09-02 11:51:27: Removing item `$Sauce Labs Onesie` from the shopping cart.
+2022-09-02T11:51:28.1357973Z 2022-09-02 11:51:28: 1 item(s) in shopping cart.
+2022-09-02T11:51:28.1358776Z 2022-09-02 11:51:28: Removing item `$Test.allTheThings() T-Shirt (Red)` from the shopping cart.
+2022-09-02T11:51:28.1359763Z 2022-09-02 11:51:28: Shopping cart empty.
+2022-09-02T11:51:28.1360505Z 2022-09-02 11:51:28: Selenium test sucessfully finished.
+2022-09-02T11:51:28.2901387Z ##[section]Finishing: Run selenium tests
+2022-09-02T11:51:28.2973929Z ##[section]Starting: PublishPipelineArtifact
+2022-09-02T11:51:28.3072983Z ==============================================================================
+2022-09-02T11:51:28.3073406Z Task         : Publish Pipeline Artifacts
+2022-09-02T11:51:28.3073814Z Description  : Publish (upload) a file or directory as a named artifact for the current run
+2022-09-02T11:51:28.3074210Z Version      : 1.199.0
+2022-09-02T11:51:28.3074471Z Author       : Microsoft Corporation
+2022-09-02T11:51:28.3074904Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/publish-pipeline-artifact
+2022-09-02T11:51:28.3075397Z ==============================================================================
+2022-09-02T11:51:28.8734107Z Artifact name input: selenium-test-logs
+2022-09-02T11:51:28.8901646Z Uploading pipeline artifact from /home/vmadmin/azagent/_work/1/s/selenium-test-logs.log for build #25
+2022-09-02T11:51:28.9541725Z Using default max parallelism.
+2022-09-02T11:51:28.9566038Z Max dedup parallelism: 192
+2022-09-02T11:51:29.9309901Z ApplicationInsightsTelemetrySender will correlate events with X-TFS-Session 2be3b358-7e59-4bde-a285-13b8cfccdc47
+2022-09-02T11:51:29.9575580Z DedupManifestArtifactClient will correlate http requests with X-TFS-Session 2be3b358-7e59-4bde-a285-13b8cfccdc47
+2022-09-02T11:51:30.0867023Z 1 files processed.
+2022-09-02T11:51:30.0881238Z Processed 1 files from /home/vmadmin/azagent/_work/1/s successfully.
+2022-09-02T11:51:31.5225514Z Uploaded 2,367 out of 2,367 bytes
+2022-09-02T11:51:31.5227266Z Content upload is done!
+2022-09-02T11:51:31.5246946Z 
+2022-09-02T11:51:31.5247890Z Content upload statistics:
+2022-09-02T11:51:31.5248489Z Total Content: 4.5 KB
+2022-09-02T11:51:31.5249131Z Physical Content Uploaded: 0.8 KB
+2022-09-02T11:51:31.5249698Z Logical Content Uploaded: 2.4 KB
+2022-09-02T11:51:31.5250290Z Compression Saved: 1.6 KB
+2022-09-02T11:51:31.5250837Z Deduplication Saved: 2.2 KB
+2022-09-02T11:51:31.5251385Z Number of Chunks Uploaded: 2
+2022-09-02T11:51:31.5251922Z Total Number of Chunks: 3
+2022-09-02T11:51:31.5252274Z 
+2022-09-02T11:51:34.2190349Z Associated artifact 40 with build 25
+2022-09-02T11:51:34.2226001Z ApplicationInsightsTelemetrySender correlated 2 events with X-TFS-Session 2be3b358-7e59-4bde-a285-13b8cfccdc47
+2022-09-02T11:51:34.2232395Z Uploading pipeline artifact finished.
+2022-09-02T11:51:34.2298238Z ##[section]Finishing: PublishPipelineArtifact
+2022-09-02T11:51:34.2360241Z ##[section]Starting: Finalize Job
+2022-09-02T11:51:34.2408180Z Cleaning up task key
+2022-09-02T11:51:34.2410104Z Start cleaning up orphan processes.
+2022-09-02T11:51:34.2764199Z Terminate orphan process: pid (1598) (chromedriver)
+2022-09-02T11:51:34.2818694Z Terminate orphan process: pid (1605) (chromium-browser)
+2022-09-02T11:51:34.2948972Z ##[section]Finishing: Finalize Job
+2022-09-02T11:51:34.3077823Z ##[section]Finishing: Run Selenium tests_Deploy_TestApp-vm-myAgentVM

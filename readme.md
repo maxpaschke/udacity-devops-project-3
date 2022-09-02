@@ -120,4 +120,4 @@ The following steps have to be done in order to run this project:
     wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w <YOUR WORKSPACE ID> -s <YOUR WORKSPACE PRIMARY KEY>
     ```
   * Get the custom logs via https://docs.microsoft.com/en-us/azure/azure-monitor/agents/data-sources-custom-logs
-  * 
+  * Add a log with `/var/log/selenium/*.log` as logfolder via `Custom logs`

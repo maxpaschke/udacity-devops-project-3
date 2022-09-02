@@ -1,0 +1,392 @@
+2022-09-02T11:48:25.3382062Z ##[section]Starting: Integration Tests
+2022-09-02T11:48:27.5523807Z ##[section]Starting: Initialize job
+2022-09-02T11:48:27.5525507Z Agent name: 'RunnerVM'
+2022-09-02T11:48:27.5526165Z Agent machine name: 'RunnerVM'
+2022-09-02T11:48:27.5526468Z Current agent version: '2.204.0'
+2022-09-02T11:48:27.5548983Z Agent running as: 'vmadmin'
+2022-09-02T11:48:27.5594905Z Prepare build directory.
+2022-09-02T11:48:27.6301176Z Set build variables.
+2022-09-02T11:48:27.6337093Z Download all required tasks.
+2022-09-02T11:48:27.6642514Z Checking job knob settings.
+2022-09-02T11:48:27.6651674Z Finished checking job knob settings.
+2022-09-02T11:48:27.7008908Z Start tracking orphan processes.
+2022-09-02T11:48:27.7153694Z ##[section]Finishing: Initialize job
+2022-09-02T11:48:27.7441630Z ##[section]Starting: Checkout maxpaschke/udacity-devops-project-3@main to s
+2022-09-02T11:48:27.7708833Z ==============================================================================
+2022-09-02T11:48:27.7709591Z Task         : Get sources
+2022-09-02T11:48:27.7710216Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2022-09-02T11:48:27.7710587Z Version      : 1.0.0
+2022-09-02T11:48:27.7711017Z Author       : Microsoft
+2022-09-02T11:48:27.7711663Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2022-09-02T11:48:27.7712130Z ==============================================================================
+2022-09-02T11:48:32.9161948Z Syncing repository: maxpaschke/udacity-devops-project-3 (GitHub)
+2022-09-02T11:48:32.9168971Z ##[command]git version
+2022-09-02T11:48:32.9176950Z git version 2.17.1
+2022-09-02T11:48:32.9179011Z ##[command]git config --get remote.origin.url
+2022-09-02T11:48:32.9189872Z ##[command]git clean -ffdx
+2022-09-02T11:48:32.9200622Z ##[command]git reset --hard HEAD
+2022-09-02T11:48:32.9206331Z HEAD is now at 73d9660 Run the full pipeline
+2022-09-02T11:48:32.9213218Z ##[command]git config gc.auto 0
+2022-09-02T11:48:32.9223425Z ##[command]git config --get-all http.https://github.com/maxpaschke/udacity-devops-project-3.extraheader
+2022-09-02T11:48:32.9234661Z ##[command]git config --get-all http.extraheader
+2022-09-02T11:48:32.9244169Z ##[command]git config --get-regexp .*extraheader
+2022-09-02T11:48:32.9252278Z ##[command]git config --get-all http.proxy
+2022-09-02T11:48:32.9260036Z ##[command]git config http.version HTTP/1.1
+2022-09-02T11:48:32.9275658Z ##[command]git -c http.extraheader="AUTHORIZATION: basic ***" fetch  --tags --prune --prune-tags --progress --no-recurse-submodules origin
+2022-09-02T11:48:34.9612805Z ##[command]git checkout --progress --force 73d9660cb506e386914efbeb01f4a60322634eac
+2022-09-02T11:48:34.9625761Z HEAD is now at 73d9660 Run the full pipeline
+2022-09-02T11:48:34.9688684Z ##[section]Finishing: Checkout maxpaschke/udacity-devops-project-3@main to s
+2022-09-02T11:48:34.9719582Z ##[section]Starting: Install node
+2022-09-02T11:48:34.9727829Z ==============================================================================
+2022-09-02T11:48:34.9728277Z Task         : Node.js tool installer
+2022-09-02T11:48:34.9728711Z Description  : Finds or downloads and caches the specified version spec of Node.js and adds it to the PATH
+2022-09-02T11:48:34.9729135Z Version      : 0.200.0
+2022-09-02T11:48:34.9729418Z Author       : Microsoft Corporation
+2022-09-02T11:48:34.9729824Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/tool/node-js
+2022-09-02T11:48:34.9730302Z ==============================================================================
+2022-09-02T11:48:35.1737990Z Found tool in cache: node 16.17.0 x64
+2022-09-02T11:48:35.1745779Z Prepending PATH environment variable with directory: /home/vmadmin/myagent/_work/_tool/node/16.17.0/x64/bin
+2022-09-02T11:48:36.8620164Z ##[section]Finishing: Install node
+2022-09-02T11:48:36.8651392Z ##[section]Starting: Install newman
+2022-09-02T11:48:36.8659688Z ==============================================================================
+2022-09-02T11:48:36.8660054Z Task         : Bash
+2022-09-02T11:48:36.8660675Z Description  : Run a Bash script on macOS, Linux, or Windows
+2022-09-02T11:48:36.8661005Z Version      : 3.201.1
+2022-09-02T11:48:36.8661323Z Author       : Microsoft Corporation
+2022-09-02T11:48:36.8661714Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2022-09-02T11:48:36.8662269Z ==============================================================================
+2022-09-02T11:48:37.0196966Z Generating script.
+2022-09-02T11:48:37.0236684Z ========================== Starting Command Output ===========================
+2022-09-02T11:48:37.0269006Z [command]/bin/bash /home/vmadmin/myagent/_work/_temp/e5c0d98c-8be9-49c3-a50d-f928f07d5f2a.sh
+2022-09-02T11:48:40.1625543Z npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+2022-09-02T11:48:40.2930585Z npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+2022-09-02T11:48:40.3015661Z npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+2022-09-02T11:48:42.4588475Z 
+2022-09-02T11:48:42.4601257Z changed 111 packages, and audited 112 packages in 5s
+2022-09-02T11:48:42.4614185Z 
+2022-09-02T11:48:42.4635116Z 5 packages are looking for funding
+2022-09-02T11:48:42.4640682Z   run `npm fund` for details
+2022-09-02T11:48:42.4667246Z 
+2022-09-02T11:48:42.4675629Z found 0 vulnerabilities
+2022-09-02T11:48:43.1039749Z 5.3.2
+2022-09-02T11:48:43.1414666Z ##[section]Finishing: Install newman
+2022-09-02T11:48:43.1443286Z ##[section]Starting: Run the regression tests
+2022-09-02T11:48:43.1455359Z ==============================================================================
+2022-09-02T11:48:43.1455746Z Task         : Bash
+2022-09-02T11:48:43.1456056Z Description  : Run a Bash script on macOS, Linux, or Windows
+2022-09-02T11:48:43.1456397Z Version      : 3.201.1
+2022-09-02T11:48:43.1456668Z Author       : Microsoft Corporation
+2022-09-02T11:48:43.1457076Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2022-09-02T11:48:43.1457551Z ==============================================================================
+2022-09-02T11:48:43.2889870Z Generating script.
+2022-09-02T11:48:43.2910108Z Formatted command: exec bash '/home/vmadmin/myagent/_work/1/s/automatedtesting/postman/run_regression_tests.sh'
+2022-09-02T11:48:43.2930250Z ========================== Starting Command Output ===========================
+2022-09-02T11:48:43.2958660Z [command]/bin/bash /home/vmadmin/myagent/_work/_temp/40c909ed-7ae0-4897-a6f0-7b2f9a3154f3.sh
+2022-09-02T11:48:44.1877748Z newman
+2022-09-02T11:48:44.1878375Z 
+2022-09-02T11:48:44.1889439Z Regression Testing Suite
+2022-09-02T11:48:44.1922719Z 
+2022-09-02T11:48:44.1924246Z → Get all authors
+2022-09-02T11:48:47.8176517Z   GET https://testapp-appservice.azurewebsites.net/api/authors [200 OK, 10.75kB, 3.6s]
+2022-09-02T11:48:47.8655334Z   ✓  Status code is 200
+2022-09-02T11:48:47.8929807Z 
+2022-09-02T11:48:47.8931523Z → Get all activities
+2022-09-02T11:48:47.9690542Z   GET https://testapp-appservice.azurewebsites.net/api/activities [200 OK, 868B, 52ms]
+2022-09-02T11:48:47.9846439Z   ✓  Status code is 200
+2022-09-02T11:48:47.9937401Z 
+2022-09-02T11:48:47.9938810Z → Get all cover photos
+2022-09-02T11:48:48.0206289Z   GET https://testapp-appservice.azurewebsites.net/api/CoverPhotos [200 OK, 2.93kB, 20ms]
+2022-09-02T11:48:48.0484224Z   ✓  Status code is 200
+2022-09-02T11:48:48.0564872Z 
+2022-09-02T11:48:48.0566007Z → Get all books
+2022-09-02T11:48:48.2704514Z   GET https://testapp-appservice.azurewebsites.net/api/books [200 OK, 900.8kB, 208ms]
+2022-09-02T11:48:48.3433147Z   ✓  Status code is 200
+2022-09-02T11:48:48.3686107Z 
+2022-09-02T11:48:48.3687732Z → Get all users
+2022-09-02T11:48:48.4198161Z   GET https://testapp-appservice.azurewebsites.net/api/users [200 OK, 560B, 30ms]
+2022-09-02T11:48:48.4272251Z   ✓  Status code is 200
+2022-09-02T11:48:48.4347071Z 
+2022-09-02T11:48:48.4348080Z → Create Activity
+2022-09-02T11:48:48.4856285Z   POST https://testapp-appservice.azurewebsites.net/api/Activities/1 [200 OK, 430B, 45ms]
+2022-09-02T11:48:48.4921560Z   ✓  Status code is 200
+2022-09-02T11:48:48.5047989Z 
+2022-09-02T11:48:48.5049199Z → Create Book
+2022-09-02T11:48:48.5244523Z   POST https://testapp-appservice.azurewebsites.net/api/Books/1 [200 OK, 430B, 10ms]
+2022-09-02T11:48:48.5301442Z   ✓  Status code is 200
+2022-09-02T11:48:48.5384088Z 
+2022-09-02T11:48:48.5385042Z → Create CoverPhoto
+2022-09-02T11:48:48.5531497Z   POST https://testapp-appservice.azurewebsites.net/api/CoverPhotos/1 [200 OK, 430B, 9ms]
+2022-09-02T11:48:48.5612074Z   ✓  Status code is 200
+2022-09-02T11:48:48.5677733Z 
+2022-09-02T11:48:48.5678949Z → Create Author
+2022-09-02T11:48:48.7530115Z   POST https://testapp-appservice.azurewebsites.net/api/Authors [200 OK, 430B, 179ms]
+2022-09-02T11:48:48.7600802Z   ✓  Status code is 200
+2022-09-02T11:48:48.7691632Z 
+2022-09-02T11:48:48.7692631Z → Create User
+2022-09-02T11:48:48.7927867Z   POST https://testapp-appservice.azurewebsites.net/api/Users/1 [200 OK, 430B, 18ms]
+2022-09-02T11:48:48.7988643Z   ✓  Status code is 200
+2022-09-02T11:48:48.8046873Z 
+2022-09-02T11:48:48.8047897Z → Get User
+2022-09-02T11:48:48.8645058Z   GET https://testapp-appservice.azurewebsites.net/api/Users/1 [200 OK, 467B, 54ms]
+2022-09-02T11:48:48.8702608Z   ✓  Status code is 200
+2022-09-02T11:48:48.8756694Z 
+2022-09-02T11:48:48.8757860Z → Get Activity
+2022-09-02T11:48:48.8945787Z   GET https://testapp-appservice.azurewebsites.net/api/Activities/1 [200 OK, 513B, 13ms]
+2022-09-02T11:48:48.9010382Z   ✓  Status code is 200
+2022-09-02T11:48:48.9062095Z 
+2022-09-02T11:48:48.9063190Z → Get Author
+2022-09-02T11:48:48.9228975Z   GET https://testapp-appservice.azurewebsites.net/api/Authors/1 [200 OK, 471B, 12ms]
+2022-09-02T11:48:48.9339387Z   ✓  Status code is 200
+2022-09-02T11:48:48.9399544Z 
+2022-09-02T11:48:48.9400720Z → Get Book
+2022-09-02T11:48:49.0672260Z   GET https://testapp-appservice.azurewebsites.net/api/Books/1 [200 OK, 2.25kB, 122ms]
+2022-09-02T11:48:49.0772468Z   ✓  Status code is 200
+2022-09-02T11:48:49.0844307Z 
+2022-09-02T11:48:49.0845604Z → Get CoverPhoto
+2022-09-02T11:48:49.1006540Z   GET https://testapp-appservice.azurewebsites.net/api/CoverPhotos/1 [200 OK, 516B, 10ms]
+2022-09-02T11:48:49.1116385Z   ✓  Status code is 200
+2022-09-02T11:48:49.1212517Z 
+2022-09-02T11:48:49.1213866Z → Delete Activity
+2022-09-02T11:48:49.1369948Z   DELETE https://testapp-appservice.azurewebsites.net/api/Activities/1 [200 OK, 211B, 10ms]
+2022-09-02T11:48:49.1481078Z   ✓  Status code is 200
+2022-09-02T11:48:49.1596041Z 
+2022-09-02T11:48:49.1597797Z → Delete Author
+2022-09-02T11:48:49.1725984Z   DELETE https://testapp-appservice.azurewebsites.net/api/Authors/1 [200 OK, 211B, 8ms]
+2022-09-02T11:48:49.1800571Z   ✓  Status code is 200
+2022-09-02T11:48:49.1950042Z 
+2022-09-02T11:48:49.1951789Z → Delete Book
+2022-09-02T11:48:49.2079589Z   DELETE https://testapp-appservice.azurewebsites.net/api/Books/1 [200 OK, 211B, 9ms]
+2022-09-02T11:48:49.2146986Z   ✓  Status code is 200
+2022-09-02T11:48:49.2207791Z 
+2022-09-02T11:48:49.2209002Z → Delete CoverPhoto
+2022-09-02T11:48:49.2354772Z   DELETE https://testapp-appservice.azurewebsites.net/api/CoverPhotos/1 [200 OK, 211B, 9ms]
+2022-09-02T11:48:49.2405996Z   ✓  Status code is 200
+2022-09-02T11:48:49.2478313Z 
+2022-09-02T11:48:49.2479435Z → Delete User
+2022-09-02T11:48:49.2603410Z   DELETE https://testapp-appservice.azurewebsites.net/api/Users/1 [200 OK, 211B, 7ms]
+2022-09-02T11:48:49.2692725Z   ✓  Status code is 200
+2022-09-02T11:48:49.2739030Z 
+2022-09-02T11:48:49.2740195Z → Update Author
+2022-09-02T11:48:49.2884916Z   PUT https://testapp-appservice.azurewebsites.net/api/Authors/1 [200 OK, 430B, 9ms]
+2022-09-02T11:48:49.2976454Z   ✓  Status code is 200
+2022-09-02T11:48:49.3041784Z 
+2022-09-02T11:48:49.3042901Z → Update Activity
+2022-09-02T11:48:49.3222821Z   PUT https://testapp-appservice.azurewebsites.net/api/Activities/1 [200 OK, 430B, 13ms]
+2022-09-02T11:48:49.3302286Z   ✓  Status code is 200
+2022-09-02T11:48:49.3359275Z 
+2022-09-02T11:48:49.3360414Z → Update Book
+2022-09-02T11:48:49.3580553Z   PUT https://testapp-appservice.azurewebsites.net/api/books/1 [200 OK, 430B, 14ms]
+2022-09-02T11:48:49.3628697Z   ✓  Status code is 200
+2022-09-02T11:48:49.3671822Z 
+2022-09-02T11:48:49.3673019Z → Update CoverPhoto
+2022-09-02T11:48:49.3836082Z   PUT https://testapp-appservice.azurewebsites.net/api/CoverPhotos/1 [200 OK, 430B, 10ms]
+2022-09-02T11:48:49.3906500Z   ✓  Status code is 200
+2022-09-02T11:48:49.3982550Z 
+2022-09-02T11:48:49.3983548Z → Update User
+2022-09-02T11:48:49.4112318Z   PUT https://testapp-appservice.azurewebsites.net/api/Users/1 [200 OK, 430B, 8ms]
+2022-09-02T11:48:49.4157218Z   ✓  Status code is 200
+2022-09-02T11:48:49.4356854Z 
+2022-09-02T11:48:49.4357887Z ┌─────────────────────────┬───────────────────┬───────────────────┐
+2022-09-02T11:48:49.4358530Z │                         │          executed │            failed │
+2022-09-02T11:48:49.4359224Z ├─────────────────────────┼───────────────────┼───────────────────┤
+2022-09-02T11:48:49.4359835Z │              iterations │                 1 │                 0 │
+2022-09-02T11:48:49.4360473Z ├─────────────────────────┼───────────────────┼───────────────────┤
+2022-09-02T11:48:49.4361062Z │                requests │                25 │                 0 │
+2022-09-02T11:48:49.4361687Z ├─────────────────────────┼───────────────────┼───────────────────┤
+2022-09-02T11:48:49.4362265Z │            test-scripts │                25 │                 0 │
+2022-09-02T11:48:49.4363094Z ├─────────────────────────┼───────────────────┼───────────────────┤
+2022-09-02T11:48:49.4363739Z │      prerequest-scripts │                 0 │                 0 │
+2022-09-02T11:48:49.4364379Z ├─────────────────────────┼───────────────────┼───────────────────┤
+2022-09-02T11:48:49.4364971Z │              assertions │                25 │                 0 │
+2022-09-02T11:48:49.4365618Z ├─────────────────────────┴───────────────────┴───────────────────┤
+2022-09-02T11:48:49.4366202Z │ total run duration: 5.2s                                        │
+2022-09-02T11:48:49.4366833Z ├─────────────────────────────────────────────────────────────────┤
+2022-09-02T11:48:49.4367447Z │ total data received: 918.28kB (approx)                          │
+2022-09-02T11:48:49.4368099Z ├─────────────────────────────────────────────────────────────────┤
+2022-09-02T11:48:49.4368736Z │ average response time: 179ms [min: 7ms, max: 3.6s, s.d.: 701ms] │
+2022-09-02T11:48:49.4370319Z └─────────────────────────────────────────────────────────────────┘
+2022-09-02T11:48:49.4610379Z ##[section]Finishing: Run the regression tests
+2022-09-02T11:48:49.4632643Z ##[section]Starting: Run the validation tests
+2022-09-02T11:48:49.4643599Z ==============================================================================
+2022-09-02T11:48:49.4643978Z Task         : Bash
+2022-09-02T11:48:49.4644293Z Description  : Run a Bash script on macOS, Linux, or Windows
+2022-09-02T11:48:49.4644800Z Version      : 3.201.1
+2022-09-02T11:48:49.4645073Z Author       : Microsoft Corporation
+2022-09-02T11:48:49.4645480Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2022-09-02T11:48:49.4645932Z ==============================================================================
+2022-09-02T11:48:49.5972915Z Generating script.
+2022-09-02T11:48:49.5992959Z Formatted command: exec bash '/home/vmadmin/myagent/_work/1/s/automatedtesting/postman/run_validation_tests.sh'
+2022-09-02T11:48:49.6013604Z ========================== Starting Command Output ===========================
+2022-09-02T11:48:49.6042453Z [command]/bin/bash /home/vmadmin/myagent/_work/_temp/f36c3f79-327a-4c64-bf9d-0c79102dd291.sh
+2022-09-02T11:48:50.4779521Z newman
+2022-09-02T11:48:50.4780236Z 
+2022-09-02T11:48:50.4788665Z Validation Testing Suite
+2022-09-02T11:48:50.4814388Z 
+2022-09-02T11:48:50.4815601Z → Get All Activities
+2022-09-02T11:48:50.6175468Z   GET https://testapp-appservice.azurewebsites.net/api/Activities [200 OK, 862B, 118ms]
+2022-09-02T11:48:50.6405225Z   ✓  Received 30 entries
+2022-09-02T11:48:50.6518841Z 
+2022-09-02T11:48:50.6520127Z → Get All Authors
+2022-09-02T11:48:50.7152796Z   GET https://testapp-appservice.azurewebsites.net/api/Authors [200 OK, 10.75kB, 56ms]
+2022-09-02T11:48:50.7467355Z   ✓  Received more than 50 entries
+2022-09-02T11:48:50.7551791Z 
+2022-09-02T11:48:50.7552807Z → Get All Books
+2022-09-02T11:48:50.9246702Z   GET https://testapp-appservice.azurewebsites.net/api/Books [200 OK, 918.88kB, 163ms]
+2022-09-02T11:48:51.0933143Z   ✓  Received 200 entries
+2022-09-02T11:48:51.1058763Z 
+2022-09-02T11:48:51.1060566Z → Get All CoverPhotos
+2022-09-02T11:48:51.1355677Z   GET https://testapp-appservice.azurewebsites.net/api/CoverPhotos [200 OK, 2.93kB, 23ms]
+2022-09-02T11:48:51.1439966Z   ✓  Received 200 entries
+2022-09-02T11:48:51.1517676Z 
+2022-09-02T11:48:51.1518650Z → Get All Users
+2022-09-02T11:48:51.1707935Z   GET https://testapp-appservice.azurewebsites.net/api/Users [200 OK, 560B, 13ms]
+2022-09-02T11:48:51.1750993Z   ✓  Received 10 entries
+2022-09-02T11:48:51.1802220Z 
+2022-09-02T11:48:51.1803126Z → Create Activity
+2022-09-02T11:48:51.1942265Z   POST https://testapp-appservice.azurewebsites.net/api/Activities/1 [200 OK, 430B, 8ms]
+2022-09-02T11:48:51.2012827Z   ✓  response body as expected for post
+2022-09-02T11:48:51.2110390Z 
+2022-09-02T11:48:51.2111515Z → Create Author
+2022-09-02T11:48:51.2290719Z   POST https://testapp-appservice.azurewebsites.net/api/Authors/1 [200 OK, 430B, 12ms]
+2022-09-02T11:48:51.2342302Z   ✓  response body as expected for post
+2022-09-02T11:48:51.2421252Z 
+2022-09-02T11:48:51.2422166Z → Create Book
+2022-09-02T11:48:51.2558005Z   POST https://testapp-appservice.azurewebsites.net/api/Books/1 [200 OK, 430B, 8ms]
+2022-09-02T11:48:51.2598740Z   ✓  response body as expected for post
+2022-09-02T11:48:51.2634993Z 
+2022-09-02T11:48:51.2635850Z → Create CoverPhoto
+2022-09-02T11:48:51.2767560Z   POST https://testapp-appservice.azurewebsites.net/api/CoverPhotos/1 [200 OK, 430B, 8ms]
+2022-09-02T11:48:51.2834312Z   ✓  response body as expected for post
+2022-09-02T11:48:51.2939989Z 
+2022-09-02T11:48:51.2942424Z → Create User
+2022-09-02T11:48:51.3094694Z   POST https://testapp-appservice.azurewebsites.net/api/Users/1 [200 OK, 430B, 8ms]
+2022-09-02T11:48:51.3156853Z   ✓  response body as expected for post
+2022-09-02T11:48:51.3204560Z 
+2022-09-02T11:48:51.3205748Z → Get Activity
+2022-09-02T11:48:51.3342866Z   GET https://testapp-appservice.azurewebsites.net/api/Activities/1 [200 OK, 515B, 7ms]
+2022-09-02T11:48:51.3390020Z   ✓  Response with ID 1
+2022-09-02T11:48:51.3445837Z 
+2022-09-02T11:48:51.3447012Z → Get Author
+2022-09-02T11:48:51.3606300Z   GET https://testapp-appservice.azurewebsites.net/api/Authors/1 [200 OK, 471B, 8ms]
+2022-09-02T11:48:51.3651440Z   ✓  Response with ID 1
+2022-09-02T11:48:51.3733072Z 
+2022-09-02T11:48:51.3733959Z → Get Book
+2022-09-02T11:48:51.4552699Z   GET https://testapp-appservice.azurewebsites.net/api/Books/1 [200 OK, 2.08kB, 75ms]
+2022-09-02T11:48:51.4662070Z   ✓  Response with ID 1
+2022-09-02T11:48:51.4749527Z 
+2022-09-02T11:48:51.4750653Z → Get CoverPhoto
+2022-09-02T11:48:51.4894923Z   GET https://testapp-appservice.azurewebsites.net/api/CoverPhotos/1 [200 OK, 516B, 9ms]
+2022-09-02T11:48:51.4963149Z   ✓  Response with ID 1
+2022-09-02T11:48:51.5033567Z 
+2022-09-02T11:48:51.5034738Z → Get User
+2022-09-02T11:48:51.5160308Z   GET https://testapp-appservice.azurewebsites.net/api/Users/1 [200 OK, 467B, 8ms]
+2022-09-02T11:48:51.5248807Z   ✓  Response with ID 1
+2022-09-02T11:48:51.5329366Z 
+2022-09-02T11:48:51.5330584Z → Update Activity
+2022-09-02T11:48:51.5497185Z   PUT https://testapp-appservice.azurewebsites.net/api/Activities/1 [200 OK, 430B, 12ms]
+2022-09-02T11:48:51.5552336Z   ✓  check for empty response body for put
+2022-09-02T11:48:51.5743268Z 
+2022-09-02T11:48:51.5744772Z → Update Author
+2022-09-02T11:48:51.5914981Z   PUT https://testapp-appservice.azurewebsites.net/api/Authors/1 [200 OK, 430B, 8ms]
+2022-09-02T11:48:51.6049518Z   ✓  check for empty response body for put
+2022-09-02T11:48:51.6128339Z 
+2022-09-02T11:48:51.6130006Z → Update Book
+2022-09-02T11:48:51.6257356Z   PUT https://testapp-appservice.azurewebsites.net/api/Books/1 [200 OK, 430B, 9ms]
+2022-09-02T11:48:51.6321035Z   ✓  check for empty response body for put
+2022-09-02T11:48:51.6377619Z 
+2022-09-02T11:48:51.6378980Z → Update CoverPhoto
+2022-09-02T11:48:51.6534800Z   PUT https://testapp-appservice.azurewebsites.net/api/CoverPhotos/1 [200 OK, 430B, 9ms]
+2022-09-02T11:48:51.6596001Z   ✓  check for empty response body for put
+2022-09-02T11:48:51.6665274Z 
+2022-09-02T11:48:51.6666920Z → Update User
+2022-09-02T11:48:51.6829143Z   PUT https://testapp-appservice.azurewebsites.net/api/Users/1 [200 OK, 430B, 11ms]
+2022-09-02T11:48:51.6922426Z   ✓  check for empty response body for put
+2022-09-02T11:48:51.6984682Z 
+2022-09-02T11:48:51.6985820Z → Delete Activity
+2022-09-02T11:48:51.7129710Z   DELETE https://testapp-appservice.azurewebsites.net/api/Activities/1 [200 OK, 211B, 9ms]
+2022-09-02T11:48:51.7266498Z   ✓  check for empty response body for delete
+2022-09-02T11:48:51.7404775Z 
+2022-09-02T11:48:51.7405709Z → Delete Author
+2022-09-02T11:48:51.7542024Z   DELETE https://testapp-appservice.azurewebsites.net/api/Authors/1 [200 OK, 211B, 9ms]
+2022-09-02T11:48:51.7592337Z   ✓  check for empty response body for delete
+2022-09-02T11:48:51.7636032Z 
+2022-09-02T11:48:51.7637201Z → Delete Book
+2022-09-02T11:48:51.7816176Z   DELETE https://testapp-appservice.azurewebsites.net/api/Books/1 [200 OK, 211B, 10ms]
+2022-09-02T11:48:51.7857475Z   ✓  check for empty response body for delete
+2022-09-02T11:48:51.7923997Z 
+2022-09-02T11:48:51.7924940Z → Delete CoverPhoto
+2022-09-02T11:48:51.8042718Z   DELETE https://testapp-appservice.azurewebsites.net/api/CoverPhotos/1 [200 OK, 211B, 7ms]
+2022-09-02T11:48:51.8081941Z   ✓  check for empty response body for delete
+2022-09-02T11:48:51.8125836Z 
+2022-09-02T11:48:51.8126814Z → Delete User
+2022-09-02T11:48:51.8235391Z   DELETE https://testapp-appservice.azurewebsites.net/api/Users/1 [200 OK, 211B, 7ms]
+2022-09-02T11:48:51.8345852Z   ✓  check for empty response body for delete
+2022-09-02T11:48:51.8560140Z 
+2022-09-02T11:48:51.8561342Z ┌─────────────────────────┬───────────────────┬──────────────────┐
+2022-09-02T11:48:51.8562102Z │                         │          executed │           failed │
+2022-09-02T11:48:51.8562830Z ├─────────────────────────┼───────────────────┼──────────────────┤
+2022-09-02T11:48:51.8563522Z │              iterations │                 1 │                0 │
+2022-09-02T11:48:51.8564250Z ├─────────────────────────┼───────────────────┼──────────────────┤
+2022-09-02T11:48:51.8565179Z │                requests │                25 │                0 │
+2022-09-02T11:48:51.8565950Z ├─────────────────────────┼───────────────────┼──────────────────┤
+2022-09-02T11:48:51.8566621Z │            test-scripts │                25 │                0 │
+2022-09-02T11:48:51.8567343Z ├─────────────────────────┼───────────────────┼──────────────────┤
+2022-09-02T11:48:51.8568193Z │      prerequest-scripts │                 0 │                0 │
+2022-09-02T11:48:51.8568923Z ├─────────────────────────┼───────────────────┼──────────────────┤
+2022-09-02T11:48:51.8569593Z │              assertions │                25 │                0 │
+2022-09-02T11:48:51.8570304Z ├─────────────────────────┴───────────────────┴──────────────────┤
+2022-09-02T11:48:51.8570975Z │ total run duration: 1363ms                                     │
+2022-09-02T11:48:51.8571701Z ├────────────────────────────────────────────────────────────────┤
+2022-09-02T11:48:51.8572909Z │ total data received: 936.18kB (approx)                         │
+2022-09-02T11:48:51.8573732Z ├────────────────────────────────────────────────────────────────┤
+2022-09-02T11:48:51.8574425Z │ average response time: 24ms [min: 7ms, max: 163ms, s.d.: 38ms] │
+2022-09-02T11:48:51.8575120Z └────────────────────────────────────────────────────────────────┘
+2022-09-02T11:48:51.8811918Z ##[section]Finishing: Run the validation tests
+2022-09-02T11:48:51.8830764Z ##[section]Starting: Show test result files
+2022-09-02T11:48:51.8836751Z ==============================================================================
+2022-09-02T11:48:51.8837043Z Task         : Bash
+2022-09-02T11:48:51.8837282Z Description  : Run a Bash script on macOS, Linux, or Windows
+2022-09-02T11:48:51.8837542Z Version      : 3.201.1
+2022-09-02T11:48:51.8837744Z Author       : Microsoft Corporation
+2022-09-02T11:48:51.8838061Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2022-09-02T11:48:51.8838428Z ==============================================================================
+2022-09-02T11:48:52.0183491Z Generating script.
+2022-09-02T11:48:52.0202564Z Script contents:
+2022-09-02T11:48:52.0204331Z ls ./Results/
+2022-09-02T11:48:52.0223849Z ========================== Starting Command Output ===========================
+2022-09-02T11:48:52.0254879Z [command]/bin/bash /home/vmadmin/myagent/_work/_temp/b9ffeb66-3831-44f4-936c-b190f16abfc6.sh
+2022-09-02T11:48:52.0330691Z RegressionTests.xml
+2022-09-02T11:48:52.0331436Z ValidationTests.xml
+2022-09-02T11:48:52.0451107Z ##[section]Finishing: Show test result files
+2022-09-02T11:48:52.0475040Z ##[section]Starting: Publish the Postman results
+2022-09-02T11:48:52.0482763Z ==============================================================================
+2022-09-02T11:48:52.0483135Z Task         : Publish Test Results
+2022-09-02T11:48:52.0483467Z Description  : Publish test results to Azure Pipelines
+2022-09-02T11:48:52.0483761Z Version      : 2.203.0
+2022-09-02T11:48:52.0484029Z Author       : Microsoft Corporation
+2022-09-02T11:48:52.0484431Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/test/publish-test-results
+2022-09-02T11:48:52.0484982Z ==============================================================================
+2022-09-02T11:49:00.0284868Z Result Attachments will be stored in LogStore
+2022-09-02T11:49:00.1560739Z Run Attachments will be stored in LogStore
+2022-09-02T11:49:01.4722311Z Publishing test results to test run '16'.
+2022-09-02T11:49:01.4775020Z TestResults To Publish 50, Test run id:16
+2022-09-02T11:49:01.4812060Z Test results publishing 50, remaining: 0. Test run id: 16
+2022-09-02T11:49:02.1106655Z ##[section]Async Command Start: Publish test results
+2022-09-02T11:49:03.3778636Z Published Test Run : https://dev.azure.com/odluser205976/udacity-azure-devops/_TestManagement/Runs?runId=16&_a=runCharts
+2022-09-02T11:49:03.8974317Z ##[section]Async Command End: Publish test results
+2022-09-02T11:49:03.8977166Z ##[section]Finishing: Publish the Postman results
+2022-09-02T11:49:03.9018436Z ##[section]Starting: Checkout maxpaschke/udacity-devops-project-3@main to s
+2022-09-02T11:49:03.9023854Z ==============================================================================
+2022-09-02T11:49:03.9024229Z Task         : Get sources
+2022-09-02T11:49:03.9024628Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2022-09-02T11:49:03.9024997Z Version      : 1.0.0
+2022-09-02T11:49:03.9025247Z Author       : Microsoft
+2022-09-02T11:49:03.9025609Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2022-09-02T11:49:03.9026074Z ==============================================================================
+2022-09-02T11:49:04.2070959Z Cleaning any cached credential from repository: maxpaschke/udacity-devops-project-3 (GitHub)
+2022-09-02T11:49:04.2177567Z ##[section]Finishing: Checkout maxpaschke/udacity-devops-project-3@main to s
+2022-09-02T11:49:04.2225865Z ##[section]Starting: Finalize Job
+2022-09-02T11:49:04.2255683Z Cleaning up task key
+2022-09-02T11:49:04.2256962Z Start cleaning up orphan processes.
+2022-09-02T11:49:04.2363717Z ##[section]Finishing: Finalize Job
+2022-09-02T11:49:04.2402782Z ##[section]Finishing: Integration Tests

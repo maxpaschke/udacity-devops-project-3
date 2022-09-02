@@ -1,0 +1,281 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1662119384910,386,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,371,0,320
+1662119384632,666,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,651,0,599
+1662119385308,10,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119385310,10,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119385320,19,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,19,0,0
+1662119385319,22,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,22,0,0
+1662119385340,6,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,6,0,0
+1662119385342,5,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119385348,24,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385346,28,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385372,7,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385375,6,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385379,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,5,0,0
+1662119385381,6,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,6,0,0
+1662119385384,8,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,8,0,0
+1662119385387,9,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,9,0,0
+1662119385392,20,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385396,15,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,12,0,0
+1662119385414,9,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119385415,11,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,11,0,0
+1662119385423,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,5,0,0
+1662119385428,5,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,5,0,0
+1662119385426,9,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,9,0,0
+1662119385433,8,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385435,9,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,9,0,0
+1662119385441,4,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385446,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,5,0,0
+1662119385452,4,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,4,0,0
+1662119385444,21,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,19,0,0
+1662119385456,12,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119385465,6,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385468,12,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,12,0,0
+1662119385480,6,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,6,0,0
+1662119385479,8,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,8,0,0
+1662119385487,6,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,6,0,0
+1662119385486,8,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,8,0,0
+1662119385493,10,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385495,12,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119385503,10,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119385507,8,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385513,7,GET Author,200,OK,Endurance Testing 1-2,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,7,0,0
+1662119385515,6,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,6,0,0
+1662119385520,5,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,5,0,0
+1662119385521,5,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119385525,11,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119385527,12,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385536,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385539,4,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385540,5,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,5,0,0
+1662119385544,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,5,0,0
+1662119385545,5,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,5,0,0
+1662119385549,7,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,7,0,0
+1662119385550,12,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119385557,7,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385562,6,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385565,6,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385569,5,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,5,0,0
+1662119385571,4,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,4,0,0
+1662119385574,4,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,4,0,0
+1662119385576,3,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,3,0,0
+1662119385578,9,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385580,8,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385588,6,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385587,9,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119385594,4,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,4,0,0
+1662119385596,6,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,6,0,0
+1662119385599,4,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,4,0,0
+1662119385602,4,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,4,0,0
+1662119385603,10,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385607,9,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385616,7,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385619,5,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385624,8,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,8,0,0
+1662119385623,10,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,10,0,0
+1662119385632,5,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,5,0,0
+1662119385633,5,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,5,0,0
+1662119385639,10,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119385637,14,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,13,0,0
+1662119385649,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385652,4,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385653,5,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119385656,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,5,0,0
+1662119385659,4,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,4,0,0
+1662119385661,4,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,4,0,0
+1662119385663,8,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385671,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385666,10,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385675,6,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,6,0,0
+1662119385676,5,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119385681,5,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,5,0,0
+1662119385682,4,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,4,0,0
+1662119385687,4,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,4,0,0
+1662119385686,11,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119385691,8,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385699,4,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385697,7,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385704,5,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,5,0,0
+1662119385703,7,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,7,0,0
+1662119385709,4,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,4,0,0
+1662119385710,4,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,4,0,0
+1662119385715,10,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385713,15,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,13,0,0
+1662119385725,6,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385728,7,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385731,7,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,7,0,0
+1662119385736,4,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,4,0,0
+1662119385738,5,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,5,0,0
+1662119385743,8,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385740,12,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,12,0,0
+1662119385752,7,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385754,5,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119385760,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385760,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,5,0,0
+1662119385764,6,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,6,0,0
+1662119385765,6,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,6,0,0
+1662119385771,8,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,8,0,0
+1662119385772,9,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119385781,5,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119385780,7,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385786,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,5,0,0
+1662119385788,5,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119385792,4,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,4,0,0
+1662119385793,8,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,7,0,0
+1662119385797,7,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385801,7,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,7,0,0
+1662119385804,7,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385811,6,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,6,0,0
+1662119385808,10,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385817,5,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,5,0,0
+1662119385818,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385822,12,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119385823,11,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,11,0,0
+1662119385834,7,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,7,0,0
+1662119385834,7,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385841,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,5,0,0
+1662119385841,7,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385846,3,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,3,0,0
+1662119385848,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385850,6,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385852,7,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,7,0,0
+1662119385856,4,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385859,4,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,4,0,0
+1662119385863,9,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385872,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385860,17,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,17,0,0
+1662119385877,4,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,4,0,0
+1662119385876,6,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,6,0,0
+1662119385882,4,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,4,0,0
+1662119385881,8,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385886,9,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385890,6,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385896,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,5,0,0
+1662119385895,7,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385901,4,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,4,0,0
+1662119385902,7,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,7,0,0
+1662119385905,9,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385910,6,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,6,0,0
+1662119385915,4,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385919,10,GET Author,200,OK,Endurance Testing 1-1,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,10,0,0
+1662119385916,15,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385930,4,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,4,0,0
+1662119385931,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385935,8,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,8,0,0
+1662119385934,10,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119385943,5,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119385944,5,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119385949,5,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119385950,9,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,9,0,0
+1662119385954,5,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119385960,4,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,4,0,0
+1662119385959,8,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,8,0,0
+1662119385964,5,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,5,0,0
+1662119385969,8,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119385967,16,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,15,0,0
+1662119385977,6,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119385983,4,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119385984,6,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,6,0,0
+1662119385990,4,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,4,0,0
+1662119385987,10,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,10,0,0
+1662119385994,9,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119385997,8,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,8,0,0
+1662119386004,6,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119386006,7,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119386010,5,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,5,0,0
+1662119386013,3,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,3,0,0
+1662119386015,6,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,6,0,0
+1662119386017,8,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,8,0,0
+1662119386021,8,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119386029,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119386025,9,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,9,0,0
+1662119386033,8,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,8,0,0
+1662119386035,11,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,11,0,0
+1662119386041,6,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,6,0,0
+1662119386047,6,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119386047,7,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119386054,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119386058,4,GET Author,200,OK,Endurance Testing 1-2,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,4,0,0
+1662119386054,10,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,10,0,0
+1662119386064,4,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,4,0,0
+1662119386063,10,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,10,0,0
+1662119386068,8,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119386076,6,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119386073,13,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,12,0,0
+1662119386082,6,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,6,0,0
+1662119386086,6,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119386088,5,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119386092,4,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,4,0,0
+1662119386096,6,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,6,0,0
+1662119386093,12,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,11,0,0
+1662119386106,3,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,3,0,0
+1662119386102,8,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119386109,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,5,0,0
+1662119386111,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119386114,4,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,4,0,0
+1662119386115,6,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,6,0,0
+1662119386118,8,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119386121,9,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,9,0,0
+1662119386127,3,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,3,0,0
+1662119386131,4,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,4,0,0
+1662119386130,8,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119386135,6,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,6,0,0
+1662119386139,3,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,3,0,0
+1662119386143,4,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,4,0,0
+1662119386141,9,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119386147,7,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,7,0,0
+1662119386150,4,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119386155,4,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,4,0,0
+1662119386154,6,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119386160,5,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119386159,9,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,9,0,0
+1662119386165,5,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,5,0,0
+1662119386170,4,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,4,0,0
+1662119386168,9,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119386177,7,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119386174,9,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119386185,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119386184,6,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,6,0,0
+1662119386189,6,GET Author,200,OK,Endurance Testing 1-2,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,6,0,0
+1662119386190,8,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,8,0,0
+1662119386195,4,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,274,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,4,0,0
+1662119386198,9,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119386200,9,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,63507,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119386209,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119386209,5,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119386214,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,5,0,0
+1662119386213,10,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,10,0,0
+1662119386220,4,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=1,4,0,0
+1662119386225,4,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=2,4,0,0
+1662119386224,8,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119386229,11,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,10,0,0
+1662119386233,8,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119386240,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119386241,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,5,0,0
+1662119386247,5,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=3,5,0,0
+1662119386245,8,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,8,0,0
+1662119386253,5,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=4,5,0,0
+1662119386252,9,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119386258,7,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0
+1662119386261,7,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,7,0,0
+1662119386265,5,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119386268,5,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,5,0,0
+1662119386271,4,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,4,0,0
+1662119386273,5,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=5,5,0,0
+1662119386275,4,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=6,4,0,0
+1662119386278,10,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,8,0,0
+1662119386279,10,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,47615,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119386290,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119386288,9,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,9,0,0
+1662119386294,5,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,5,0,0
+1662119386300,6,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=8,6,0,0
+1662119386297,11,GET Author,200,OK,Endurance Testing 1-1,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,11,0,0
+1662119386307,6,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119386308,8,DELETE Author,200,OK,Endurance Testing 1-1,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=7,8,0,0
+1662119386313,4,POST Authors,200,OK,Endurance Testing 1-2,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119386317,6,GET All Authors,200,OK,Endurance Testing 1-1,text,true,,31723,176,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,5,0,0
+1662119386317,7,GET Author,200,OK,Endurance Testing 1-2,text,true,,330,182,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,7,0,0
+1662119386323,4,POST Authors,200,OK,Endurance Testing 1-1,text,true,,262,260,2,2,https://testapp-appservice.azurewebsites.net/api/Authors,4,0,0
+1662119386324,9,DELETE Author,200,OK,Endurance Testing 1-2,,true,,211,272,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=9,9,0,0
+1662119386327,7,GET Author,200,OK,Endurance Testing 1-1,text,true,,333,183,2,2,https://testapp-appservice.azurewebsites.net/api/Authors/?id=10,7,0,0
+1662119386333,7,GET All Authors,200,OK,Endurance Testing 1-2,text,true,,31723,176,1,1,https://testapp-appservice.azurewebsites.net/api/Authors,6,0,0

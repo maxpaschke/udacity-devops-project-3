@@ -1,0 +1,69 @@
+2022-09-02T11:47:31.8135272Z ##[section]Starting: FakeRestAPI
+2022-09-02T11:47:34.3028129Z ##[section]Starting: Initialize job
+2022-09-02T11:47:34.3031129Z Agent name: 'RunnerVM'
+2022-09-02T11:47:34.3032461Z Agent machine name: 'RunnerVM'
+2022-09-02T11:47:34.3033033Z Current agent version: '2.204.0'
+2022-09-02T11:47:34.3071708Z Agent running as: 'vmadmin'
+2022-09-02T11:47:34.3127584Z Prepare build directory.
+2022-09-02T11:47:34.3812565Z Set build variables.
+2022-09-02T11:47:34.3840843Z Download all required tasks.
+2022-09-02T11:47:34.3986691Z Checking job knob settings.
+2022-09-02T11:47:34.3997724Z Finished checking job knob settings.
+2022-09-02T11:47:34.4296634Z Start tracking orphan processes.
+2022-09-02T11:47:34.4442251Z ##[section]Finishing: Initialize job
+2022-09-02T11:47:34.4698125Z ##[section]Starting: Download Artifact
+2022-09-02T11:47:34.4932545Z ==============================================================================
+2022-09-02T11:47:34.4933103Z Task         : Download pipeline artifact
+2022-09-02T11:47:34.4933541Z Description  : Download a named artifact from a pipeline to a local path
+2022-09-02T11:47:34.4933854Z Version      : 1.198.0
+2022-09-02T11:47:34.4934191Z Author       : Microsoft Corporation
+2022-09-02T11:47:34.4934705Z Help         : Download a named artifact from a pipeline to a local path
+2022-09-02T11:47:34.4935041Z ==============================================================================
+2022-09-02T11:47:35.5734906Z Download from the specified build: #25
+2022-09-02T11:47:35.5735763Z Download artifact to: /home/vmadmin/myagent/_work/1/
+2022-09-02T11:47:35.5736336Z Using default max parallelism.
+2022-09-02T11:47:35.5736857Z Max dedup parallelism: 192
+2022-09-02T11:47:40.5960178Z ApplicationInsightsTelemetrySender will correlate events with X-TFS-Session 687649b5-4584-42ce-a6b2-d361440f0b0f
+2022-09-02T11:47:40.7660651Z Downloading 1 pipeline artifacts...
+2022-09-02T11:47:40.7842328Z DedupManifestArtifactClient will correlate http requests with X-TFS-Session 687649b5-4584-42ce-a6b2-d361440f0b0f
+2022-09-02T11:47:40.7845570Z Start downloading artifact - drop-fakerestapi
+2022-09-02T11:47:40.7863703Z Minimatch patterns: [**]
+2022-09-02T11:47:42.5452521Z Filtered 1 files from the Minimatch filters supplied.
+2022-09-02T11:47:42.5503010Z Downloaded 0.0 MB out of 9.4 MB (0%).
+2022-09-02T11:47:45.5373344Z Downloaded 9.4 MB out of 9.4 MB (100%).
+2022-09-02T11:47:45.5411983Z 
+2022-09-02T11:47:45.5415227Z Download statistics:
+2022-09-02T11:47:45.5417309Z Total Content: 9.4 MB
+2022-09-02T11:47:45.5420799Z Physical Content Downloaded: 9.4 MB
+2022-09-02T11:47:45.5422059Z Compression Saved: 0.0 MB
+2022-09-02T11:47:45.5423278Z Local Caching Saved: 0.0 MB
+2022-09-02T11:47:45.5424491Z Chunks Downloaded: 124
+2022-09-02T11:47:45.5425729Z Nodes Downloaded: 0
+2022-09-02T11:47:45.5426878Z 
+2022-09-02T11:47:45.5600939Z Download completed.
+2022-09-02T11:47:47.2722547Z ApplicationInsightsTelemetrySender correlated 2 events with X-TFS-Session 687649b5-4584-42ce-a6b2-d361440f0b0f
+2022-09-02T11:47:47.2723277Z Downloading artifact finished.
+2022-09-02T11:47:47.2759490Z ##[section]Finishing: Download Artifact
+2022-09-02T11:47:47.2789224Z ##[section]Starting: Deploy Azure Web App
+2022-09-02T11:47:47.2800524Z ==============================================================================
+2022-09-02T11:47:47.2800892Z Task         : Azure Web App
+2022-09-02T11:47:47.2801195Z Description  : Deploy an Azure Web App for Linux or Windows
+2022-09-02T11:47:47.2801497Z Version      : 1.208.0
+2022-09-02T11:47:47.2801756Z Author       : Microsoft Corporation
+2022-09-02T11:47:47.2802083Z Help         : https://aka.ms/azurewebapptroubleshooting
+2022-09-02T11:47:47.2802460Z ==============================================================================
+2022-09-02T11:47:47.6591748Z Got service connection details for Azure App Service:'TestApp-AppService'
+2022-09-02T11:47:50.6548547Z Trying to update App Service Application settings. Data: {"WEBSITE_RUN_FROM_PACKAGE":"1"}
+2022-09-02T11:47:50.6549502Z Deleting App Service Application settings. Data: ["WEBSITE_RUN_FROM_ZIP"]
+2022-09-02T11:48:00.6558810Z Updated App Service Application settings and Kudu Application settings.
+2022-09-02T11:48:01.1407513Z Package deployment using ZIP Deploy initiated.
+2022-09-02T11:48:11.1280106Z Deploy logs can be viewed at https://testapp-appservice.scm.azurewebsites.net/api/deployments/6a255b86eb9f444cb12ac3468c94eec6/log
+2022-09-02T11:48:11.1283704Z Successfully deployed web package to App Service.
+2022-09-02T11:48:11.1286525Z NOTE: Run From Package makes wwwroot read-only, so you will receive an error when writing files to this directory.
+2022-09-02T11:48:11.8781619Z App Service Application URL: http://testapp-appservice.azurewebsites.net
+2022-09-02T11:48:11.8913357Z ##[section]Finishing: Deploy Azure Web App
+2022-09-02T11:48:11.8985695Z ##[section]Starting: Finalize Job
+2022-09-02T11:48:11.9019481Z Cleaning up task key
+2022-09-02T11:48:11.9021175Z Start cleaning up orphan processes.
+2022-09-02T11:48:11.9148239Z ##[section]Finishing: Finalize Job
+2022-09-02T11:48:11.9193338Z ##[section]Finishing: FakeRestAPI
