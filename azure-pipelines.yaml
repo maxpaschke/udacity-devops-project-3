@@ -5,203 +5,203 @@ variables:
 
 stages:
   #########################################################################################
-  - stage: Provision
-    jobs:
-      - job: Provision
-        displayName: Run Terraform
-        pool:
-          name: Default
-        steps:
-          - task: InstallSSHKey@0
-            inputs:
-              knownHostsEntry: "KNOWN_HOSTS_STRING"
-              sshKeySecureFile: "id_rsa"
-          - task: DownloadSecureFile@1
-            displayName: Download the modified vars file
-            name: terraformvars
-            inputs:
-              secureFile: "terraform.tfvars"
-          - task: DownloadSecureFile@1
-            displayName: Download the modified backend file
-            name: terraformbackend
-            inputs:
-              secureFile: "terraform_backend.conf"
-          - task: DownloadSecureFile@1
-            displayName: Download the modified backend file
-            name: rsakey
-            inputs:
-              secureFile: "id_rsa.pub"
-          - task: CopyFiles@2
-            displayName: Copy the secure files
-            inputs:
-              SourceFolder: "$(Agent.TempDirectory)"
-              Contents: "**"
-              TargetFolder: "terraform"
-          - task: Bash@3
-            displayName: Install Terraform
-            inputs:
-              filePath: "terraform/install_terraform.sh"
-              workingDirectory: "terraform"
-          - task: Bash@3
-            displayName: Init Terraform
-            inputs:
-              targetType: "inline"
-              script: "terraform init --backend-config=terraform_backend.conf --reconfigure"
-              workingDirectory: "terraform"
-          # - task: Bash@3
-          #   displayName: Import RG
-          #   inputs:
-          #     filePath: 'terraform/import_resource_group.sh'
-          #     workingDirectory: 'terraform'
-          - task: Bash@3
-            displayName: Apply Terraform
-            inputs:
-              targetType: "inline"
-              script: "terraform apply -auto-approve"
-              workingDirectory: "terraform"
+  # - stage: Provision
+  #   jobs:
+  #     - job: Provision
+  #       displayName: Run Terraform
+  #       pool:
+  #         name: Default
+  #       steps:
+  #         - task: InstallSSHKey@0
+  #           inputs:
+  #             knownHostsEntry: "KNOWN_HOSTS_STRING"
+  #             sshKeySecureFile: "id_rsa"
+  #         - task: DownloadSecureFile@1
+  #           displayName: Download the modified vars file
+  #           name: terraformvars
+  #           inputs:
+  #             secureFile: "terraform.tfvars"
+  #         - task: DownloadSecureFile@1
+  #           displayName: Download the modified backend file
+  #           name: terraformbackend
+  #           inputs:
+  #             secureFile: "terraform_backend.conf"
+  #         - task: DownloadSecureFile@1
+  #           displayName: Download the modified backend file
+  #           name: rsakey
+  #           inputs:
+  #             secureFile: "id_rsa.pub"
+  #         - task: CopyFiles@2
+  #           displayName: Copy the secure files
+  #           inputs:
+  #             SourceFolder: "$(Agent.TempDirectory)"
+  #             Contents: "**"
+  #             TargetFolder: "terraform"
+  #         - task: Bash@3
+  #           displayName: Install Terraform
+  #           inputs:
+  #             filePath: "terraform/install_terraform.sh"
+  #             workingDirectory: "terraform"
+  #         - task: Bash@3
+  #           displayName: Init Terraform
+  #           inputs:
+  #             targetType: "inline"
+  #             script: "terraform init --backend-config=terraform_backend.conf --reconfigure"
+  #             workingDirectory: "terraform"
+  #         # - task: Bash@3
+  #         #   displayName: Import RG
+  #         #   inputs:
+  #         #     filePath: 'terraform/import_resource_group.sh'
+  #         #     workingDirectory: 'terraform'
+  #         - task: Bash@3
+  #           displayName: Apply Terraform
+  #           inputs:
+  #             targetType: "inline"
+  #             script: "terraform apply -auto-approve"
+  #             workingDirectory: "terraform"
 
-  #########################################################################################
-  - stage: BuildFakeRestApi
-    jobs:
-      - job: Build
-        pool:
-          name: Default
-        steps:
-          - task: Bash@3
-            displayName: Install zip
-            inputs:
-              targetType: "inline"
-              script: |
-                sudo apt-get update
-                sudo apt-get install zip unzip
-          - task: ArchiveFiles@2
-            displayName: "Archive FakeRestAPI"
-            inputs:
-              rootFolderOrFile: "automatedtesting/jmeter/fakerestapi"
-              includeRootFolder: false
-              archiveType: "zip"
-              archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip"
-          - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
-            displayName: "Upload Package"
-            artifact: drop-fakerestapi
+  # #########################################################################################
+  # - stage: BuildFakeRestApi
+  #   jobs:
+  #     - job: Build
+  #       pool:
+  #         name: Default
+  #       steps:
+  #         - task: Bash@3
+  #           displayName: Install zip
+  #           inputs:
+  #             targetType: "inline"
+  #             script: |
+  #               sudo apt-get update
+  #               sudo apt-get install zip unzip
+  #         - task: ArchiveFiles@2
+  #           displayName: "Archive FakeRestAPI"
+  #           inputs:
+  #             rootFolderOrFile: "automatedtesting/jmeter/fakerestapi"
+  #             includeRootFolder: false
+  #             archiveType: "zip"
+  #             archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip"
+  #         - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
+  #           displayName: "Upload Package"
+  #           artifact: drop-fakerestapi
 
-  #########################################################################################
-  - stage: DeployFakeRestApi
-    jobs:
-      - deployment: FakeRestAPI
-        pool:
-          name: Default
-        environment: "TEST"
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-                - task: AzureWebApp@1
-                  displayName: "Deploy Azure Web App"
-                  inputs:
-                    azureSubscription: "AzureUdacity"
-                    appName: $(appName)
-                    appType: webApp
-                    package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
+  # #########################################################################################
+  # - stage: DeployFakeRestApi
+  #   jobs:
+  #     - deployment: FakeRestAPI
+  #       pool:
+  #         name: Default
+  #       environment: "TEST"
+  #       strategy:
+  #         runOnce:
+  #           deploy:
+  #             steps:
+  #               - task: AzureWebApp@1
+  #                 displayName: "Deploy Azure Web App"
+  #                 inputs:
+  #                   azureSubscription: "AzureUdacity"
+  #                   appName: $(appName)
+  #                   appType: webApp
+  #                   package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
 
-  ##########################################################################################
-  - stage: Tests
-    jobs:
-      - job: Integrationtests
-        pool:
-          name: Default
-        displayName: "Integration Tests"
-        steps:
-          - task: NodeTool@0
-            displayName: "Install node"
-            inputs:
-              versionSpec: "16.x"
-          - task: Bash@3
-            displayName: "Install newman"
-            inputs:
-              targetType: "inline"
-              script: |
-                npm install -g newman
-                newman --version
-                mkdir -p logs/postman
-                mkdir Results
+  # ##########################################################################################
+  # - stage: Tests
+  #   jobs:
+  #     - job: Integrationtests
+  #       pool:
+  #         name: Default
+  #       displayName: "Integration Tests"
+  #       steps:
+  #         - task: NodeTool@0
+  #           displayName: "Install node"
+  #           inputs:
+  #             versionSpec: "16.x"
+  #         - task: Bash@3
+  #           displayName: "Install newman"
+  #           inputs:
+  #             targetType: "inline"
+  #             script: |
+  #               npm install -g newman
+  #               newman --version
+  #               mkdir -p logs/postman
+  #               mkdir Results
 
-          - task: Bash@3
-            displayName: "Run the regression tests"
-            inputs:
-              workingDirectory: "$(System.DefaultWorkingDirectory)"
-              filePath: "automatedtesting/postman/run_regression_tests.sh"
-          - task: Bash@3
-            displayName: "Run the validation tests"
-            inputs:
-              workingDirectory: "$(System.DefaultWorkingDirectory)"
-              filePath: "automatedtesting/postman/run_validation_tests.sh"
-          - task: Bash@3
-            displayName: "Show test result files"
-            inputs:
-              targetType: "inline"
-              script: |
-                ls ./Results/
-          - task: PublishTestResults@2
-            displayName: Publish the Postman results
-            condition: always()
-            inputs:
-              testResultsFormat: "JUnit"
-              testResultsFiles: "Results/*.xml"
-              mergeTestResults: true
+  #         - task: Bash@3
+  #           displayName: "Run the regression tests"
+  #           inputs:
+  #             workingDirectory: "$(System.DefaultWorkingDirectory)"
+  #             filePath: "automatedtesting/postman/run_regression_tests.sh"
+  #         - task: Bash@3
+  #           displayName: "Run the validation tests"
+  #           inputs:
+  #             workingDirectory: "$(System.DefaultWorkingDirectory)"
+  #             filePath: "automatedtesting/postman/run_validation_tests.sh"
+  #         - task: Bash@3
+  #           displayName: "Show test result files"
+  #           inputs:
+  #             targetType: "inline"
+  #             script: |
+  #               ls ./Results/
+  #         - task: PublishTestResults@2
+  #           displayName: Publish the Postman results
+  #           condition: always()
+  #           inputs:
+  #             testResultsFormat: "JUnit"
+  #             testResultsFiles: "Results/*.xml"
+  #             mergeTestResults: true
 
-  ##########################################################################################
-  - stage: LoadTesting
-    jobs:
-      - job: jmeterTests
-        pool:
-          name: Default
-        displayName: "Run Jmeter Tests"
-        steps:
-          - task: Bash@3
-            displayName: "Install jmeter"
-            inputs:
-              targetType: "inline"
-              script: |
-                sudo apt-get install default-jre -y
-                JMETERFILE=apache-jmeter-5.5.tgz
-                wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.5.tgz -O $JMETERFILE
-                tar -xzvf $JMETERFILE
-                ./apache-jmeter-5.5/bin/jmeter --version
-          - task: Bash@3
-            displayName: "Create folders"
-            inputs:
-              targetType: "inline"
-              script: |
-                mkdir -p logs/jmeter
-                mkdir Results
-          - task: Bash@3
-            displayName: "Run Endurance Test"
-            inputs:
-              targetType: "inline"
-              script: |
-                dir automatedtesting/jmeter
-                apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Endurance_Test.jmx -l logs/jmeter/Endurance_Result.csv \
-                               -e -f -o logs/jmeter/Endurance-html-report -j logs/jmeter/Endurance-test.log
-          - task: Bash@3
-            displayName: "Run Stress Test"
-            inputs:
-              targetType: "inline"
-              script: |
-                dir automatedtesting/jmeter
-                apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Stress_Test.jmx -l logs/jmeter/Stress_Result.csv \
-                               -e -f -o logs/jmeter/Stress-html-report -j logs/jmeter/Stress-test.log
-          - task: ArchiveFiles@2
-            inputs:
-              rootFolderOrFile: "logs/jmeter"
-              includeRootFolder: true
-              archiveType: "zip"
-              archiveFile: "logs/jmeter/jmeter-test-repot-$(Build.BuildId).zip"
-              replaceExistingArchive: true
-          - task: PublishPipelineArtifact@1
-            inputs:
-              targetPath: "logs/jmeter/jmeter-test-repot-$(Build.BuildId).zip"
-              artifact: "Jmeter-Results"
+  # ##########################################################################################
+  # - stage: LoadTesting
+  #   jobs:
+  #     - job: jmeterTests
+  #       pool:
+  #         name: Default
+  #       displayName: "Run Jmeter Tests"
+  #       steps:
+  #         - task: Bash@3
+  #           displayName: "Install jmeter"
+  #           inputs:
+  #             targetType: "inline"
+  #             script: |
+  #               sudo apt-get install default-jre -y
+  #               JMETERFILE=apache-jmeter-5.5.tgz
+  #               wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.5.tgz -O $JMETERFILE
+  #               tar -xzvf $JMETERFILE
+  #               ./apache-jmeter-5.5/bin/jmeter --version
+  #         - task: Bash@3
+  #           displayName: "Create folders"
+  #           inputs:
+  #             targetType: "inline"
+  #             script: |
+  #               mkdir -p logs/jmeter
+  #               mkdir Results
+  #         - task: Bash@3
+  #           displayName: "Run Endurance Test"
+  #           inputs:
+  #             targetType: "inline"
+  #             script: |
+  #               dir automatedtesting/jmeter
+  #               apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Endurance_Test.jmx -l logs/jmeter/Endurance_Result.csv \
+  #                              -e -f -o logs/jmeter/Endurance-html-report -j logs/jmeter/Endurance-test.log
+  #         - task: Bash@3
+  #           displayName: "Run Stress Test"
+  #           inputs:
+  #             targetType: "inline"
+  #             script: |
+  #               dir automatedtesting/jmeter
+  #               apache-jmeter-5.5/bin/jmeter -n -t automatedtesting/jmeter/Stress_Test.jmx -l logs/jmeter/Stress_Result.csv \
+  #                              -e -f -o logs/jmeter/Stress-html-report -j logs/jmeter/Stress-test.log
+  #         - task: ArchiveFiles@2
+  #           inputs:
+  #             rootFolderOrFile: "logs/jmeter"
+  #             includeRootFolder: true
+  #             archiveType: "zip"
+  #             archiveFile: "logs/jmeter/jmeter-test-repot-$(Build.BuildId).zip"
+  #             replaceExistingArchive: true
+  #         - task: PublishPipelineArtifact@1
+  #           inputs:
+  #             targetPath: "logs/jmeter/jmeter-test-repot-$(Build.BuildId).zip"
+  #             artifact: "Jmeter-Results"
 
   ###########################################################################################
   - stage: UI_Testing
@@ -279,7 +279,7 @@ stages:
                       python3 selenium_test.py > selenium-test-logs.log
                       cat selenium-test-logs.log
                       sudo cp selenium-test-logs.log $(System.DefaultWorkingDirectory)/selenium-test-logs.log
-                      mkdir /var/log/selenium/
+                      sudo mkdir -p /var/log/selenium/
                       sudo cp selenium-test-logs.log /var/log/selenium/selenium-test-logs.log
 
                 - task: PublishPipelineArtifact@1
