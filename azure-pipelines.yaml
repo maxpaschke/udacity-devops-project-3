@@ -15,7 +15,7 @@ stages:
           - task: InstallSSHKey@0
             inputs:
               knownHostsEntry: "KNOWN_HOSTS_STRING"
-              sshKeySecureFile: "id_rsa.pub"
+              sshKeySecureFile: "id_rsa"
           - task: DownloadSecureFile@1
             displayName: Download the modified vars file
             name: terraformvars
