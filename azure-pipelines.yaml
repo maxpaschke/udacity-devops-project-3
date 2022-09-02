@@ -280,7 +280,8 @@ stages:
                       cat selenium-test-logs.log
                       sudo cp selenium-test-logs.log $(System.DefaultWorkingDirectory)/selenium-test-logs.log
                       sudo mkdir -p /var/log/selenium/
-                      sudo cp selenium-test-logs.log /var/log/selenium/selenium-test-logs.log
+                      sudo chmod 664 /var/log/selenium
+                      sudo cp selenium-test-logs.log /var/log/selenium/selenium-test-logs-$(Build.BuildId).log
 
                 - task: PublishPipelineArtifact@1
                   inputs:
