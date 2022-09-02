@@ -113,3 +113,11 @@ The following steps have to be done in order to run this project:
 * Connect the logworkspace to the vm
   * Select the workspace from the portal
   * Select "Connect VM" --> Connect the VM to the workspace
+  * Install log analytics on the VM (See https://docs.microsoft.com/en-us/azure/azure-monitor/agents/agent-linux?tabs=wrapper-script)
+  * Run the following and insert your workspace id and primary key:
+  * The id is the azure id, the workspace primary key can be found under "Agents management"
+  * ``` bash
+    wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w <YOUR WORKSPACE ID> -s <YOUR WORKSPACE PRIMARY KEY>
+    ```
+  * Get the custom logs via https://docs.microsoft.com/en-us/azure/azure-monitor/agents/data-sources-custom-logs
+  * 

@@ -68,6 +68,11 @@ if ($CREATE_STORAGE) {
 # Create the runner vm
 # az vm create --resource-group $RESOURCE_GROUP_NAME --name "RunnerVM" --image "Canonical:UbuntuServer:18.04-LTS:latest" --admin-username "vmadmin" --ssh-key-values terraform/id_rsa.pub
 
+
+# Create a log analytics workspace
+az monitor log-analytics workspace create --resource-group $RESOURCE_GROUP_NAME --workspace-name myLogWorkspace
+
+
 # get the public ip
 $publicIp = Get-AzPublicIpAddress -Name "RunnerVMPublicIp"
 
