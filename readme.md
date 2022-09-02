@@ -121,3 +121,8 @@ The following steps have to be done in order to run this project:
     ```
   * Get the custom logs via https://docs.microsoft.com/en-us/azure/azure-monitor/agents/data-sources-custom-logs
   * Add a log with `/var/log/selenium/*.log` as logfolder via `Custom logs`
+
+
+
+# Results
+The results of the tests and builds can be found in the `images` folder.
