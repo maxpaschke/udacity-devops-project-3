@@ -1,98 +1,21 @@
 {
 	"info": {
-		"_postman_id": "79012281-0d8e-44ac-aed5-e9b420f39b09",
-		"name": "Validation Test",
+		"_postman_id": "7e9d0a6d-60bd-414f-9210-6cdf98edf691",
+		"name": "Validation Testing Suite",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Create Employee",
+			"name": "Get All Activities",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"jsonData = (pm.response.json())",
-							"",
-							"pm.test(\"Successful response\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"success\");",
-							"});",
-							"",
-							"pm.test(\"Data should be equal to the input\", function () {",
-							"    pm.expect(jsonData.data.name).to.equal(pm.environment.get(\"name\"));",
-							"    pm.expect(jsonData.data.salary).to.equal(pm.environment.get(\"salary\"));",
-							"    pm.expect(jsonData.data.age).to.equal(pm.environment.get(\"age\"));",
-							"});",
-							"",
-							"pm.environment.set(\"id\", jsonData.data.id);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"{{name}}\",\n    \"salary\": \"{{salary}}\",\n    \"age\": \"{{age}}\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://dummy.restapiexample.com/api/v1/create",
-					"protocol": "http",
-					"host": [
-						"dummy",
-						"restapiexample",
-						"com"
-					],
-					"path": [
-						"api",
-						"v1",
-						"create"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Employees",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"jsonData = (pm.response.json())",
-							"",
-							"pm.test(\"Successful response\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"success\");",
-							"});",
-							"",
-							"pm.test(\"Successful response message\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"Successfully! All records has been fetched.\");",
-							"});",
-							"",
-							"pm.test(\"More than zero entries in data\", function () {",
-							"    pm.expect(jsonData.data.length).to.be.greaterThan(0);",
-							"});",
-							"",
-							"pm.test(\"Test data type of the response\", () => {",
-							"  pm.expect(jsonData).to.be.an(\"object\");",
-							"  pm.expect(jsonData.data).to.be.an(\"array\");",
-							"  pm.expect(jsonData.status).to.be.an(\"string\");",
-							"  pm.expect(jsonData.message).to.be.an(\"string\");",
-							"});",
-							"",
-							"pm.test(\"Test data of the first response\", () => {",
-							"  pm.expect(jsonData.data[0].id).to.equal(1);",
-							"  pm.expect(jsonData.data[0].employee_salary).to.equal(320800);",
-							"  pm.expect(jsonData.data[0].employee_age).to.equal(61);",
-							"  pm.expect(jsonData.data[0].employee_name).to.equal(\"Tiger Nixon\");",
-							"  pm.expect(jsonData.data[0].profile_image).to.equal(\"\");",
+							"var jsonData = pm.response.json();",
+							"var numberOfEntries = 30;",
+							"pm.test(\"Received \" + numberOfEntries + \" entries\", function () {",
+							"    pm.expect(jsonData.length).to.eql(numberOfEntries);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -103,17 +26,785 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://dummy.restapiexample.com/api/v1/employees",
-					"protocol": "http",
+					"raw": "{{url}}/Activities",
 					"host": [
-						"dummy",
-						"restapiexample",
-						"com"
+						"{{url}}"
 					],
 					"path": [
-						"api",
-						"v1",
-						"employees"
+						"Activities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Authors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"var numberOfEntries = 50;",
+							"pm.test(\"Received more than \" + numberOfEntries + \" entries\", function () {",
+							"    pm.expect(jsonData.length).to.be.greaterThan(numberOfEntries);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Authors",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"var numberOfEntries = 200;",
+							"pm.test(\"Received \" + numberOfEntries + \" entries\", function () {",
+							"    pm.expect(jsonData.length).to.eql(numberOfEntries);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Books",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All CoverPhotos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"var numberOfEntries = 200;",
+							"pm.test(\"Received \" + numberOfEntries + \" entries\", function () {",
+							"    pm.expect(jsonData.length).to.eql(numberOfEntries);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/CoverPhotos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"CoverPhotos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"var numberOfEntries = 10;",
+							"pm.test(\"Received \" + numberOfEntries + \" entries\", function () {",
+							"    pm.expect(jsonData.length).to.eql(numberOfEntries);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Activity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response body as expected for post\", function () {",
+							"    pm.response.to.have.body(\"null\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/Activities/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Activities",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response body as expected for post\", function () {",
+							"    pm.response.to.have.body(\"null\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Authors/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Authors",
+						"{{id}}"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "authorXyz",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response body as expected for post\", function () {",
+							"    pm.response.to.have.body(\"null\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Books/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Books",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create CoverPhoto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response body as expected for post\", function () {",
+							"    pm.response.to.have.body(\"null\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/CoverPhotos/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"CoverPhotos",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response body as expected for post\", function () {",
+							"    pm.response.to.have.body(\"null\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Users/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Users",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Activity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Response with ID 1\", function () {",
+							"    pm.expect(jsonData.ID).to.eql(parseInt(pm.environment.get(\"id\")));",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Activities/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Activities",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Response with ID 1\", function () {",
+							"    pm.expect(jsonData.ID).to.eql(parseInt(pm.environment.get(\"id\")));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Authors/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Authors",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Response with ID 1\", function () {",
+							"    pm.expect(jsonData.ID).to.eql(parseInt(pm.environment.get(\"id\")));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Books/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Books",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get CoverPhoto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Response with ID 1\", function () {",
+							"    pm.expect(jsonData.ID).to.eql(parseInt(pm.environment.get(\"id\")));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/CoverPhotos/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"CoverPhotos",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Response with ID 1\", function () {",
+							"    pm.expect(jsonData.ID).to.eql(parseInt(pm.environment.get(\"id\")));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Users/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Users",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Activity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check for empty response body for put\", function () {",
+							"    pm.response.to.have.body(\"null\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Activities/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Activities",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check for empty response body for put\", function () {",
+							"    pm.response.to.have.body(\"null\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Authors/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Authors",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check for empty response body for put\", function () {",
+							"    pm.response.to.have.body(\"null\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Books/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Books",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update CoverPhoto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check for empty response body for put\", function () {",
+							"    pm.response.to.have.body(\"null\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/CoverPhotos/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"CoverPhotos",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check for empty response body for put\", function () {",
+							"    pm.response.to.have.body(\"null\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Users/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Users",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Activity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check for empty response body for delete\", function () {",
+							"    pm.response.to.have.body(\"\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Activities/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Activities",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check for empty response body for delete\", function () {",
+							"    pm.response.to.have.body(\"\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Authors/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Authors",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check for empty response body for delete\", function () {",
+							"    pm.response.to.have.body(\"\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Books/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Books",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete CoverPhoto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check for empty response body for delete\", function () {",
+							"    pm.response.to.have.body(\"\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/CoverPhotos/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"CoverPhotos",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check for empty response body for delete\", function () {",
+							"    pm.response.to.have.body(\"\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Users/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Users",
+						"{{id}}"
 					]
 				}
 			},

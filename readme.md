@@ -1,13 +1,10 @@
 # Ensuring Quality Releases - Udacity Cloud DevOps using Microsoft Azure Project 3
-
+[![Build Status](https://dev.azure.com/odluser201100/udacity/_apis/build/status/maxpaschke.udacity-devops-project-3?branchName=main)](https://dev.azure.com/odluser201100/udacity/_build/latest?definitionId=1&branchName=main)
 # Overview
 This project demonstrates automated testing in Azure with end to end (E2E), unit testing and monitoring.
 
-# Architecture Diagramm
-
-
 # Instructions
-
+The following steps have to be done in order to run this project:
 * Setup the cloud shell
   - Open the cloud shell from Azure Portal
   - Select "Bash" as input

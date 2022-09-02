@@ -22,12 +22,72 @@
 		},
 		{
 			"key": "id",
-			"value": "",
+			"value": "1",
 			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "url",
+			"value": "https://testapp-appservice.azurewebsites.net/api",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "inputid",
+			"value": "1",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "IDBook",
+			"value": "1",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "FirstName",
+			"value": "Max",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "LastName",
+			"value": "Maxus",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "title",
+			"value": "titlesaa",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "desc",
+			"value": "aaaa",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "pagecount",
+			"value": "0",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "excerpt",
+			"value": "excp",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "pubdate",
+			"value": "2022-07-15T13:47:58.321Z",
+			"type": "default",
 			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2022-07-14T14:00:56.394Z",
+	"_postman_exported_at": "2022-07-15T14:45:02.955Z",
 	"_postman_exported_using": "Postman/9.22.2"
 }
