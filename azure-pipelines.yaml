@@ -217,13 +217,13 @@ stages:
              rootFolderOrFile: '$(System.DefaultWorkingDirectory)/automatedtesting/selenium'
              includeRootFolder: true
              archiveType: 'zip'
-             archiveFile: '$(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip'
+             archiveFile: '$(Build.ArtifactStagingDirectory)/seleniumtests.zip'
              replaceExistingArchive: true
-         - publish: $(Build.ArtifactStagingDirectory)/seleniumtests-$(Build.BuildId).zip
-           artifact: seleniumtestarchive
-           displayName: 'Publish selenium tests'
+         - upload: $(Build.ArtifactStagingDirectory)/seleniumtests.zip
+           artifact: seleniumtests
+           displayName: 'Upload selenium tests'
 
-     - deployment: seleniumtests
+     - deployment: runSelenium
        dependsOn: prepareSeleniumTest
        environment:
         name: 'TEST'
@@ -246,47 +246,39 @@ stages:
                   sudo apt-get install unzip -y
                   sudo apt-get install -y chromium-browser
                   sudo apt-get install -y chromium-chromedriver
+
+                  sudo apt-get install python3.7 -y
+                  sudo apt-get install python3.7-venv -y 
+                  sudo apt-get install python3-pip -y
+                  sudo apt-get install pip -y
+                  python3 —version
+                  pip3 —version 
+                  sudo apt-get install python3.7-distutils -y
+                  sudo apt install python3.7-distutils -y
+                  sudo apt-get -y install zip
+
                   pip3 install selenium
+                  python3 --version
                   
                   chromium-browser --version
                   chromedriver --version
             - download: current
-              displayName: 'Download selenium tests'
-              patterns: "**selenium**" 
+              displayName: 'Download Selenium'
+              artifact: seleniumtests
 
             - task: Bash@3
               displayName: 'Run selenium tests'
               inputs:
                 targetType: 'inline'
                 script: |
-                 pwd
-                 ls -la
                  cd $(Pipeline.Workspace)
-                 ls -la
-
-
-
-
-
-    # - deployment: VMDeploy
-    #   displayName: NAME
-    #   environment:
-    #     name:  ENVIRONMENT NAME
-    #     resourceType: VirtualMachine
-    #     tags: TAG NAME
-    #   strategy:
-    #     runOnce:
-    #       deploy:
-    #         steps:
-    #         - task: Bash@3
-    #           inputs:
-    #             targetType: 'inline'
-    #             script: |
-    #               #! /bin/bash
-
-    #               sudo apt-get upgrade -y
-    #               sudo apt-get install python3-pip -y
-    #               sudo apt-get install unzip -y
-    #               sudo apt-get install -y chromium-browser
-    #               pip3 install selenium
-    #               export PATH=$PATH:some/path
+                 unzip -o seleniumtests/seleniumtests.zip -d .
+                 cd selenium
+                 python3 selenium_test.py > selenium-test-logs.log
+                 cat selenium-test-logs.log
+                 sudo cp selenium-test-logs.log $(System.DefaultWorkingDirectory)/selenium-test-logs.log
+            - task: PublishPipelineArtifact@1
+              inputs:
+                targetPath: 'selenium-test-logs.log'
+                artifact: 'selenium-test-logs'
+                publishLocation: 'pipeline'
